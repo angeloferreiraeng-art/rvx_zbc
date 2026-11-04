@@ -23,20 +23,97 @@
 
 Loading user preference file /home/ciexpert/angelo.ferreira/.synopsys_fc_gui/preferences.tcl
 Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
-source ../../_setup/setup.tcl
-Error: could not open script file "../../_setup/setup.tcl" (CMD-015)
-Information: script '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/icc2_top.tcl'
-                stopped at line 1 due to error. (CMD-081)
+#----------------- Preamble ----------------------------------
+set SCRIPT_DIR     [file dirname [file normalize [info script]]]
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/new_scripts
+set PRJ_ROOT_SETUP [file dirname [file dirname $SCRIPT_DIR]]
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow
+set FLOW_ROOT_SETUP [file dirname $SCRIPT_DIR]
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout
+set LOCAL_PDK_DIR "$PRJ_ROOT_SETUP/_pdk"
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk
+set LOCAL_LC_DIR "$PRJ_ROOT_SETUP/_lc"
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc
+set OUT_LIBRARY $PRJ_ROOT_SETUP/output/design.dlib
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib
+# top design
+set TOP_MODULE_NAME "top_pad_rvx"
+top_pad_rvx
+set DESIGN          "rvx"
+rvx
+# dirs
+set PRJ_ROOT        $PRJ_ROOT_SETUP
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow
+set FLOW_ROOT       $FLOW_ROOT_SETUP
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout
+set SOURCE_DIR          "$FLOW_ROOT/inp_data/source"           
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/inp_data/source
+set REPORT_DIR          "$FLOW_ROOT/out_data/reports/pnr"   
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/out_data/reports/pnr
+set PRE_LAYOUT_DIR      "$PRJ_ROOT_SETUP/out_data/pre_layout"    
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout
+set POST_LAYOUT_DIR     "$FLOW_ROOT/out_data/post_layout"   
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/out_data/post_layout
+set_host_options -max_cores 16
+1
+#---------------Basic Set up ----------------------------
+source $SCRIPT_DIR/pdk_setup.tcl
+source $SCRIPT_DIR/set_context.tcl
+Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib' (FILE-007)
+Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2ng_stdcell.ndm' (FILE-007)
+Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2_iocell.ndm' (FILE-007)
+Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/CLIBs/EXPLORE_physical_only.ndm' (FILE-007)
+Information: Auto created reference libraries are up-to-date, no need to rebuild. (LIB-084)
+Information: User units loaded from library 'ixc013g2ng_stdcell' (LNK-040)
+Opening block 'design.dlib:top_pad_rvx_initial.design' in edit mode
+{design.dlib:top_pad_rvx_initial.design}
+source $SCRIPT_DIR/constraints.tcl
+Using libraries: design.dlib ixc013g2ng_stdcell ixc013g2_iocell EXPLORE_physical_only
+Visiting block design.dlib:top_pad_rvx_initial.design
+Information: The command 'load_upf' cleared the undo history. (UNDO-016)
+Design 'top_pad_rvx' was successfully linked.
+Created scenario func_slow for mode func and corner slow
+All analysis types are activated.
+{func_slow}
+#----------------------- Main steps ----------------------------
+source $SCRIPT_DIR/floorplan.tcl
+source $SCRIPT_DIR/placement.tcl
+source $SCRIPT_DIR/clock.tcl
+Error: wrong # args: should be "proc name arguments body"
+        Use error_info for more info. (CMD-013)
+Information: script '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/new_scripts/clock.tcl'
+                stopped at line 6 due to error. (CMD-081)
 Extended error info:
-
+wrong # args: should be "proc name arguments body"
     while executing
-"source ../../_setup/setup.tcl"
-    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/icc2_top.tcl" line 1)
+"proc mk_cts{forced} {
+        global OUTPUT_LIBRARY
+        global TOP_MODULE_NAME
+        set DESIGN_CTS ${TOP_MODULE_NAME}_cts
+
+        if {$forced || [catch {open_block ${OUT_..."
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/new_scripts/clock.tcl" line 6)
+ -- End Extended Error Info
+Information: script '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/new_scripts/main.tcl'
+                stopped at line 31 due to error. (CMD-081)
+Extended error info:
+wrong # args: should be "proc name arguments body"
+    while executing
+"proc mk_cts{forced} {
+        global OUTPUT_LIBRARY
+        global TOP_MODULE_NAME
+        set DESIGN_CTS ${TOP_MODULE_NAME}_cts
+
+        if {$forced || [catch {open_block ${OUT_..."
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/new_scripts/clock.tcl" line 6)
+    invoked from within
+"source $SCRIPT_DIR/clock.tcl"
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/new_scripts/main.tcl" line 31)
  -- End Extended Error Info
 fc_shell> exit
-Maximum memory usage for this session: 369.23 MB
-Maximum memory usage for this session including child processes: 369.23 MB
+Maximum memory usage for this session: 502.85 MB
+Maximum memory usage for this session including child processes: 502.85 MB
 CPU usage for this session:      7 seconds (  0.00 hours)
-Elapsed time for this session:     30 seconds (  0.01 hours)
+Elapsed time for this session:     29 seconds (  0.01 hours)
 Thank you for using Fusion Compiler.
 

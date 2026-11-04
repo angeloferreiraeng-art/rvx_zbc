@@ -33,7 +33,7 @@ Information: The following app options are used in cellmap
         place.common.use_placement_model : false
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
-Total 0.0740 seconds to build cellmap data
+Total 0.0711 seconds to build cellmap data
 Information: Creating classic rule checker.
 Warning: Routing direction of metal layer GatPoly is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
 =====> Processed 81 ref cells (10 fillers) from library

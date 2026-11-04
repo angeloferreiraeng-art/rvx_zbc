@@ -7,6 +7,7 @@
 
 set DESIGN_INITIAL ${TOP_MODULE_NAME}_initial
 
+
 if { [catch {open_lib $OUT_LIBRARY }] } {
 	create_lib $OUT_LIBRARY \
 	-technology $TECH_FILE \

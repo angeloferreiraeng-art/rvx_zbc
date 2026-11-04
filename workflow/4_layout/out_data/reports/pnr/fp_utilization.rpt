@@ -1,0 +1,26 @@
+****************************************
+Report : report_utilization
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Wed Nov  4 02:39:04 2026
+****************************************
+Utilization Ratio:			0.2652
+Utilization options:
+ - Area calculation based on:		site_row of block top_pad_rvx_initial
+ - Categories of objects excluded:	hard_macros macro_keepouts soft_macros io_cells hard_blockages 
+Total Area:				2884832.7228
+Total Capacity Area:			2884832.7228
+Total Area of cells:			765137.4696
+Area of excluded objects:
+ - hard_macros         :		0.0000
+ - macro_keepouts      :		0.0000
+ - soft_macros         :		0.0000
+ - io_cells            :		2715600.0000
+ - hard_blockages      :		0.0000
+Total Area of excluded objects:		2715600.0000
+Ratio of excluded objects:		0.9413
+
+Utilization of site-rows with:
+ - Site 'CoreSite':				0.2652
+
+0.2652

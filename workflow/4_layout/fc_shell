@@ -1,0 +1,38 @@
+
+# proj paths
+set SCRIPT_PATH     [file dirname [file normalize [info script]]]
+set PRJ_ROOT_SETUP [file dirname [file dirname $SCRIPT_DIR]]
+set FLOW_ROOT_SETUP [file dirname $SCRIPT_DIR]
+
+# top design
+set TOP_MODULE_NAME "top_pad_rvx"
+set DESIGN          "rvx"
+
+# dirs
+set PRJ_ROOT        $PRJ_ROOT_SETUP
+set FLOW_ROOT       $FLOW_ROOT_SETUP
+
+set SOURCE_DIR  	"$FLOW_ROOT/inp_data/source"           
+set REPORT_DIR  	"$FLOW_ROOT/out_data/reports/pnr"   
+set PRE_LAYOUT_DIR	"$FLOW_ROOT/out_data/pre_layout"    
+set POST_LAYOUT_DIR	"$FLOW_ROOT/out_data/post_layout"   
+
+echo $SCRIPT_PATH
+source $SCRIPT_PATH/pdk_setup.tcl
+exit
+source $SCRIPT_PATH/01-create_lib.tcl
+source $SCRIPT_PATH/02-floorplan.tcl
+echo "FLOORPLAN IS GO"
+source $SCRIPT_PATH/03-placement.tcl
+echo "PLACEMENT IS GO"
+
+source $SCRIPT_PATH/quickfix1.tcl
+source $SCRIPT_PATH/04-cts.tcl
+echo "CTS IS GO"
+source $SCRIPT_PATH/05-route.tcl
+echo "ROUTING IS GO"
+#source ../scripts/post_route_fix.tcl
+report_constraints -all_violators
+#source ../scripts/07-export.tcl
+#start_gui
+exit

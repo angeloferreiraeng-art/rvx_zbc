@@ -1,0 +1,12 @@
+# Ignore all files inside any .tmp folder
+**/.tmp/
+**/out_data/
+**/simv_out/
+*.log
+**/output/
+**/_pdk/
+**/_pdk_new/
+**/_lc/
+**/_pdk/*
+**/orkflow/_pdk_new/*
+_lc/*

@@ -1,0 +1,114 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2020-2026 RVX Project Contributors
+
+`include "rvx_constants.vh"
+
+module rvx_timer (
+
+    // Global signals
+    input wire clock,
+    input wire reset_n,
+
+    // IO interface
+    input  wire [ 4:0] rw_address,
+    output reg  [31:0] read_data,
+    input  wire        read_request,
+    output reg         read_response,
+    input  wire [31:0] write_data,
+    input  wire [ 3:0] write_strobe,
+    input  wire        write_request,
+    output reg         write_response,
+
+    // Timer interrupt request
+    output reg timer_irq,
+
+    // Timer output
+    output wire [63:0] timer
+
+);
+
+  // Signals and registers
+  reg        counter_enable;
+  reg [63:0] counter;
+  reg [63:0] compare;
+
+  // Register read logic
+  // ---------------------------------------------------------------------------
+
+  always @(posedge clock) begin
+    if (!reset_n || !read_request) begin
+      read_response <= 1'b0;
+      read_data     <= 32'h00000000;
+    end
+    else if (read_request == 1'b1) begin
+      read_response <= 1'b1;
+      case (rw_address[4:0])
+        `RVX_TIMER_COUNTER_ENABLE_REG_ADDR: read_data <= {31'b0, counter_enable};
+        `RVX_TIMER_COUNTERL_REG_ADDR:       read_data <= counter[31:0];
+        `RVX_TIMER_COUNTERH_REG_ADDR:       read_data <= counter[63:32];
+        `RVX_TIMER_COMPAREL_REG_ADDR:       read_data <= compare[31:0];
+        `RVX_TIMER_COMPAREH_REG_ADDR:       read_data <= compare[63:32];
+        default:                            read_data <= 32'h00000000;
+      endcase
+    end
+  end
+
+
+  // Register write logic
+  // ---------------------------------------------------------------------------
+
+  wire valid_write_strobe = (write_strobe == 4'b1111 || write_strobe == 4'b0011 || write_strobe == 4'b0001);
+  wire valid_write_request = write_request == 1'b1 && valid_write_strobe;
+
+  always @(posedge clock) begin
+    if (!reset_n) begin
+      write_response <= 1'b0;
+      counter_enable <= 1'b1;
+      compare[63:0]  <= 64'hffffffff_ffffffff;
+    end
+    else if (valid_write_request == 1'b1) begin
+      write_response <= 1'b1;
+      case (rw_address[4:0])
+        `RVX_TIMER_COUNTER_ENABLE_REG_ADDR: counter_enable <= write_data[0];
+        `RVX_TIMER_COMPAREL_REG_ADDR:       compare[31:0] <= write_data;
+        `RVX_TIMER_COMPAREH_REG_ADDR:       compare[63:32] <= write_data;
+        default:                            ;
+      endcase
+    end
+    else write_response <= 1'b0;
+  end
+
+  // Counter logic
+  // ---------------------------------------------------------------------------
+
+  assign timer = counter;
+  always @(posedge clock) begin
+    if (!reset_n) begin
+      counter <= 64'd0;
+    end
+    else begin
+      if (valid_write_request == 1'b1 && rw_address[4:0] == `RVX_TIMER_COUNTERL_REG_ADDR) begin
+        counter[31:0] <= write_data;
+      end
+      else if (valid_write_request == 1'b1 && rw_address[4:0] == `RVX_TIMER_COUNTERH_REG_ADDR) begin
+        counter[63:32] <= write_data;
+      end
+      else if (counter_enable) begin
+        counter <= counter + 1;
+      end
+    end
+  end
+
+  // Interrupt logic
+  // ---------------------------------------------------------------------------
+
+  always @(posedge clock) begin
+    if (!reset_n) begin
+      timer_irq <= 1'b0;
+    end
+    else begin
+      timer_irq <= (counter >= compare) ? 1'b1 : 1'b0;
+    end
+  end
+
+endmodule

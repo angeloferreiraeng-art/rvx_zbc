@@ -1,0 +1,42 @@
+ 
+                              Fusion Compiler (TM)
+
+                Version W-2024.09-SP3 for linux64 - Jan 16, 2025
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Loading user preference file /home/ciexpert/angelo.ferreira/.synopsys_fc_gui/preferences.tcl
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+source ../../_setup/setup.tcl
+Error: could not open script file "../../_setup/setup.tcl" (CMD-015)
+Information: script '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/icc2_top.tcl'
+                stopped at line 1 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"source ../../_setup/setup.tcl"
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/icc2_top.tcl" line 1)
+ -- End Extended Error Info
+fc_shell> exit
+Maximum memory usage for this session: 369.23 MB
+Maximum memory usage for this session including child processes: 369.23 MB
+CPU usage for this session:      7 seconds (  0.00 hours)
+Elapsed time for this session:     30 seconds (  0.01 hours)
+Thank you for using Fusion Compiler.
+

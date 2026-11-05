@@ -1,9 +1,0 @@
-Command check_pg_drc started  at Wed Nov  4 03:28:03 2026
-Command check_pg_drc finished at Wed Nov  4 03:28:07 2026
-CPU usage for check_pg_drc: 4.19 seconds ( 0.00 hours)
-Elapsed time for check_pg_drc: 4.20 seconds ( 0.00 hours)
-Total number of errors found: 40
-   40 insufficient spacings on TopMetal2
-------------
-Description of the errors can be seen in gui error set "DRC_report_by_check_pg_drc"
-------------

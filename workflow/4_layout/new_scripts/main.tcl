@@ -30,11 +30,15 @@ source $SCRIPT_DIR/floorplan.tcl
 source $SCRIPT_DIR/placement.tcl
 source $SCRIPT_DIR/clock.tcl
 source $SCRIPT_DIR/cap_fix.tcl
+source $SCRIPT_DIR/route.tcl
 
-mk_floorplan false
-mk_placement false
-mk_cts true
-fix_min_cap true
+mk_floorplan true
+mk_placement true
+#mk_cts true
+#fix_min_cap true
+#mk_route true
+
+report_constraints -all_violators
 exit
 source $SCRIPT_DIR/quickfix1.tcl
 source $SCRIPT_DIR/04-cts.tcl

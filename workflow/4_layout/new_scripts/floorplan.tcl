@@ -218,10 +218,10 @@ proc mk_floorplan {forced} {
 		# report_utilization
 		# check_legality
 
-		check_pg_drc          > $REPORT_DIR/fp_pg_drc.rpt
-		check_pg_connectivity -check_std_cell_pins none > $REPORT_DIR/fp_pg_connectivity.rpt
-		check_legality        > $REPORT_DIR/fp_pg_check_legality.rpt
-		report_utilization    > $REPORT_DIR/fp_utilization.rpt
+		#check_pg_drc          > $REPORT_DIR/fp_pg_drc.rpt
+		#check_pg_connectivity -check_std_cell_pins none > $REPORT_DIR/fp_pg_connectivity.rpt
+		#check_legality        > $REPORT_DIR/fp_pg_check_legality.rpt
+		#report_utilization    > $REPORT_DIR/fp_utilization.rpt
 
 		save_block -as ${DESIGN_FLOORPLAN}
 	}

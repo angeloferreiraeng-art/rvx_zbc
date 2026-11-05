@@ -1,18 +1,0 @@
-<Database>
-versionNumber:2
-Name/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/check_workspace.ems
-Creation TimeWed Nov  4 03:27:01 2026
-Modified TimeWed Nov  4 03:27:01 2026
-Design Name
-Library Name
-</Database>
-<RuleCount>
-LM-0501
-LMUI-0091
-</RuleCount>
-<UserDefinedRules>
-</UserDefinedRules>
-<Messages>
-LMUI-009Warningpara1-allow_missing10para2option10para3physical_only10
-LM-050Informationpara11610para2s10
-</Messages>

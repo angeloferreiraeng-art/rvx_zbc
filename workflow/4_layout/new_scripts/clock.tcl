@@ -4,11 +4,12 @@ file mkdir $REPORT_DIR
 
 #TODO: convert this to CCD
 proc mk_cts { forced } {
-	global OUTPUT_LIBRARY
+	global OUT_LIBRARY
 	global TOP_MODULE_NAME
 	set DESIGN_CTS ${TOP_MODULE_NAME}_cts
 
 	if {$forced || [catch {open_block ${OUT_LIBRARY}:${DESIGN_CTS} }] } {
+		puts "WHY"
 		check_clock_tree
 
 		remove_clock_uncertainty [all_clocks]

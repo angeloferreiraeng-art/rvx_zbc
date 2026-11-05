@@ -27,6 +27,7 @@ proc mk_placement {forced} {
 		#set_auto_floorplan_constraints
 		# placement + optimização (comando forte do ICC2)
 		place_opt
+		puts("--------------------------PASSED PLACE OPT -----------------------------------")
 
 		# reports
 		#redirect -f $REPORT_DIR/place_opt_timing_max.txt {report_timing -max_paths 10}

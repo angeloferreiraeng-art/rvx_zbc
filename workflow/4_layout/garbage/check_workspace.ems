@@ -1,0 +1,18 @@
+<Database>
+versionNumber:2
+Name/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/garbage/check_workspace.ems
+Creation TimeThu Nov  5 12:31:49 2026
+Modified TimeThu Nov  5 12:31:49 2026
+Design Name
+Library Name
+</Database>
+<RuleCount>
+LM-0501
+LMUI-0091
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+LMUI-009Warningpara1-allow_missing10para2option10para3physical_only10
+LM-050Informationpara11610para2s10
+</Messages>

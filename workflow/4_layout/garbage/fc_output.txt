@@ -1,0 +1,128 @@
+ 
+                              Fusion Compiler (TM)
+
+                Version W-2024.09-SP3 for linux64 - Jan 16, 2025
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Loading user preference file /home/ciexpert/angelo.ferreira/.synopsys_fc_gui/preferences.tcl
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+#----------------- Preamble ----------------------------------
+set SCRIPT_DIR     [file dirname [file normalize [info script]]]
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts
+set PRJ_ROOT_SETUP [file dirname [file dirname $SCRIPT_DIR]]
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow
+set FLOW_ROOT_SETUP [file dirname $SCRIPT_DIR]
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout
+set LOCAL_PDK_DIR "$PRJ_ROOT_SETUP/_pdk"
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk
+set LOCAL_LC_DIR "$PRJ_ROOT_SETUP/_lc"
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc
+set OUT_LIBRARY $PRJ_ROOT_SETUP/output/design.dlib
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib
+# top design
+set TOP_MODULE_NAME "top_pad_rvx"
+top_pad_rvx
+set DESIGN          "rvx"
+rvx
+# dirs
+set PRJ_ROOT        $PRJ_ROOT_SETUP
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow
+set FLOW_ROOT       $FLOW_ROOT_SETUP
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout
+set SOURCE_DIR          "$FLOW_ROOT/inp_data/source"           
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/inp_data/source
+set REPORT_DIR          "$FLOW_ROOT/out_data/reports/pnr"   
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/out_data/reports/pnr
+set PRE_LAYOUT_DIR      "$PRJ_ROOT_SETUP/out_data/pre_layout"    
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout
+set POST_LAYOUT_DIR     "$FLOW_ROOT/out_data/post_layout"   
+/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/out_data/post_layout
+#---------------Basic Set up ----------------------------
+source $SCRIPT_DIR/pdk_setup.tcl
+source $SCRIPT_DIR/set_context.tcl
+Error: File '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib' cannot be found using search_path of: '. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .'. (FILE-002)
+Warning: Pitch 2.280000 for layer TopMetal1 is less than sum(3.280000) of minSpacing(1.640000) and minWidth(1.640000).(ixc013g2ng_tech.tf line:319) (TECH-223)
+Warning: Layer 'TopMetal1' is missing the attribute 'minArea'. (ixc013g2ng_tech.tf line 308) (TECH-026)
+Warning: Layer 'TopMetal2' is missing the attribute 'minArea'. (ixc013g2ng_tech.tf line 340) (TECH-026)
+Warning: Layer 'TopMetal1' is missing the attribute 'minArea'. ( line 322) (TECH-026)
+Warning: The value of the pitch attribute of layer TopMetal1 is invalid. Attribute pitch should not be less than sum of attribute minWidth and minSpacing. (ixc013g2ng_tech.tf line 319) (TECH-050)
+Warning: Layer 'TopMetal2' is missing the attribute 'minArea'. ( line 354) (TECH-026)
+Warning: Cut layer 'Via1' has a non-cross primary default ContactCode 'Via1_XX_so'. (line 362) (TECH-083w)
+Warning: Cut layer 'Via2' has a non-cross primary default ContactCode 'Via2_XX_so'. (line 1427) (TECH-083w)
+Warning: Cut layer 'Via3' has a non-cross primary default ContactCode 'Via3_XX_so'. (line 2464) (TECH-083w)
+Warning: Cut layer 'Via4' has a non-cross primary default ContactCode 'Via4_XX_so'. (line 3501) (TECH-083w)
+Information: Loading technology file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk/ixc013g2ng_tech.tf' (FILE-007)
+Warning: No db files from link_library to create reference libraries, will create a physical-only reference library. (LIB-081)
+...Created 1 lib groups
+
+... 1 cell library to build.
+
+
+... checking whether need to build cell library: EXPLORE_physical_only.ndm (1/1)
+... checking whether can reuse library under output directory
+cannot reuse CLIBs/EXPLORE_physical_only.ndm under output directory: library not exists
+
+... processing cell library: EXPLORE_physical_only.ndm (1/1)
+... run lm_shell to build the cell library
+..............................
+created new cell library under output directory: CLIBs/EXPLORE_physical_only.ndm
+
+
+Warning: There are 1 lef files not used for creating cell libraries: /pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef. (LIB-083)
+Information: Successfully built 1 reference libraries: EXPLORE_physical_only.ndm. (LIB-093)
+Error: File '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v' cannot be found using search_path of: '. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn'. (FILE-002)
+Information: script '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/set_context.tcl'
+                stopped at line 10 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"read_verilog $PRE_LAYOUT_VER_NETLIST -top $TOP_MODULE_NAME"
+    invoked from within
+"if { [catch {open_lib $OUT_LIBRARY }] } {
+        create_lib $OUT_LIBRARY \
+        -technology $TECH_FILE \
+        -ref_libs [list $NDM_SC_LIB $NDM_IO_LIB \
+        /pdk/ihp/ih..."
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/set_context.tcl" line 10)
+ -- End Extended Error Info
+Information: script '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/main.tcl'
+                stopped at line 24 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"read_verilog $PRE_LAYOUT_VER_NETLIST -top $TOP_MODULE_NAME"
+    invoked from within
+"if { [catch {open_lib $OUT_LIBRARY }] } {
+        create_lib $OUT_LIBRARY \
+        -technology $TECH_FILE \
+        -ref_libs [list $NDM_SC_LIB $NDM_IO_LIB \
+        /pdk/ihp/ih..."
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/set_context.tcl" line 10)
+    invoked from within
+"source $SCRIPT_DIR/set_context.tcl"
+    (file "/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/main.tcl" line 24)
+ -- End Extended Error Info
+fc_shell> exit
+Maximum memory usage for this session: 373.73 MB
+Maximum memory usage for this session including child processes: 373.73 MB
+CPU usage for this session:      9 seconds (  0.00 hours)
+Elapsed time for this session:     50 seconds (  0.01 hours)
+Thank you for using Fusion Compiler.
+

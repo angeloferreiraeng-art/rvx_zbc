@@ -1,0 +1,35 @@
+create_supply_net VSSCORE
+create_supply_net VDDCORE
+create_supply_net VDDPAD
+create_supply_net VSSPAD
+
+create_supply_set ss_low -function {power VDDCORE} -function {ground VSSCORE }
+create_supply_set ss_high -function {power VDDPAD}  -function {ground VSSPAD}
+
+create_power_domain PD_TOP  -supply {primary ss_low}
+
+create_supply_port VDDCORE -direction in
+create_supply_port VSSCORE -direction in
+create_supply_port VDDPAD -direction in
+create_supply_port VSSPAD -direction in
+
+connect_supply_net VDDCORE -ports VDDCORE
+connect_supply_net VSSCORE -ports VSSCORE
+connect_supply_net VSSPAD -ports VSSPAD
+connect_supply_net VDDPAD -ports VDDPAD
+
+set_design_attributes -elements {.} -attribute correlated_supply_group {*}
+
+add_power_state -supply ss_low -state ON \
+  { -supply_expr { power  == {FULL_ON 1.08 1.08 1.20} && \
+                   ground == {FULL_ON 0.0} } }
+
+
+add_power_state -supply ss_high -state ON \
+  { -supply_expr { power  == {FULL_ON 2.97 3.30 3.63} && \
+                   ground == {FULL_ON 0.0} } }
+
+create_power_state_group PST
+add_power_state -group PST \
+        -state RUN {-logic_expr { ss_low==ON && ss_high==ON }}
+

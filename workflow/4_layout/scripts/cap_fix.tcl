@@ -54,14 +54,37 @@ puts "mincap_fix: using $BUF_REF (input cap $bestc >= $need)"
 
 # ---- insert one buffer per pad DOUT net -------------------------------------
 set i 0
-foreach_in_collection pad $OUT_PADS {
-	echo [get_attribute $pad full_name]
+#foreach_in_collection pad $OUT_PADS {
+#	echo [get_attribute $pad full_name]
 	#set drv [get_pins -quiet $pad/DOUT]
 	#if {[sizeof_collection $drv] == 0} { puts "mincap_fix: no $pad/DOUT, skipped"; continue } 
 	#set pin_cap [get_attribute $pad capacitance]
 	#echo "CURRENT PIN CAP = ${pin_cap}"	
-	insert_buffer $pad $BUF_REF -new_cell_names mincap_buf_$i -new_net_names mincap_net_$i
-	incr i
+#	insert_buffer $pad $BUF_REF -new_cell_names mincap_buf_$i -new_net_names mincap_net_$i
+#	incr i
+#}
+
+foreach_in_collection pad $OUT_PADS {
+    set pad_name [get_attribute $pad full_name]
+    echo $pad_name
+    
+    # Get all nets connected to this pad (or its DOUT pin)
+    set pad_nets [get_nets -quiet -of_objects $pad]
+    
+    # Also check via the DOUT pin, since pad's own net may be empty
+    set dout_pin [get_pins -quiet $pad_name/DOUT]
+    if {[sizeof_collection $dout_pin] > 0} {
+        set dout_nets [get_nets -quiet -of_objects $dout_pin]
+        set pad_nets [add_to_collection $pad_nets $dout_nets]
+    }
+    
+    if {[sizeof_collection $pad_nets] == 0} {
+        puts "mincap_fix: no net on $pad_name, skipped"
+        continue
+    }
+    
+    insert_buffer $pad $BUF_REF -new_cell_names mincap_buf_$i -new_net_names mincap_net_$i
+    incr i
 }
 set_dont_touch [get_cells mincap_buf_*]
 connect_pg_net -automatic

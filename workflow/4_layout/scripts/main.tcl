@@ -24,16 +24,16 @@ source $SCRIPT_DIR/pdk_setup.tcl
 source $SCRIPT_DIR/set_context.tcl
 #----------------------- Main steps ----------------------------
 
-source $SCRIPT_DIR/floorplan.tcl
-source $SCRIPT_DIR/placement.tcl
+#source $SCRIPT_DIR/floorplan.tcl
+#source $SCRIPT_DIR/placement.tcl
 
 #source $SCRIPT_DIR/clocks.tcl
 #source $SCRIPT_DIR/route.tcl
-#source ../scripts/post_route_fix.tcl
-
-source $SCRIPT_DIR/cap_fix.tcl
+#report_constraints -all_violators
+#source $SCRIPT_DIR/cap_fix.tcl
 #--------------------- Reporting and exporting ----------------------------
 report_constraints -all_violators
+source $SCRIPT_DIR/report_blocks.tcl
 #source ../scripts/07-export.tcl
 #start_gui
 exit

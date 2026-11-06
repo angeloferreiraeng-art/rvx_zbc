@@ -1,8 +1,10 @@
 # 04-cts.tcl (ICC2)
 
-#file mkdir $REPORT_DIR
-set DESIGN_CLOCK ${TOP_MODULE_NAME}_floorplan
 
+set DESIGN_CLOCK ${TOP_MODULE_NAME}_cts
+if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_CLOCK}}] } {
+	
+#file mkdir $REPORT_DIR
 
 check_clock_tree
 
@@ -17,3 +19,4 @@ clock_opt
 
 save_block -as ${DESIGN_CLOCK}
 save_lib
+}

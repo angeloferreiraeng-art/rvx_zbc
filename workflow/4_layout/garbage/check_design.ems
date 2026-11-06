@@ -1,0 +1,58 @@
+<Database>
+versionNumber:2
+Name/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/garbage/check_design.ems
+Creation TimeThu Nov  5 12:56:56 2026
+Modified TimeThu Nov  5 12:56:56 2026
+Design Nametop_pad_rvx_initial
+Library Namedesign.dlib
+</Database>
+<RuleCount>
+DFT-0111
+DMM-1041
+DMM-10539
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndcore_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/gndcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndcore_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/gndcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndcore_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/gndcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndcore_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/gndcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndpad_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/gndpad)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndpad_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/gndpad)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndpad_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/gndpad)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/gndpad_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/gndpad)10objtypelib_pin10repairedstateaccepted10
+DMM-104Informationmmactionaccept10mmhandlerchange_lib_port_type10mmobjnamelib_port_type_ixc013g2_iocell/ixc013_asig_ASIG10mmtypelib_port_type10objnameASIG (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_asig_ASIG10mmtypelib_port_direction10objnameASIG (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_asig_PAD10mmtypelib_port_direction10objnamePAD (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_asig_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_asig_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_asig_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_asig_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/ixc013_asig)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16m_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/ixc013_b16m)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16m_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/ixc013_b16m)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16m_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/ixc013_b16m)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16m_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/ixc013_b16m)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpdn_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/ixc013_b16mpdn)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpdn_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/ixc013_b16mpdn)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpdn_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/ixc013_b16mpdn)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpdn_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/ixc013_b16mpdn)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpup_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/ixc013_b16mpup)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpup_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/ixc013_b16mpup)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpup_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/ixc013_b16mpup)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_b16mpup_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/ixc013_b16mpup)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_i16x_PAD10mmtypelib_port_direction10objnamePAD (ixc013g2_iocell/ixc013_i16x)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_i16x_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/ixc013_i16x)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_i16x_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/ixc013_i16x)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_i16x_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/ixc013_i16x)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/ixc013_i16x_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/ixc013_i16x)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddcore_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/vddcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddcore_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/vddcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddcore_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/vddcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddcore_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/vddcore)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddpad_VDDCORE10mmtypelib_port_direction10objnameVDDCORE (ixc013g2_iocell/vddpad)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddpad_VDDPAD10mmtypelib_port_direction10objnameVDDPAD (ixc013g2_iocell/vddpad)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddpad_VSSCORE10mmtypelib_port_direction10objnameVSSCORE (ixc013g2_iocell/vddpad)10objtypelib_pin10repairedstateaccepted10
+DMM-105Informationmmactionaccept10mmhandlerchange_lib_port_direction10mmobjnamelib_port_direction_ixc013g2_iocell/vddpad_VSSPAD10mmtypelib_port_direction10objnameVSSPAD (ixc013g2_iocell/vddpad)10objtypelib_pin10repairedstateaccepted10
+DFT-011Informationreason10
+</Messages>

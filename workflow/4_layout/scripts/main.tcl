@@ -23,16 +23,15 @@ set POST_LAYOUT_DIR	"$FLOW_ROOT/out_data/post_layout"
 source $SCRIPT_DIR/pdk_setup.tcl
 source $SCRIPT_DIR/set_context.tcl
 #----------------------- Main steps ----------------------------
+
 source $SCRIPT_DIR/floorplan.tcl
 source $SCRIPT_DIR/placement.tcl
-exit
-source $SCRIPT_DIR/quickfix1.tcl
-source $SCRIPT_DIR/04-cts.tcl
-echo "CTS IS GO"
-source $SCRIPT_DIR/05-route.tcl
-echo "ROUTING IS GO"
+
+#source $SCRIPT_DIR/clocks.tcl
+#source $SCRIPT_DIR/route.tcl
 #source ../scripts/post_route_fix.tcl
 
+source $SCRIPT_DIR/cap_fix.tcl
 #--------------------- Reporting and exporting ----------------------------
 report_constraints -all_violators
 #source ../scripts/07-export.tcl

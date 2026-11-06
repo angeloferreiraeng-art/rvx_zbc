@@ -1,8 +1,15 @@
-# library dir & path
-set PDK_PATH_SETUP            "/pdk/ihp/ihp130"
-set IO_LIB_PATH_SETUP	      $PDK_PATH_SETUP/ixc013g2_iocell/db
-set STD_LIB_PATH_SETUP        $PDK_PATH_SETUP/ixc013g2ng_stdcell/db
-set STD_VERILOG_PATH_SETUP    $PDK_PATH_SETUP/ixc013g2ng_stdcell/verilog/ixc013g2ng_stdcell.v
+# top design
+set TOP_MODULE_NAME "top_pad_rvx"
+set DESIGN          "rvx"
+
+# dirs
+set PRJ_ROOT        $PRJ_ROOT_SETUP
+set FLOW_ROOT       $FLOW_ROOT_SETUP
+
+set SOURCE_DIR  	"$FLOW_ROOT/inp_data/source"           
+set REPORT_DIR  	"$FLOW_ROOT/out_data/reports/pnr"   
+set PRE_LAYOUT_DIR	"$FLOW_ROOT/out_data/pre_layout"    
+set POST_LAYOUT_DIR	"$FLOW_ROOT/out_data/post_layout"   
 
 #set SYN_TECH_DIR	 $SYN_TECH_DIR_SETUP                
 set STD_CELL_LIB_DIR     $STD_LIB_PATH_SETUP                
@@ -18,13 +25,13 @@ set SDF_FILE                "$POST_LAYOUT_DIR/${DESIGN}_final.sdf"
 
 # set ANTENNA_RULE_FILE    "./scripts/antenna_rules.tcl"
 
-
+ 
 # --- NDM reference (gerados por nos no lm_shell) ---
-set NDM_SC_LIB   "$LOCAL_LC_DIR/libs/ixc013g2ng_stdcell.ndm"
-set NDM_IO_LIB   "$LOCAL_LC_DIR/libs/ixc013g2_iocell.ndm"
+set NDM_SC_LIB   "$FLOW_ROOT/_lc/libs/ixc013g2ng_stdcell.ndm"
+set NDM_IO_LIB   "$FLOW_ROOT/_lc/libs/ixc013g2_iocell.ndm"
 
 # --- tech (o mesmo .tf usado para gerar os NDM) ---
-set TECH_FILE    "$LOCAL_PDK_DIR/ixc013g2ng_tech.tf"
+set TECH_FILE    "$FLOW_ROOT/_pdk/ixc013g2ng_tech.tf"
 
 # --- parasitics (TLUPlus) ---
 # IHP fornece um unico .tlu+ (sem max/min separados); mesmo arquivo nos dois corners.

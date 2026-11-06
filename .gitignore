@@ -2,7 +2,6 @@
 **/.tmp/
 **/out_data/
 **/simv_out/
-*.log
 **/output/
 **/_pdk/
 **/_pdk_new/

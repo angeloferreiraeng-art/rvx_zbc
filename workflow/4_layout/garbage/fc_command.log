@@ -1,0 +1,45 @@
+#@ # 
+#@ # Running fc_shell Version W-2024.09-SP3 for linux64 -- Jan 16, 2025
+#@ # Date:   Fri Nov  6 17:54:16 2026
+#@ # Run by: angelo.ferreira@cadmicro-el8-03.inf.ufrgs.br
+#@ 
+
+open_lib ../../output/design.dlib/
+list_blocks
+open_block design.dlib:top_pad_rvx_floorplan
+report_power >> power_report.log
+report_qoc >> qoc_report.log
+report_qor >> qor_report.log
+report_timing >> timing_report.log
+open_block design.dlib:top_pad_rvx_placement
+report_power >> power_report.log
+report_qor >> qor_report.log
+report_timing >> timing_report.log
+open_block design.dlib:top_pad_rvx_route
+report_power >> power_report.log
+report_qor >> qor_report.log
+report_timing >> timing_report.log
+open_block design.dlib:top_pad_rvx_mincap_fix
+report_power >> power_report.log
+report_qor >> qor_report.log
+report_timing >> timing_report.log
+gui_start
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+win_set_filter -visible -class cell -filter {assembly_die_margin bridge clock_margin filler_allowed_margin hard_macro_margin hard_margin route_blockage_margin seal_ring_margin soft_margin substrate} -layer {}
+win_set_filter -visible -class pseudo_bump -filter {deleted} -layer {}
+win_set_filter -visible -class pseudo_tsv -filter {deleted} -layer {}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {0-18}
+win_set_filter -expand_cell_types {soft_macro  }
+win_set_select_class -visible {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pseudo_tsv pin_blockage block_shielding topology_node topology_edge topology_repeater annotation_shape core_area die_area edit_group shape via terminal fill_cell metal_area metal_area_hole placement_blockage }
+win_set_filter -class cell -filter {array assembly_die_margin bridge clock_margin filler_allowed_margin hard_macro_margin hard_margin route_blockage_margin seal_ring_margin soft_margin substrate} -layer {}
+win_set_filter -class pseudo_bump -filter {deleted} -layer {}
+win_set_filter -class pseudo_tsv -filter {deleted} -layer {}
+win_set_filter -class placement_blockage -filter {wiring} -layer {0-18}
+win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pseudo_tsv pin_blockage topology_node topology_edge topology_repeater annotation_shape edit_group shape via metal_area metal_area_hole placement_blockage }
+gui_zoom -window [gui_get_current_window -view] -factor 2.0
+gui_scroll -window [gui_get_current_window -view] -vrel .2
+gui_scroll -window [gui_get_current_window -view] -vrel .2
+gui_scroll -window [gui_get_current_window -view] -vrel -.2
+gui_set_highlight_options -current_color blue
+set_edrc_setting -check_drc {true}
+exit

@@ -91,6 +91,6 @@ connect_pg_net -automatic
 legalize_placement
 
 # If clock_c was already routed by CTS, patch the new connection:
-route_eco
+#route_eco
 save_block -as ${TOP_MODULE_NAME}_mincap_fix
 

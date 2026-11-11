@@ -1,0 +1,42 @@
+****************************************
+ Report : check_design
+ Options: { pre_placement_stage }
+ Design : top_pad_rvx
+ Version: W-2024.09-SP3
+ Date   : Wed Nov 11 00:21:07 2026
+****************************************
+
+****************************************
+Report : Data Mismatches
+Version: W-2024.09-SP3
+Date   : Wed Nov 11 00:21:07 2026
+****************************************
+No mismatches exist on the design.
+1
+1
+Information: There are no relative placement groups in the design. (NDMUI-173)
+1
+1
+
+  *** EMS Message summary ***
+  ----------------------------------------------------------------------------------------------------
+  Rule         Type   Count      Message
+  ----------------------------------------------------------------------------------------------------
+  DFT-011      Info   1          The design has no scan chain defined in the scandef.
+  DMM-104      Info   1          Mismatch type %mmtype is detected on object type %objtype at obj...
+  DMM-105      Info   39         Mismatch type %mmtype is detected on object type %objtype at obj...
+  TCK-001      Warn   11150      The reported endpoint '%endpoint' is unconstrained. Reason: '%re...
+  TCK-002      Warn   10894      The register clock pin '%pin' has no fanin clocks. Mode:'%mode'.
+  TL-119       Error  1          Top-level has estimated_corner. Can not be used for top-level op...
+  ----------------------------------------------------------------------------------------------------
+  Total 22086 EMS messages : 1 errors, 22044 warnings, 41 info.
+  ----------------------------------------------------------------------------------------------------
+
+  *** Non-EMS message summary *** 
+  ----------------------------------------------------------------------------------------------------
+   Rule         Type   Count      Message
+  ----------------------------------------------------------------------------------------------------
+     NDMUI-173   Info          1 There are no relative placement groups in the design.
+  ----------------------------------------------------------------------------------------------------
+  Total 1 non-EMS messages : 0 errors, 0 warnings, 1 info.
+  ----------------------------------------------------------------------------------------------------

@@ -1,15 +1,16 @@
 
-#create_mode   func
-#create_corner slow
-#create_scenario -mode func -corner slow -name func_slow
-#current_scenario func_slow
+create_mode   func
+create_corner slow
+create_scenario -mode func -corner slow -name func_slow
+current_scenario func_slow
 
 
-set CLOCK_PERIOD 1.0
+set CLOCK_PERIOD 20.0
+
 
 
 create_corner tt_25c
-set_parasitic_parameters -early_spec rcTLU -late_spec rcTLU
+set_parasitic_parameters -corner tt_25c -early_spec rcTLU -late_spec rcTLU
 set_process_number 1
 set_process_label typical
 set_voltage -object_list VDDCORE 1.20
@@ -18,25 +19,25 @@ set_voltage -object_list VDDPAD 1.20
 set_voltage -object_list VSSPAD 0.0
 set_temperature 25
 
-create_corner ff_m40c
-set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
-set_process_number 1
-set_process_label fast
-set_voltage -object_list VDDCORE 1.65
-set_voltage -object_list VSSCORE 0.0
-set_voltage -object_list VDDPAD 1.65
-set_voltage -object_list VSSPAD 0.0
-set_temperature -40
+#create_corner ff_m40c
+#set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
+#set_process_number 1
+#set_process_label fast
+#set_voltage -object_list VDDCORE 1.65
+#set_voltage -object_list VSSCORE 0.0
+#set_voltage -object_list VDDPAD 1.65
+#set_voltage -object_list VSSPAD 0.0
+#set_temperature -40
 
-create_corner ss_125c
-set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
-set_process_number 1
-set_process_label slow
-set_voltage -object_list VDDCORE 1.08
-set_voltage -object_list VSSCORE 0.0
-set_voltage -object_list VDDPAD 1.08
-set_voltage -object_list VSSPAD 0.0
-set_temperature 125
+#create_corner ss_125c
+#set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
+#set_process_number 1
+#set_process_label slow
+#set_voltage -object_list VDDCORE 1.08
+#set_voltage -object_list VSSCORE 0.0
+#set_voltage -object_list VDDPAD 1.08
+#set_voltage -object_list VSSPAD 0.0
+#set_temperature 125
 
 
 create_mode func
@@ -46,13 +47,13 @@ create_scenario -mode func -corner tt_25c
 set_scenario_status func::tt_25c -setup true -hold false
 create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
 
-create_scenario -mode func -corner ff_m40c
-set_scenario_status func::ff_m40c -setup true -hold false
-create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
+#create_scenario -mode func -corner ff_m40c
+#set_scenario_status func::ff_m40c -setup true -hold false
+#create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
 
-create_scenario -mode func -corner ss_125c
-set_scenario_status func::ss_125c -setup true -hold false
-create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
+#create_scenario -mode func -corner ss_125c
+#set_scenario_status func::ss_125c -setup true -hold false
+#create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
 
 
 #create_mode high_freq

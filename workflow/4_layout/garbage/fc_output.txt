@@ -21,60 +21,801 @@
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 
-Loading user preference file /home/ciexpert/angelo.ferreira/.synopsys_fc_gui/preferences.tcl
+Loading user preference file /home/angelo.ferreira/.synopsys_fc_gui/preferences.tcl
 Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
-fc_shell> open_lib ../../output/design.dlib/
-Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib' (FILE-007)
-Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2ng_stdcell.ndm' (FILE-007)
-Information: Loading library file '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2_iocell.ndm' (FILE-007)
-Error: File '/home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/garbage/CLIBs/EXPLORE_physical_only.ndm' cannot be found using search_path of: '. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .'. (FILE-002)
-{design.dlib}
-fc_shell> list_blocks
-Lib design.dlib /home/ciexpert/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib tech current
-  ->  0 top_pad_rvx.design Nov-06-16:13
-  ->  0 top_pad_rvx_initial.design Nov-06-16:47
-  ->  0 top_pad_rvx_place_opt.design Nov-06-16:26
-  ->  0 top_pad_rvx_placement.design Nov-06-17:29
-  ->  0 top_pad_rvx_floorplan.design Nov-06-17:22
-  ->  0 top_pad_rvx_initial_route.design Nov-06-17:26
-  ->  0 top_pad_rvx_post_route.design Nov-06-17:29
-  ->  0 top_pad_rvx_route.design Nov-06-17:29
-  ->  0 top_pad_rvx_mincap_fix.design Nov-06-17:30
-9
-fc_shell> open_block design.dlib:top_pad_rvx_floorplan
+#----------------- Preamble ----------------------------------
+set SCRIPT_DIR     [file dirname [file normalize [info script]]]
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts
+set PRJ_ROOT_SETUP [file dirname [file dirname $SCRIPT_DIR]]
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow
+set FLOW_ROOT_SETUP [file dirname $SCRIPT_DIR]
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout
+set LOCAL_PDK_DIR "$PRJ_ROOT_SETUP/_pdk"
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk
+set LOCAL_LC_DIR "$PRJ_ROOT_SETUP/_lc"
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc
+set OUT_LIBRARY $PRJ_ROOT_SETUP/output/design.dlib
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib
+# top design
+set TOP_MODULE_NAME "top_pad_rvx"
+top_pad_rvx
+set DESIGN          "rvx"
+rvx
+# dirs
+set PRJ_ROOT        $PRJ_ROOT_SETUP
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow
+set FLOW_ROOT       $FLOW_ROOT_SETUP
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout
+set SOURCE_DIR          "$FLOW_ROOT/inp_data/source"           
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/inp_data/source
+set REPORT_DIR          "$FLOW_ROOT/out_data/reports/pnr"   
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/out_data/reports/pnr
+set PRE_LAYOUT_DIR      "$PRJ_ROOT_SETUP/out_data/pre_layout"    
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout
+set POST_LAYOUT_DIR     "$FLOW_ROOT/out_data/post_layout"   
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/out_data/post_layout
+set_host_options -max_cores 16
+1
+#---------------Basic Set up ----------------------------
+source $SCRIPT_DIR/pdk_setup.tcl
+source $SCRIPT_DIR/set_context.tcl
+Error: File '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib' cannot be found using search_path of: '. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .'. (FILE-002)
+Warning: Pitch 2.280000 for layer TopMetal1 is less than sum(3.280000) of minSpacing(1.640000) and minWidth(1.640000).(ixc013g2ng_tech.tf line:319) (TECH-223)
+Warning: Layer 'TopMetal1' is missing the attribute 'minArea'. (ixc013g2ng_tech.tf line 308) (TECH-026)
+Warning: Layer 'TopMetal2' is missing the attribute 'minArea'. (ixc013g2ng_tech.tf line 340) (TECH-026)
+Warning: Layer 'TopMetal1' is missing the attribute 'minArea'. ( line 322) (TECH-026)
+Warning: The value of the pitch attribute of layer TopMetal1 is invalid. Attribute pitch should not be less than sum of attribute minWidth and minSpacing. (ixc013g2ng_tech.tf line 319) (TECH-050)
+Warning: Layer 'TopMetal2' is missing the attribute 'minArea'. ( line 354) (TECH-026)
+Warning: Cut layer 'Via1' has a non-cross primary default ContactCode 'Via1_XX_so'. (line 362) (TECH-083w)
+Warning: Cut layer 'Via2' has a non-cross primary default ContactCode 'Via2_XX_so'. (line 1427) (TECH-083w)
+Warning: Cut layer 'Via3' has a non-cross primary default ContactCode 'Via3_XX_so'. (line 2464) (TECH-083w)
+Warning: Cut layer 'Via4' has a non-cross primary default ContactCode 'Via4_XX_so'. (line 3501) (TECH-083w)
+Information: Loading technology file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk/ixc013g2ng_tech.tf' (FILE-007)
+Warning: No db files from link_library to create reference libraries, will create a physical-only reference library. (LIB-081)
+...Created 1 lib groups
+
+... 1 cell library to build.
+
+
+... checking whether need to build cell library: EXPLORE_physical_only.ndm (1/1)
+... checking whether can reuse library under output directory
+cannot reuse CLIBs/EXPLORE_physical_only.ndm under output directory: number of the physical source files of the cell library /home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/garbage/CLIBs/EXPLORE_physical_only.ndm is 1, expected 2
+
+... processing cell library: EXPLORE_physical_only.ndm (1/1)
+... run lm_shell to build the cell library
+..............................
+overwrite existing cell library under output directory: CLIBs/EXPLORE_physical_only.ndm
+
+
+Warning: There are 1 lef files not used for creating cell libraries: /pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef. (LIB-083)
+Information: Successfully built 1 reference libraries: EXPLORE_physical_only.ndm. (LIB-093)
+Information: Reading Verilog into new design 'top_pad_rvx' in library 'design.dlib'. (VR-012)
+Loading verilog file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v'
+Information: tri converted to a wire with no special attributes
+                at line 88861 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Information: tri converted to a wire with no special attributes
+                at line 88862 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Information: tri converted to a wire with no special attributes
+                at line 88863 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Information: tri converted to a wire with no special attributes
+                at line 88864 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Information: tri converted to a wire with no special attributes
+                at line 88865 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Information: tri converted to a wire with no special attributes
+                at line 88866 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Information: tri converted to a wire with no special attributes
+                at line 88867 in /home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.v (SVR-21)
+Number of modules read: 26
+Top level ports: 18
+Total ports in all modules: 3195
+Total nets in all modules: 63121
+Total instances in all modules: 58521
+Elapsed = 00:00:00.44, CPU = 00:00:00.41
+Using libraries: design.dlib ixc013g2ng_stdcell ixc013g2_iocell EXPLORE_physical_only
+Linking block design.dlib:top_pad_rvx.design
 Information: User units loaded from library 'ixc013g2ng_stdcell' (LNK-040)
-Opening block 'design.dlib:top_pad_rvx_floorplan.design' in edit mode
-{design.dlib:top_pad_rvx_floorplan.design}
-fc_shell> report_power >> power_report.log
-fc_shell> report_qoc >> qoc_report.log
-Error: unknown command 'report_qoc' (CMD-005)
-fc_shell> report_qor >> qor_report.log
-fc_shell> report_timing >> timing_report.log
-fc_shell> open_block design.dlib:top_pad_rvx_placement
-Opening block 'design.dlib:top_pad_rvx_placement.design' in edit mode
-{design.dlib:top_pad_rvx_placement.design}
-fc_shell> report_power >> power_report.log
-fc_shell> report_qor >> qor_report.log
-fc_shell> report_timing >> timing_report.log
-fc_shell> open_block design.dlib:top_pad_rvx_route
-Opening block 'design.dlib:top_pad_rvx_route.design' in edit mode
-{design.dlib:top_pad_rvx_route.design}
-fc_shell> report_power >> power_report.log
-fc_shell> report_qor >> qor_report.log
-fc_shell> report_timing >> timing_report.log
-fc_shell> open_block design.dlib:top_pad_rvx_mincap_fix
-Opening block 'design.dlib:top_pad_rvx_mincap_fix.design' in edit mode
-{design.dlib:top_pad_rvx_mincap_fix.design}
-fc_shell> report_power >> power_report.log
-fc_shell> report_qor >> qor_report.log
-fc_shell> report_timing >> timing_report.log
-fc_shell> gui_start
-fc_shell> gui_set_highlight_options -current_color blue
-fc_shell> set_edrc_setting -check_drc {true}
-fc_shell> exit
-Maximum memory usage for this session: 2057.70 MB
-Maximum memory usage for this session including child processes: 2057.70 MB
-CPU usage for this session:    120 seconds (  0.03 hours)
-Elapsed time for this session:    513 seconds (  0.14 hours)
+Design 'top_pad_rvx' was successfully linked.
+Information: Loading SDC version 2.1 file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/out_data/pre_layout/rvx.sdc' (FILE-007)
+Information: Timer using 16 threads
+Information: Saving 'design.dlib:top_pad_rvx.design' to 'design.dlib:top_pad_rvx_initial.design'. (DES-028)
+Saving library 'design.dlib'
+Opening block 'design.dlib:top_pad_rvx_initial.design' in edit mode
+{design.dlib:top_pad_rvx_initial.design}
+source $SCRIPT_DIR/constraints.tcl
+Using libraries: design.dlib ixc013g2ng_stdcell ixc013g2_iocell EXPLORE_physical_only
+Visiting block design.dlib:top_pad_rvx_initial.design
+Design 'top_pad_rvx' was successfully linked.
+Created scenario func_slow for mode func and corner slow
+All analysis types are activated.
+Warning: Process label typical is not used by any reference library. (CSTR-040)
+Warning: Nothing implicitly matched 'VDDCORE' (SEL-003)
+Error: Nothing matched for -object_list (SEL-005)
+Warning: Nothing implicitly matched 'VSSCORE' (SEL-003)
+Error: Nothing matched for -object_list (SEL-005)
+Warning: Nothing implicitly matched 'VDDPAD' (SEL-003)
+Error: Nothing matched for -object_list (SEL-005)
+Warning: Nothing implicitly matched 'VSSPAD' (SEL-003)
+Error: Nothing matched for -object_list (SEL-005)
+Error: Mode 'func' already exists. (CSTR-002)
+Created scenario func::tt_25c for mode func and corner tt_25c
+All analysis types are activated.
+Scenario func::tt_25c (mode func corner tt_25c) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+Warning: Redefining clock 'master_clk'.  
+        Previously defined at: /home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/constraints.tcl, line 44 (UIC-034)
+#----------------------- Main steps ----------------------------
+source $SCRIPT_DIR/floorplan.tcl
+Error: Cannot find block '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib:top_pad_rvx_floorplan'. (DES-004)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'horizontal' routing direction for layer 'Metal1'. (DPUI-924)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'vertical' routing direction for layer 'Metal2'. (DPUI-924)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'horizontal' routing direction for layer 'Metal3'. (DPUI-924)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'vertical' routing direction for layer 'Metal4'. (DPUI-924)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'horizontal' routing direction for layer 'Metal5'. (DPUI-924)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'vertical' routing direction for layer 'TopMetal1'. (DPUI-924)
+Warning: The routing directions for layer 'Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2 ' are missing. Auto deriving 'horizontal' routing direction for layer 'TopMetal2'. (DPUI-924)
+Use site_def 'CoreSite' to initialize floorplan.
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 26.48%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+Info: Edge left -> 8 pads, gap=171 um, remainder=3 um
+Information: The command 'set_signal_io_constraints' cleared the undo history. (UNDO-016)
+Signal IO constraints set successfully
+Info: Edge top -> 6 pads, gap=264 um, remainder=0 um
+Signal IO constraints set successfully
+Info: Edge right -> 10 pads, gap=120 um, remainder=0 um
+Signal IO constraints set successfully
+Info: Edge bottom -> 6 pads, gap=264 um, remainder=0 um
+Signal IO constraints set successfully
+Information: Starting 'place_io' (FLW-8000)
+Information: Time: 2026-11-11 01:29:59 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 580 MB (FLW-8100)
+Overall runtime for IO placement: 0.094u 0.001s 0:00.09e 99.7%
+Information: Ending   'place_io' (FLW-8001)
+Information: Time: 2026-11-11 01:29:59 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 580 MB (FLW-8100)
+------------------------- Start of Overlap Check --------------------------
+-------------------------- End of Overlap Check ---------------------------
+
+No violation has been found.
+------------------ Start of Signal I/O constraints Check ------------------
+------------------- End of Signal I/O constraints Check -------------------
+
+No violation has been found.
+Information: The command 'create_io_filler_cells' cleared the undo history. (UNDO-016)
+Filler cells placed successfully
+------------------------- Start of Overlap Check --------------------------
+-------------------------- End of Overlap Check ---------------------------
+
+No violation has been found.
+------------------ Start of Signal I/O constraints Check ------------------
+------------------- End of Signal I/O constraints Check -------------------
+
+No violation has been found.
+Information: Loading UPF file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/power.upf' (FILE-007)
+create_supply_net VSSCORE
+create_supply_net VDDCORE
+create_supply_net VDDPAD
+create_supply_net VSSPAD
+create_supply_set ss_low -function {power VDDCORE} -function {ground VSSCORE }
+create_supply_set ss_high -function {power VDDPAD}  -function {ground VSSPAD}
+create_power_domain PD_TOP  -supply {primary ss_low}
+create_supply_port VDDCORE -direction in
+create_supply_port VSSCORE -direction in
+create_supply_port VDDPAD -direction in
+create_supply_port VSSPAD -direction in
+connect_supply_net VDDCORE -ports VDDCORE
+connect_supply_net VSSCORE -ports VSSCORE
+connect_supply_net VSSPAD -ports VSSPAD
+connect_supply_net VDDPAD -ports VDDPAD
+set_design_attributes -elements {.} -attribute correlated_supply_group {*}
+add_power_state -supply ss_low -state ON \
+  { -supply_expr { power  == {FULL_ON 1.08 1.08 1.20} && \
+                   ground == {FULL_ON 0.0} } }
+add_power_state -supply ss_high -state ON \
+  { -supply_expr { power  == {FULL_ON 2.97 3.30 3.63} && \
+                   ground == {FULL_ON 0.0} } }
+create_power_state_group PST
+add_power_state -group PST \
+        -state RUN {-logic_expr { ss_low==ON && ss_high==ON }}
+Information: Total 0 isolation cell(s) in the design. (MV-021)
+Information: Total 0 level shifter cell(s) in the design. (MV-021)
+Information: Total 0 enable level shifter cell(s) in the design. (MV-021)
+Information: Total 0 repeater cell(s) in the design. (MV-021)
+Information: Total 0 retention cell(s) in the design. (MV-021)
+Information: Total 0 power switch cell(s) in the design. (MV-021)
+Information: Total 0 netlist change(s) and disconnections have been made to resolve conflicts between power intent and PG netlist. (UPF-073)
+Information: UPF has been successfully committed. (UPF-072)
+Information: Committing UPF. (MV-134)
+Information: Total 0 isolation cell(s) in the design. (MV-021)
+Information: Total 0 level shifter cell(s) in the design. (MV-021)
+Information: Total 0 enable level shifter cell(s) in the design. (MV-021)
+Information: Total 0 repeater cell(s) in the design. (MV-021)
+Information: Total 0 retention cell(s) in the design. (MV-021)
+Information: Total 0 power switch cell(s) in the design. (MV-021)
+Information: Total 0 netlist change(s) and disconnections have been made to resolve conflicts between power intent and PG netlist. (UPF-073)
+Information: UPF has been successfully committed. (UPF-072)
+Information: Connecting to PG and tie pins in automatic mode. (MV-396)
+****************************************
+Report : Power/Ground Connection Summary
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Wed Nov 11 01:30:01 2026
+****************************************
+P/G net name                      P/G pin count(previous/current)
+--------------------------------------------------------------------------------
+Power net VDDCORE                 0/59084
+Power net VDDPAD                  0/618
+Ground net VSSCORE                0/59084
+Ground net VSSPAD                 0/618
+--------------------------------------------------------------------------------
+Information: connections of 119404 power/ground pin(s) are created or changed. (MV-382)
+
+Successfully create PG ring pattern ring_pattern.
+Successfully set PG strategy core_ring.
+Sanity check for inputs.
+Warning: Strategy via rule is not defined. Add appropriate via rule to get expected results and avoid runtime penalties. (PGR-095)
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy core_ring.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 614
+Creating rings.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias inside strategy core_ring.
+Checking 8 stacked vias: 0% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 8 wires.
+Committed 8 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+Net {VDDCORE} is shifted too far
+Net {VDDCORE} is shifted too far
+Warning: 1 net(s) were skipped (LED-041)
+Objects created: 8
+Net {VSSCORE} is shifted too far
+Net {VSSCORE} is shifted too far
+Warning: 1 net(s) were skipped (LED-041)
+Objects created: 8
+Information: The command 'create_pad_rings' cleared the undo history. (UNDO-016)
+Processing layer TopMetal1 ...
+Creating pad ring for net VDDCORE
+Starting pad ring DRC checking ...
+Creating 4 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Checking 0 stacked vias: 0% 100%
+Committed 4 wires.
+Committed 0 vias.
+Creating pad ring for net VDDPAD
+Starting pad ring DRC checking ...
+Creating 20 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Checking 0 stacked vias: 0% 100%
+Committed 20 wires.
+Committed 0 vias.
+Creating pad ring for net VSSCORE
+Starting pad ring DRC checking ...
+Creating 4 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Checking 0 stacked vias: 0% 100%
+Committed 4 wires.
+Committed 0 vias.
+Creating pad ring for net VSSPAD
+Starting pad ring DRC checking ...
+Creating 20 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Checking 0 stacked vias: 0% 100%
+Committed 20 wires.
+Committed 0 vias.
+Overall runtime: 0 seconds.
+Overall elapsed time: 0.00 seconds.
+Successfully created PG pad rings.
+Command check_pg_drc started  at Wed Nov 11 01:30:08 2026
+Command check_pg_drc finished at Wed Nov 11 01:30:08 2026
+CPU usage for check_pg_drc: 0.54 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.08 seconds ( 0.00 hours)
+Total number of errors found: 40
+   40 insufficient spacings on TopMetal2
+------------
+Description of the errors can be seen in gui error set "DRC_report_by_check_pg_drc"
+------------
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDDCORE    Secondary Net:
+Primary Net : VDDPAD    Secondary Net:
+Primary Net : VSSCORE    Secondary Net:
+Primary Net : VSSPAD    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 0
+Number of Macro Cells: 0
+Number of IO Pad Cells: 618
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDDCORE Wires: 12
+Number of VDDCORE Vias: 8
+Number of VDDCORE Terminals: 0
+**************Verify net VDDCORE connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VDDPAD Wires: 20
+Number of VDDPAD Vias: 0
+Number of VDDPAD Terminals: 0
+**************Verify net VDDPAD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSSCORE Wires: 12
+Number of VSSCORE Vias: 8
+Number of VSSCORE Terminals: 0
+**************Verify net VSSCORE connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSSPAD Wires: 20
+Number of VSSPAD Vias: 0
+Number of VSSPAD Terminals: 0
+**************Verify net VSSPAD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 0 seconds.
+Successfully create standard cell rail pattern std_rail.
+Successfully set PG strategy core_rail.
+Sanity check for inputs.
+Warning: Strategy via rule is not defined. Add appropriate via rule to get expected results and avoid runtime penalties. (PGR-095)
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy core_rail.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 614
+Creating standard cell rails.
+Creating standard cell rails for strategy core_rail.
+DRC checking and fixing for standard cell rail strategy core_rail.
+Number of threads: 16
+Number of partitions: 41
+Direction of partitions: horizontal
+Number of wires: 450
+Checking DRC for 450 wires: 0% 100%
+Creating 450 wires after DRC fixing.
+Wire DRC checking runtime 1.00 seconds.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 450 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 1 seconds.
+Successfully compiled PG.
+Overall runtime: 1 seconds.
+Successfully create mesh pattern mesh_h.
+Successfully set PG strategy core_mesh_h.
+Sanity check for inputs.
+Warning: Strategy via rule is not defined. Add appropriate via rule to get expected results and avoid runtime penalties. (PGR-095)
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy core_mesh_h.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 614
+Creating straps and vias in power plan.
+Creating wire shapes for strategies core_mesh_h .
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies core_mesh_h .
+Check and fix DRC for 33 wires for strategy core_mesh_h.
+Number of threads: 16
+Number of partitions: 3
+Direction of partitions: horizontal
+Number of wires: 33
+Checking DRC for 33 wires: 0% 100%
+Creating 33 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies core_mesh_h .
+Number of threads: 16
+Working on strategy core_mesh_h.
+Number of detected intersections: 0
+Total runtime of via shapes creation: 0 seconds
+Runtime of via DRC checking for strategy core_mesh_h: 0.00 seconds.
+Creating via connection between strategies and existing shapes.
+Check and fix DRCs for 58 stacked vias.
+Number of threads: 16
+Number of partitions: 3
+Direction of partitions: horizontal
+Number of vias: 58
+Checking DRC for 58 stacked vias:: 0% 100%
+1 regular vias are not fixed
+Via DRC checking runtime 0.00 seconds.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias between strategies and existing shapes.
+Checking 57 stacked vias: 0% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 29 wires.
+Committed 57 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+Successfully create mesh pattern mesh_v.
+Successfully set PG strategy core_mesh_v.
+Sanity check for inputs.
+Warning: Strategy via rule is not defined. Add appropriate via rule to get expected results and avoid runtime penalties. (PGR-095)
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy core_mesh_v.
+Loading library and design information.
+Number of Standard Cells: 0
+Number of Hard Macros: 0
+Number of Pads: 614
+Creating straps and vias in power plan.
+Creating wire shapes for strategies core_mesh_v .
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies core_mesh_v .
+Check and fix DRC for 33 wires for strategy core_mesh_v.
+Number of threads: 16
+Number of partitions: 3
+Direction of partitions: vertical
+Number of wires: 33
+Checking DRC for 33 wires: 0% 100%
+Creating 33 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies core_mesh_v .
+Number of threads: 16
+Working on strategy core_mesh_v.
+Number of detected intersections: 0
+Total runtime of via shapes creation: 0 seconds
+Runtime of via DRC checking for strategy core_mesh_v: 0.00 seconds.
+Creating via connection between strategies and existing shapes.
+Check and fix DRCs for 7969 stacked vias.
+Number of threads: 16
+Number of partitions: 43
+Direction of partitions: horizontal
+Number of vias: 7969
+Checking DRC for 7969 stacked vias:: 0% 100%
+Via DRC checking runtime 0.00 seconds.
+via connection runtime: 0 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias between strategies and existing shapes.
+Checking 7969 stacked vias: 0% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 33 wires.
+Committed 37669 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+Information: Starting 'create_placement' (FLW-8000)
+Information: Time: 2026-11-11 01:30:09 / Session:  00:00:27 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 700 MB (FLW-8100)
+Creating appropriate block views (if needed)...
+Multi-Processing Summary
+  Max number of cores for parent process: 16; hostname: cadmicro-el8-03.inf.ufrgs.br
+  No distributed processing
+Command Option Settings Summary
+  -floorplan -effort medium
+Info: starting to push down row track for sub-blocks.
+Information: All hard macros are fixed, no hard macro placement is done. (DPP-416)
+Generating automatic soft blockages for top_pad_rvx_initial, hor/vert channel sizes are 22.68/22.68
+Placing top level std cells.
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Warning: Corner tt_25c:  0 process number, 2 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 58484 cells affected for early, 58484 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Warning: Corner default:  0 process number, 0 process label, 1 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 18 cells affected for early, 18 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Warning: Network of supply net VDDCORE has no early voltage defined in corner default. (PVT-014)
+Warning: Network of supply net VDDCORE has no late voltage defined in corner default. (PVT-014)
+Warning: Network of supply net VDDPAD has no early voltage defined in corner default. (PVT-014)
+Warning: Network of supply net VDDPAD has no late voltage defined in corner default. (PVT-014)
+Warning: Corner slow:  0 process number, 0 process label, 1 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 18 cells affected for early, 18 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Warning: Network of supply net VDDCORE has no early voltage defined in corner slow. (PVT-014)
+Warning: Network of supply net VDDCORE has no late voltage defined in corner slow. (PVT-014)
+Warning: Network of supply net VDDPAD has no early voltage defined in corner slow. (PVT-014)
+Warning: Network of supply net VDDPAD has no late voltage defined in corner slow. (PVT-014)
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+coarse place 0% done.
+coarse place 20% done.
+coarse place 40% done.
+coarse place 60% done.
+coarse place 80% done.
+coarse place 100% done.
+Running block placement.
+Running timing driven standard cell placement
+No editable block found.
+Running virtual optimization on full netlist ...
+Created estimated_corner
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(EARLY) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(EARLY) (NEX-018)
+Information: The stitching and editing of coupling caps is turned OFF for design 'design.dlib:top_pad_rvx_initial.design'. (TIM-125)
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Information: Design Average RC for design top_pad_rvx_initial  (NEX-011)
+Information: r = 0.422585 ohm/um, via_r = 7.607316 ohm/cut, c = 0.206149 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 0.403214 ohm/um, via_r = 8.369781 ohm/cut, c = 0.216485 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Error: Corner default does not have parasitic tech information.
+Error: Corner slow does not have parasitic tech information.
+Error: Something is wrong and optimization cannot start (APS-020)
+Creating appropriate block views (if needed)...
+Info: starting to push down row track for sub-blocks.
+Generating automatic soft blockages for top_pad_rvx_initial, hor/vert channel sizes are 22.68/22.68
+Placing top level std cells.
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+Warning: no valid parasitic for slow corner(LATE) (NEX-018)
+coarse place 40% done.
+coarse place 60% done.
+coarse place 80% done.
+coarse place 100% done.
+Running block placement.
+Floorplan placement done.
+****************************************
+Report : report_placement
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Wed Nov 11 01:30:22 2026
+****************************************
+  ==================
+  Note: Ignoring violations of fixed cells or between fixed pairs of cells. 
+        To include violations of / between fixed cells, disable -ignore_fixed. 
+  ==================
+
+  Wire length report (all)
+  ==================
+  wire length in design top_pad_rvx_initial: 3796121.989 microns.
+  wire length in design top_pad_rvx_initial (see through blk pins): 3796121.989 microns.
+  ------------------
+  Total wire length: 3796121.989 microns.
+
+  Physical hierarchy violations report
+  ====================================
+  Violations in design top_pad_rvx_initial:
+     0 cells have placement violation.
+  ------------------------------------
+  Total 0 cells have placement violation.
+
+  Voltage area violations report
+  ====================================
+  Voltage area placement violations in design top_pad_rvx_initial:
+     0 cells placed outside the voltage area which they belong to.
+  ------------------------------------
+  Total 0 macro cells placed outside the voltage area which they belong to.
+
+  Hard macro to hard macro overlap report
+  =======================================
+  HM to HM overlaps in design top_pad_rvx_initial: 0
+  ---------------------------------------
+  Total hard macro to hard macro overlaps: 0
+
+Information: Default error view top_pad_rvx_initial_dpplace.err is created in GUI error browser. (DPP-054)
+Information: Elapsed time for create_placement excluding pending time: 00:00:12.91. (DPUI-902)
+Information: CPU time for create_placement : 00:00:44.41. (DPUI-903)
+Information: Peak memory usage for create_placement : 985 MB. (DPUI-904)
+Information: Ending   'create_placement' (FLW-8001)
+Information: Time: 2026-11-11 01:30:22 / Session:  00:00:40 / Command:  00:00:12 / CPU:  00:00:41 / Memory: 986 MB (FLW-8100)
+Information: Starting 'legalize_placement' (FLW-8000)
+Information: Time: 2026-11-11 01:30:22 / Session:  00:00:40 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 986 MB (FLW-8100)
+nplDplc2Placer::setParam(effort,1)
+nplDplc2Placer::setParam(debug,0)
+nplDplc2Placer::setParam(site_check,2)
+nplDplc2Placer::setParam(app_firm_wgt,0)
+Warning: Site master "CoreSite" has neither X-Symmetry nor Y-Symmetry. The "legal orientations" for the standard cells will be limited. (LGL-031)
+Warning: Routing direction of metal layer GatPoly is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+        place.legalize.enable_prerouted_net_check: 1
+        place.legalize.num_tracks_for_access_check: 1
+        place.legalize.use_eol_spacing_for_access_check: 0
+        place.legalize.allow_touch_track_for_access_check: 1
+        place.legalize.reduce_conservatism_in_eol_check: 0
+        place.legalize.preroute_shape_merge_distance: 0.0
+        place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer Metal1: cached 0 shapes out of 450 total shapes.
+Layer Metal2: cached 0 shapes out of 0 total shapes.
+Cached 14850 vias out of 37742 total vias.
+
+Legalizing Top Level Design top_pad_rvx ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.0665 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer GatPoly is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 81 ref cells (10 fillers) from library
+
+Bounds/Regions In This Design:
+        Area    Num Cells  Exclusive Name
+ (square um)
+ 2.88483e+06        58466        Yes DEFAULT_VA
+
+Warning: max_legality_failures=5000 ignored.
+        To use it, set limit_legality_checks to true.
+Warning: max_legality_check_range=500 ignored.
+        To use it, set limit_legality_checks to true.
+Starting legalizer.
+Warning: Exclusive bound 'DEFAULT' has no cells.
+Optimizing Exclusive Bound 'DEFAULT_VA' (2/2)
+    Done Exclusive Bound 'DEFAULT_VA' (2/2) (2 sec)
+Legalization complete (4 total sec)
+
+****************************************
+  Report : Placement Attempts
+  Site   : CoreSite
+****************************************
+
+number of cells:                  58466
+number of references:                81
+number of site rows:                449
+number of locations attempted:   933938
+number of locations failed:           0  (0.0%)
+
+Legality of references at locations:
+0 references had failures.
+
+Legality of references in rows:
+0 references had row failures.
+
+****************************************
+  Report : Cell Displacements
+****************************************
+
+number of cells aggregated:       58466 (481946 total sites)
+avg row height over cells:        3.780 um
+rms cell displacement:            1.106 um ( 0.29 row height)
+rms weighted cell displacement:   1.106 um ( 0.29 row height)
+max cell displacement:            2.373 um ( 0.63 row height)
+avg cell displacement:            0.968 um ( 0.26 row height)
+avg weighted cell displacement:   0.968 um ( 0.26 row height)
+number of cells moved:            58466
+number of large displacements:        0
+large displacement threshold:     3.000 row height
+
+Displacements of worst 10 cells:
+Cell: u_core/rvx_tightly_coupled_memory_instance/U3531 (INVJIX0)
+  Input location: (570.046,621.216)
+  Legal location: (571.36,619.24)
+  Displacement:   2.373 um ( 0.63 row height)
+Cell: u_core/rvx_clmul_instance/U670 (BUJIX1)
+  Input location: (1494.79,817.948)
+  Legal location: (1495.78,815.8)
+  Displacement:   2.365 um ( 0.63 row height)
+Cell: u_core/rvx_tightly_coupled_memory_instance/U7735 (AN22JIX0)
+  Input location: (462.826,1218.22)
+  Legal location: (463.84,1220.26)
+  Displacement:   2.280 um ( 0.60 row height)
+Cell: u_core/rvx_tightly_coupled_memory_instance/U1153 (INVJIX0)
+  Input location: (731.771,1134.81)
+  Legal location: (733.48,1133.32)
+  Displacement:   2.268 um ( 0.60 row height)
+Cell: u_core/rvx_tightly_coupled_memory_instance/U22984 (AN22JIX0)
+  Input location: (874.63,787.482)
+  Legal location: (873.34,789.34)
+  Displacement:   2.262 um ( 0.60 row height)
+Cell: u_core/rvx_tightly_coupled_memory_instance/U1418 (INVJIX0)
+  Input location: (618.999,1384.57)
+  Legal location: (617.98,1386.58)
+  Displacement:   2.258 um ( 0.60 row height)
+Cell: u_core/rvx_tightly_coupled_memory_instance/U22485 (NA4JIX0)
+  Input location: (909.048,632.489)
+  Legal location: (910.3,634.36)
+  Displacement:   2.251 um ( 0.60 row height)
+Cell: u_core/rvx_tightly_coupled_memory_instance/U4212 (AN22JIX0)
+  Input location: (1090.88,980.269)
+  Legal location: (1092.16,982.12)
+  Displacement:   2.248 um ( 0.59 row height)
+Cell: u_core/rvx_clmul_instance/U2880 (INJIX0)
+  Input location: (1288.86,818.025)
+  Legal location: (1289.14,815.8)
+  Displacement:   2.243 um ( 0.59 row height)
+Cell: u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U1729 (NO2I1JIX0)
+  Input location: (1824.32,1025.8)
+  Legal location: (1825.06,1023.7)
+  Displacement:   2.229 um ( 0.59 row height)
+
+Legalization succeeded.
+Total Legalizer CPU: 4.910
+Total Legalizer Wall Time: 4.930
+----------------------------------------------------------------
+Information: Ending   'legalize_placement' (FLW-8001)
+Information: Time: 2026-11-11 01:30:27 / Session:  00:00:45 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 986 MB (FLW-8100)
+Information: The command 'save_block' cleared the undo history. (UNDO-016)
+Information: Saving 'design.dlib:top_pad_rvx_initial.design' to 'design.dlib:top_pad_rvx_floorplan.design'. (DES-028)
+1
+get_corners
+{default slow tt_25c estimated_corner}
+exit
+Maximum memory usage for this session: 985.68 MB
+Maximum memory usage for this session including child processes: 985.68 MB
+CPU usage for this session:     68 seconds (  0.02 hours)
+Elapsed time for this session:     45 seconds (  0.01 hours)
 Thank you for using Fusion Compiler.
 

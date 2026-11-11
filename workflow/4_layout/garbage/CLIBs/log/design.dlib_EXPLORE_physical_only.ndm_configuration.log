@@ -1,0 +1,295 @@
+ 
+                              Library Manager (TM)
+
+                Version W-2024.09-SP3 for linux64 - Jan 16, 2025
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+set search_path {. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .}
+. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .
+setenv RUN_RESULT /tmp/.tARL1727097/_rrkFsJpo
+/tmp/.tARL1727097/_rrkFsJpo
+set_current_mismatch_config auto_fix
+1
+set_app_options -name lib.workspace.build_script -value CLIBs/.scripts/EXPLORE_physical_only.tcl
+lib.workspace.build_script CLIBs/.scripts/EXPLORE_physical_only.tcl
+#suppress_messages
+source -echo -verbose CLIBs/.scripts/EXPLORE_physical_only.tcl
+set NDM_LIBS {}
+set FRAME_LIBS {}
+set LEF_FILES {/pdk/ihp/ihp130/ixc013g2_iocell/lef/ixc013g2_iocell_v5p8.lef /pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef}
+/pdk/ihp/ihp130/ixc013g2_iocell/lef/ixc013g2_iocell_v5p8.lef /pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef
+set DB_FILES {}
+set TECH_FILE "/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk/ixc013g2ng_tech.tf"
+/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk/ixc013g2ng_tech.tf
+set_app_options -name lib.workspace.create_cached_lib -value true
+lib.workspace.create_cached_lib true
+set_app_options -name lib.workspace.include_design_filters -value {ANTENNACELLN2JI ANTENNACELLNP2JI ANTENNACELLP2JI DECAP10JI DECAP25JI DECAP3JI DECAP5JI FEED10JI FEED1JI FEED25JI FEED2JI FEED3JI FEED5JI corner filler10u filler1u filler2u filler4u gndcore gndpad ixc013_asig ixc013_b16m ixc013_b16mpdn ixc013_b16mpup ixc013_i16x power_cut4u power_cut60u vddcore vddpad}
+lib.workspace.include_design_filters {ANTENNACELLN2JI ANTENNACELLNP2JI ANTENNACELLP2JI DECAP10JI DECAP25JI DECAP3JI DECAP5JI FEED10JI FEED1JI FEED25JI FEED2JI FEED3JI FEED5JI corner filler10u filler1u filler2u filler4u gndcore gndpad ixc013_asig ixc013_b16m ixc013_b16mpdn ixc013_b16mpup ixc013_i16x power_cut4u power_cut60u vddcore vddpad}
+#suppress_messages
+set_app_options -name lib.workspace.allow_read_aggregate_lib -value true
+lib.workspace.allow_read_aggregate_lib true
+create_workspace EXPLORE_physical_only -flow physical_only -technology $TECH_FILE -scale_factor 10000
+Warning: Pitch 2.280000 for layer TopMetal1 is less than sum(3.280000) of minSpacing(1.640000) and minWidth(1.640000).(ixc013g2ng_tech.tf line:319) (TECH-223)
+Warning: Layer 'TopMetal1' is missing the attribute 'minArea'. (ixc013g2ng_tech.tf line 308) (TECH-026)
+Warning: Layer 'TopMetal2' is missing the attribute 'minArea'. (ixc013g2ng_tech.tf line 340) (TECH-026)
+Warning: Layer 'TopMetal1' is missing the attribute 'minArea'. ( line 322) (TECH-026)
+Warning: The value of the pitch attribute of layer TopMetal1 is invalid. Attribute pitch should not be less than sum of attribute minWidth and minSpacing. (ixc013g2ng_tech.tf line 319) (TECH-050)
+Warning: Layer 'TopMetal2' is missing the attribute 'minArea'. ( line 354) (TECH-026)
+Warning: Cut layer 'Via1' has a non-cross primary default ContactCode 'Via1_XX_so'. (line 362) (TECH-083w)
+Warning: Cut layer 'Via2' has a non-cross primary default ContactCode 'Via2_XX_so'. (line 1427) (TECH-083w)
+Warning: Cut layer 'Via3' has a non-cross primary default ContactCode 'Via3_XX_so'. (line 2464) (TECH-083w)
+Warning: Cut layer 'Via4' has a non-cross primary default ContactCode 'Via4_XX_so'. (line 3501) (TECH-083w)
+Information: Loading technology file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_pdk/ixc013g2ng_tech.tf' (FILE-007)
+... created workspace EXPLORE_physical_only in physical_only flow
+read_lef $LEF_FILES
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Information: Loading LEF file '/pdk/ihp/ihp130/ixc013g2_iocell/lef/ixc013g2_iocell_v5p8.lef' (FILE-007)
+Information: Read LEF into a new library 'ixc013g2_iocell_v5p8'. (LEFR-022)
+Warning: Line 102, OBS (0, 0),(310, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin corner/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/corner_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 173, OBS (0, 0),(10, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin filler10u/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/filler10u_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 245, OBS (0, 0),(1, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin filler1u/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/filler1u_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 317, OBS (0, 0),(2, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin filler2u/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/filler2u_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 389, OBS (0, 0),(4, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin filler4u/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/filler4u_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 472, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 477, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 479, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 484, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 489, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin gndcore/VSSPAD. (LEFR-067)
+Warning: Line 491, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin gndcore/VDDCORE. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/gndcore_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 572, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 577, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 579, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 584, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 591, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin gndpad/VSSPAD. (LEFR-067)
+Warning: Line 589, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin gndpad/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/gndpad_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 711, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 718, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 724, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 731, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 742, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_b16m/VSSPAD. (LEFR-067)
+Warning: Line 740, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_b16m/VSSPAD. (LEFR-067)
+Warning: Line 721, OBS (9.075, 0),(52.535, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16m/DIN. (LEFR-068)
+Warning: Line 723, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16m/DIN. (LEFR-068)
+Warning: Line 723, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16m/OEN. (LEFR-068)
+Warning: Line 721, OBS (9.075, 0),(52.535, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16m/DOUT. (LEFR-068)
+Warning: Line 723, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16m/DOUT. (LEFR-068)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/ixc013_b16m_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 862, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 869, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 875, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 882, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 893, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_b16mpdn/VSSPAD. (LEFR-067)
+Warning: Line 891, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_b16mpdn/VSSPAD. (LEFR-067)
+Warning: Line 872, OBS (9.075, 0),(52.535, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpdn/DOUT. (LEFR-068)
+Warning: Line 874, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpdn/DOUT. (LEFR-068)
+Warning: Line 872, OBS (9.075, 0),(52.535, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpdn/DIN. (LEFR-068)
+Warning: Line 874, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpdn/DIN. (LEFR-068)
+Warning: Line 874, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpdn/OEN. (LEFR-068)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/ixc013_b16mpdn_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1012, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1019, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1025, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1032, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1043, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_b16mpup/VSSPAD. (LEFR-067)
+Warning: Line 1041, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_b16mpup/VSSPAD. (LEFR-067)
+Warning: Line 1022, OBS (9.075, 0),(52.535, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpup/DOUT. (LEFR-068)
+Warning: Line 1024, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpup/DOUT. (LEFR-068)
+Warning: Line 1024, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpup/OEN. (LEFR-068)
+Warning: Line 1022, OBS (9.075, 0),(52.535, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpup/DIN. (LEFR-068)
+Warning: Line 1024, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_b16mpup/DIN. (LEFR-068)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/ixc013_b16mpup_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1142, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1148, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1152, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1158, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1167, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_i16x/VSSPAD. (LEFR-067)
+Warning: Line 1165, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_i16x/VSSPAD. (LEFR-067)
+Warning: Line 1151, OBS (0, 0),(60, 308.79) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_i16x/DOUT. (LEFR-068)
+Warning: Line 1149, OBS (9.075, 0),(60, 310) on layer Metal3 is less than the fat spacing, 0.21, of pin ixc013_i16x/DOUT. (LEFR-068)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/ixc013_i16x_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1215, OBS (0, 0),(4, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin power_cut4u/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/power_cut4u_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1265, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin power_cut60u/VSSPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/power_cut60u_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1348, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1353, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1355, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1360, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1365, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin vddcore/VSSPAD. (LEFR-067)
+Warning: Line 1367, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin vddcore/VDDCORE. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/vddcore_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1448, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1453, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1455, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1460, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1465, OBS (0, 0),(60, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin vddpad/VDDCORE. (LEFR-067)
+Warning: Line 1467, OBS (0, 0),(60, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin vddpad/VDDPAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/vddpad_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: Line 1550, OBS on layer Metal3 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1555, OBS on layer Metal3 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1557, OBS on layer Metal4 has SPACING 0.6; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1563, OBS on layer Metal4 has SPACING 0.21; the blockages will be bloated in the frame view. (LEFR-066)
+Warning: Line 1570, OBS (0, 0),(100, 310) on layer TopMetal1 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_asig/VSSPAD. (LEFR-067)
+Warning: Line 1564, OBS (52.2, 0),(100, 310) on layer Metal4 is less than the fat spacing, 0.21, of pin ixc013_asig/ASIG. (LEFR-068)
+Warning: Line 1565, OBS (0, 0),(47.78, 310) on layer Metal4 is less than the fat spacing, 0.21, of pin ixc013_asig/ASIG. (LEFR-068)
+Warning: Line 1566, OBS (0, 0),(100, 308.94) on layer Metal4 is less than the fat spacing, 0.21, of pin ixc013_asig/ASIG. (LEFR-068)
+Warning: Line 1572, OBS (0, 0),(100, 310) on layer TopMetal2 does not have a "SPACING 0" attribute but overlaps or touches pin ixc013_asig/PAD. (LEFR-067)
+Information: The error data is saved in ./PreFrameCheck/ixc013g2_iocell_v5p8/ixc013_asig_preFrame.err; use the error browser to view the errors. (LEFR-070)
+Warning: The library workspace has 81 cell layout warnings. (LEFR-072)
+Information: Loading LEF file '/pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef' (FILE-007)
+Information: Read LEF into a new library 'ixc013g2ng_phys'. (LEFR-022)
+Error: The height or width of MACRO DECAP10JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO DECAP25JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO DECAP3JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO DECAP5JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO ANTENNACELLN2JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO ANTENNACELLNP2JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO ANTENNACELLP2JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO FEED10JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO FEED1JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO FEED25JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO FEED2JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO FEED3JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: The height or width of MACRO FEED5JI is not a multiple of any site definition in the technology data. (LEFR-065)
+Error: read lef file '/pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef' failed. (LEFR-002)
+1
+process_workspaces -check_options {-allow_missing} -force -directory CLIBs -output EXPLORE_physical_only.ndm
+Warning: Cannot specify the -allow_missing option in the physical_only flow. It is ignored.  (LMUI-009)
+Checking libraries...
+Building a physical-only workspace...
+... looking for physical-only designs ...
+Information: Copied 16 physical designs (LM-050)
+... creating frames for EXPLORE_physical_only
+Information: Block corner.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block corner.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block corner.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block corner.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block corner.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block corner.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block corner.frame has a very large regular routing blockage RB_5 on the TopMetal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block corner.frame has a very large regular routing blockage RB_27 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block filler10u.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block filler10u.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler10u.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler10u.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler10u.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler10u.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler10u.frame has a very large regular routing blockage RB_39 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block filler1u.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block filler1u.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler1u.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler1u.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler1u.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler1u.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler1u.frame has a very large regular routing blockage RB_39 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block filler2u.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block filler2u.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler2u.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler2u.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler2u.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler2u.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler2u.frame has a very large regular routing blockage RB_39 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block filler4u.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block filler4u.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler4u.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler4u.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler4u.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler4u.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block filler4u.frame has a very large regular routing blockage RB_39 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block gndcore.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block gndcore.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block gndcore.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block gndcore.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block gndcore.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block gndpad.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block gndpad.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block gndpad.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block gndpad.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block gndpad.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block ixc013_b16m.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block ixc013_b16m.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16m.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16m.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16m.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block ixc013_b16mpdn.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block ixc013_b16mpdn.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16mpdn.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16mpdn.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16mpdn.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block ixc013_b16mpup.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block ixc013_b16mpup.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16mpup.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16mpup.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_b16mpup.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block ixc013_i16x.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block ixc013_i16x.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_i16x.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_i16x.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_i16x.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block power_cut4u.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block power_cut4u.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut4u.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut4u.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut4u.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut4u.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut4u.frame has a very large regular routing blockage RB_22 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block power_cut60u.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block power_cut60u.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut60u.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut60u.frame has a very large regular routing blockage RB_2 on the Metal3 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut60u.frame has a very large regular routing blockage RB_3 on the Metal4 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut60u.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block power_cut60u.frame has a very large regular routing blockage RB_22 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block vddcore.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block vddcore.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block vddcore.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block vddcore.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block vddcore.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block vddpad.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block vddpad.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block vddpad.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block vddpad.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block vddpad.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Information: Block ixc013_asig.frame, the feature of blockage trimming by pin is set to 'touch' on specific layers. All metal shapes and routing blockages touch pins in design view are trimmed on layers: GatPoly Metal1 Metal2 Metal3 Metal4 Metal5 TopMetal1 TopMetal2. (FRAM-046)
+Warning: Block ixc013_asig.frame has a very large regular routing blockage RB_0 on the Metal1 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_asig.frame has a very large regular routing blockage RB_1 on the Metal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_asig.frame has a very large regular routing blockage RB_4 on the Metal5 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+Warning: Block ixc013_asig.frame has a very large regular routing blockage RB_38 on the TopMetal2 metal layer; this might prevent the router from connecting to nearby terminals. (FRAM-066)
+... created 16 frames
+
+Workspace check succeeded!
+... wrote CLIBs/EXPLORE_physical_only.ndm
+... removing library 'ixc013g2_iocell_v5p8'
+... lib workspace removed!
+
+Warning: EMS database "check_workspace.ems" already exists, over-writing it. (EMS-040)
+Maximum memory usage for this session: 102.77 MB
+CPU usage for this session:      1 seconds (  0.00 hours)
+Elapsed time for this session:      5 seconds (  0.00 hours)
+Thank you for using Library Manager.
+

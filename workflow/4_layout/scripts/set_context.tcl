@@ -26,7 +26,7 @@ if { [catch {open_lib $OUT_LIBRARY }] } {
 	read_verilog $PRE_LAYOUT_VER_NETLIST -top $TOP_MODULE_NAME
 	link_block
 
-	set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
+	#set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
 
 	# 5. Constraints
 	read_sdc $SDC_FILE

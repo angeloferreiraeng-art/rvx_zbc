@@ -24,8 +24,8 @@
 Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
 set search_path {. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .}
 . /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .
-setenv RUN_RESULT /tmp/.tARL1727097/_rrkFsJpo
-/tmp/.tARL1727097/_rrkFsJpo
+setenv RUN_RESULT /tmp/.tARL549138/_rrGcx2zu
+/tmp/.tARL549138/_rrGcx2zu
 set_current_mismatch_config auto_fix
 1
 set_app_options -name lib.workspace.build_script -value CLIBs/.scripts/EXPLORE_physical_only.tcl
@@ -288,8 +288,8 @@ Workspace check succeeded!
 ... lib workspace removed!
 
 Warning: EMS database "check_workspace.ems" already exists, over-writing it. (EMS-040)
-Maximum memory usage for this session: 102.77 MB
+Maximum memory usage for this session: 102.89 MB
 CPU usage for this session:      1 seconds (  0.00 hours)
-Elapsed time for this session:      5 seconds (  0.00 hours)
+Elapsed time for this session:      1 seconds (  0.00 hours)
 Thank you for using Library Manager.
 

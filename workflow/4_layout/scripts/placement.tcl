@@ -20,6 +20,7 @@ if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_PLACEMENT} }] } {
 
 	#create_bound -name center_bound -type soft -boudary {{650 650} {1850 1850}} [get_cells u_core/*]
 	set_auto_floorplan_constraints
+	set_early_data_check_policy -checks {estimated_corner} -policy tolerate
 	# placement + optimização (comando forte do ICC2)
 	place_opt
 

@@ -14,6 +14,11 @@ if { [catch {open_lib $OUT_LIBRARY }] } {
 	/pdk/ihp/ihp130/ixc013g2_iocell/lef/ixc013g2_iocell_v5p8.lef \
 	/pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef]
 
+	    set link_library "* \
+        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_fast_1p65v_m40c.db \
+        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_typ_1p20v_25c.db \
+        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_slow_1p08v_125c.db"
+	
 	get_libs
 	get_lib_cells -quiet *corner*
 	get_lib_cells -quiet *FEED*

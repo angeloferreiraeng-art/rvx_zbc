@@ -110,7 +110,7 @@ Top level ports: 18
 Total ports in all modules: 3195
 Total nets in all modules: 63121
 Total instances in all modules: 58521
-Elapsed = 00:00:00.44, CPU = 00:00:00.41
+Elapsed = 00:00:00.43, CPU = 00:00:00.41
 Using libraries: design.dlib ixc013g2ng_stdcell ixc013g2_iocell EXPLORE_physical_only
 Linking block design.dlib:top_pad_rvx.design
 Information: User units loaded from library 'ixc013g2ng_stdcell' (LNK-040)
@@ -142,6 +142,23 @@ All analysis types are activated.
 Scenario func::tt_25c (mode func corner tt_25c) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
 Warning: Redefining clock 'master_clk'.  
         Previously defined at: /home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/constraints.tcl, line 44 (UIC-034)
+report_ref_libs
+****************************************
+Report : Reference Library Report
+Library: design.dlib
+Version: W-2024.09-SP3
+Date   : Fri Nov 13 17:14:59 2026
+****************************************
+
+    Name                  Path                                                                                          Location
+    ----------------------------------------------------------------------------------------------------------------------------
+*+  ixc013g2ng_stdcell    /home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2ng_stdcell.ndm                  /home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2ng_stdcell.ndm
+*+  ixc013g2_iocell       /home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2_iocell.ndm                     /home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2_iocell.ndm
+*+  EXPLORE_physical_only /home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/garbage/CLIBs/EXPLORE_physical_only.ndm /home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/garbage/CLIBs/EXPLORE_physical_only.ndm
+    "*" = Library currently open
+    "+" = Library has technology information
+1
+#exit
 #----------------------- Main steps ----------------------------
 source $SCRIPT_DIR/floorplan.tcl
 Error: Cannot find block '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib:top_pad_rvx_floorplan'. (DES-004)
@@ -170,10 +187,10 @@ Signal IO constraints set successfully
 Info: Edge bottom -> 6 pads, gap=264 um, remainder=0 um
 Signal IO constraints set successfully
 Information: Starting 'place_io' (FLW-8000)
-Information: Time: 2026-11-11 01:29:59 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 580 MB (FLW-8100)
-Overall runtime for IO placement: 0.094u 0.001s 0:00.09e 99.7%
+Information: Time: 2026-11-13 17:14:59 / Session:  00:00:13 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 580 MB (FLW-8100)
+Overall runtime for IO placement: 0.102u 0.001s 0:00.10e 99.5%
 Information: Ending   'place_io' (FLW-8001)
-Information: Time: 2026-11-11 01:29:59 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 580 MB (FLW-8100)
+Information: Time: 2026-11-13 17:14:59 / Session:  00:00:13 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 580 MB (FLW-8100)
 ------------------------- Start of Overlap Check --------------------------
 -------------------------- End of Overlap Check ---------------------------
 
@@ -240,7 +257,7 @@ Information: Connecting to PG and tie pins in automatic mode. (MV-396)
 Report : Power/Ground Connection Summary
 Design : top_pad_rvx
 Version: W-2024.09-SP3
-Date   : Wed Nov 11 01:30:01 2026
+Date   : Fri Nov 13 17:15:01 2026
 ****************************************
 P/G net name                      P/G pin count(previous/current)
 --------------------------------------------------------------------------------
@@ -321,9 +338,9 @@ Committed 0 vias.
 Overall runtime: 0 seconds.
 Overall elapsed time: 0.00 seconds.
 Successfully created PG pad rings.
-Command check_pg_drc started  at Wed Nov 11 01:30:08 2026
-Command check_pg_drc finished at Wed Nov 11 01:30:08 2026
-CPU usage for check_pg_drc: 0.54 seconds ( 0.00 hours)
+Command check_pg_drc started  at Fri Nov 13 17:15:09 2026
+Command check_pg_drc finished at Fri Nov 13 17:15:09 2026
+CPU usage for check_pg_drc: 0.55 seconds ( 0.00 hours)
 Elapsed time for check_pg_drc: 0.08 seconds ( 0.00 hours)
 Total number of errors found: 40
    40 insufficient spacings on TopMetal2
@@ -417,7 +434,7 @@ Direction of partitions: horizontal
 Number of wires: 450
 Checking DRC for 450 wires: 0% 100%
 Creating 450 wires after DRC fixing.
-Wire DRC checking runtime 1.00 seconds.
+Wire DRC checking runtime 0.00 seconds.
 Creating via connection between strategies and existing shapes.
 via connection runtime: 0 seconds.
 Removing dangling/floating wire/vias after DRC check.
@@ -430,9 +447,9 @@ Committing vias takes 0.00 seconds.
 Committed 450 wires.
 Committed 0 vias.
 Committed 0 wires for via creation.
-Overall PG creation runtime: 1 seconds.
+Overall PG creation runtime: 0 seconds.
 Successfully compiled PG.
-Overall runtime: 1 seconds.
+Overall runtime: 0 seconds.
 Successfully create mesh pattern mesh_h.
 Successfully set PG strategy core_mesh_h.
 Sanity check for inputs.
@@ -455,7 +472,7 @@ Direction of partitions: horizontal
 Number of wires: 33
 Checking DRC for 33 wires: 0% 100%
 Creating 33 wires after DRC fixing.
-Wire DRC checking runtime 0.00 seconds.
+Wire DRC checking runtime 1.00 seconds.
 Creating via shapes for strategies core_mesh_h .
 Number of threads: 16
 Working on strategy core_mesh_h.
@@ -484,9 +501,9 @@ Committing vias takes 0.00 seconds.
 Committed 29 wires.
 Committed 57 vias.
 Committed 0 wires for via creation.
-Overall PG creation runtime: 0 seconds.
+Overall PG creation runtime: 1 seconds.
 Successfully compiled PG.
-Overall runtime: 0 seconds.
+Overall runtime: 1 seconds.
 Successfully create mesh pattern mesh_v.
 Successfully set PG strategy core_mesh_v.
 Sanity check for inputs.
@@ -540,11 +557,12 @@ Committed 0 wires for via creation.
 Overall PG creation runtime: 0 seconds.
 Successfully compiled PG.
 Overall runtime: 0 seconds.
+[1;31m Corners before upf [0m
 Information: Starting 'create_placement' (FLW-8000)
-Information: Time: 2026-11-11 01:30:09 / Session:  00:00:27 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 700 MB (FLW-8100)
+Information: Time: 2026-11-13 17:15:10 / Session:  00:00:24 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 700 MB (FLW-8100)
 Creating appropriate block views (if needed)...
 Multi-Processing Summary
-  Max number of cores for parent process: 16; hostname: cadmicro-el8-03.inf.ufrgs.br
+  Max number of cores for parent process: 16; hostname: cadmicro-el8-05.inf.ufrgs.br
   No distributed processing
 Command Option Settings Summary
   -floorplan -effort medium
@@ -630,7 +648,7 @@ Floorplan placement done.
 Report : report_placement
 Design : top_pad_rvx
 Version: W-2024.09-SP3
-Date   : Wed Nov 11 01:30:22 2026
+Date   : Fri Nov 13 17:15:23 2026
 ****************************************
   ==================
   Note: Ignoring violations of fixed cells or between fixed pairs of cells. 
@@ -665,13 +683,13 @@ Date   : Wed Nov 11 01:30:22 2026
   Total hard macro to hard macro overlaps: 0
 
 Information: Default error view top_pad_rvx_initial_dpplace.err is created in GUI error browser. (DPP-054)
-Information: Elapsed time for create_placement excluding pending time: 00:00:12.91. (DPUI-902)
-Information: CPU time for create_placement : 00:00:44.41. (DPUI-903)
-Information: Peak memory usage for create_placement : 985 MB. (DPUI-904)
+Information: Elapsed time for create_placement excluding pending time: 00:00:13.80. (DPUI-902)
+Information: CPU time for create_placement : 00:00:47.17. (DPUI-903)
+Information: Peak memory usage for create_placement : 986 MB. (DPUI-904)
 Information: Ending   'create_placement' (FLW-8001)
-Information: Time: 2026-11-11 01:30:22 / Session:  00:00:40 / Command:  00:00:12 / CPU:  00:00:41 / Memory: 986 MB (FLW-8100)
+Information: Time: 2026-11-13 17:15:24 / Session:  00:00:38 / Command:  00:00:13 / CPU:  00:00:44 / Memory: 987 MB (FLW-8100)
 Information: Starting 'legalize_placement' (FLW-8000)
-Information: Time: 2026-11-11 01:30:22 / Session:  00:00:40 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 986 MB (FLW-8100)
+Information: Time: 2026-11-13 17:15:24 / Session:  00:00:38 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 987 MB (FLW-8100)
 nplDplc2Placer::setParam(effort,1)
 nplDplc2Placer::setParam(debug,0)
 nplDplc2Placer::setParam(site_check,2)
@@ -707,7 +725,7 @@ Information: The following app options are used in cellmap
         place.common.use_placement_model : false
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
-Total 0.0665 seconds to build cellmap data
+Total 0.0733 seconds to build cellmap data
 Information: Creating classic rule checker.
 Warning: Routing direction of metal layer GatPoly is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
 =====> Processed 81 ref cells (10 fillers) from library
@@ -802,20 +820,34 @@ Cell: u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U1729 (NO2
   Displacement:   2.229 um ( 0.59 row height)
 
 Legalization succeeded.
-Total Legalizer CPU: 4.910
-Total Legalizer Wall Time: 4.930
+Total Legalizer CPU: 5.561
+Total Legalizer Wall Time: 5.587
 ----------------------------------------------------------------
 Information: Ending   'legalize_placement' (FLW-8001)
-Information: Time: 2026-11-11 01:30:27 / Session:  00:00:45 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 986 MB (FLW-8100)
-Information: The command 'save_block' cleared the undo history. (UNDO-016)
-Information: Saving 'design.dlib:top_pad_rvx_initial.design' to 'design.dlib:top_pad_rvx_floorplan.design'. (DES-028)
-1
+Information: Time: 2026-11-13 17:15:30 / Session:  00:00:44 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 987 MB (FLW-8100)
+[1;31m Corners after place [0m
 get_corners
 {default slow tt_25c estimated_corner}
-exit
-Maximum memory usage for this session: 985.68 MB
-Maximum memory usage for this session including child processes: 985.68 MB
-CPU usage for this session:     68 seconds (  0.02 hours)
-Elapsed time for this session:     45 seconds (  0.01 hours)
-Thank you for using Fusion Compiler.
+source $SCRIPT_DIR/placement.tcl
+Information: The command 'open_block' cleared the undo history. (UNDO-016)
+Error: Cannot find block '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/output/design.dlib:top_pad_rvx_placement'. (DES-004)
+Error: Invalid check estimated_corner. (NDMUI-924)
+Information: script '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/placement.tcl'
+                stopped at line 23 due to error. (CMD-081)
+Extended error info:
 
+    while executing
+"set_early_data_check_policy -checks {estimated_corner} -policy tolerate"
+    (file "/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/placement.tcl" line 23)
+ -- End Extended Error Info
+Information: script '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/main.tcl'
+                stopped at line 33 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"set_early_data_check_policy -checks {estimated_corner} -policy tolerate"
+    (file "/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/placement.tcl" line 23)
+    invoked from within
+"source $SCRIPT_DIR/placement.tcl"
+    (file "/home/angelo.ferreira/FASE2/rvx_zbc/workflow/4_layout/scripts/main.tcl" line 33)
+ -- End Extended Error Info

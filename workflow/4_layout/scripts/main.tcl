@@ -24,12 +24,12 @@ set_host_options -max_cores 16
 source $SCRIPT_DIR/pdk_setup.tcl
 source $SCRIPT_DIR/set_context.tcl
 source $SCRIPT_DIR/constraints.tcl
-
+report_ref_libs
+#exit
 #----------------------- Main steps ----------------------------
 
 source $SCRIPT_DIR/floorplan.tcl
 get_corners
-exit
 source $SCRIPT_DIR/placement.tcl
 exit
 source $SCRIPT_DIR/clocks.tcl

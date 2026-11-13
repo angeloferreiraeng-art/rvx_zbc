@@ -29,8 +29,10 @@ report_ref_libs
 #----------------------- Main steps ----------------------------
 
 source $SCRIPT_DIR/floorplan.tcl
+#get_corners
+#exit
 source $SCRIPT_DIR/placement.tcl
-exit
+
 source $SCRIPT_DIR/clocks.tcl
 source $SCRIPT_DIR/route.tcl
 
@@ -42,5 +44,5 @@ source $SCRIPT_DIR/cap_fix.tcl
 report_constraints -all_violators
 #source $SCRIPT_DIR/report_blocks.tcl
 #source ../scripts/07-export.tcl
-#start_gui
+start_gui
 exit

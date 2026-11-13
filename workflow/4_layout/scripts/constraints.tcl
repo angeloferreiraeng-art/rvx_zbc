@@ -1,9 +1,4 @@
 
-create_mode   func
-create_corner slow
-create_scenario -mode func -corner slow -name func_slow
-current_scenario func_slow
-
 
 set CLOCK_PERIOD 20.0
 
@@ -15,7 +10,7 @@ set_process_number 1
 set_process_label typical
 set_voltage -object_list VDDCORE 1.20
 set_voltage -object_list VSSCORE 0.0
-set_voltage -object_list VDDPAD 1.20
+set_voltage -object_list VDDPAD 3.30
 set_voltage -object_list VSSPAD 0.0
 set_temperature 25
 
@@ -45,7 +40,7 @@ create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock]
 
 create_scenario -mode func -corner tt_25c
 set_scenario_status func::tt_25c -setup true -hold false
-create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
+#create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
 
 #create_scenario -mode func -corner ff_m40c
 #set_scenario_status func::ff_m40c -setup true -hold false

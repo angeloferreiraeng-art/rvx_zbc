@@ -2,6 +2,7 @@
 
 set DESIGN_FLOORPLAN ${TOP_MODULE_NAME}_floorplan
 
+current_scenario func::tt_25c
 
 if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_FLOORPLAN} }] } {
 	#####################

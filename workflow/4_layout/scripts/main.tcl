@@ -29,7 +29,6 @@ report_ref_libs
 #----------------------- Main steps ----------------------------
 
 source $SCRIPT_DIR/floorplan.tcl
-get_corners
 source $SCRIPT_DIR/placement.tcl
 exit
 source $SCRIPT_DIR/clocks.tcl

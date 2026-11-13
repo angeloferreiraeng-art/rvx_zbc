@@ -21,12 +21,12 @@ connect_supply_net VDDPAD -ports VDDPAD
 set_design_attributes -elements {.} -attribute correlated_supply_group {*}
 
 add_power_state -supply ss_low -state ON \
-  { -supply_expr { power  == {FULL_ON 1.08 1.08 1.20} && \
+  { -supply_expr { power  == {FULL_ON 1.08 1.20 1.65} && \
                    ground == {FULL_ON 0.0} } }
 
 
 add_power_state -supply ss_high -state ON \
-  { -supply_expr { power  == {FULL_ON 2.97 3.30 3.63} && \
+  { -supply_expr { power  == {FULL_ON 3.00 3.30 3.60} && \
                    ground == {FULL_ON 0.0} } }
 
 create_power_state_group PST

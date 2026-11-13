@@ -15,9 +15,12 @@ if { [catch {open_lib $OUT_LIBRARY }] } {
 	/pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef]
 
 	    set link_library "* \
-        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_fast_1p65v_m40c.db \
-        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_typ_1p20v_25c.db \
-        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_slow_1p08v_125c.db"
+        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_fast_1p65V_m40C.db \
+        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_typ_1p20V_25C.db \
+        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_slow_1p08V_125C.db\
+        ${IO_LIB_PATH_SETUP}/ixc013g2_iocell_fast_1p65V_3p6V_m40C.db \
+        ${IO_LIB_PATH_SETUP}/ixc013g2_iocell_typ_1p2V_3p3V_25C.db \
+        ${IO_LIB_PATH_SETUP}/ixc013g2_iocell_slow_1p08V_3p0V_125C.db"
 	
 	get_libs
 	get_lib_cells -quiet *corner*

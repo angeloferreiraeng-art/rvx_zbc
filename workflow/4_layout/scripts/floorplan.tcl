@@ -125,18 +125,18 @@ check_io_placement -overlap all
 check_io_placement -signal_constraints
 
 
-load_upf $SCRIPT_DIR/power.upf
-commit_upf
+#load_upf $SCRIPT_DIR/power.upf
+#commit_upf
 # UM: testing here
-set_voltage 1.20 -object_list [get_supply_nets VDDCORE]
-set_voltage 3.30 -object_list [get_supply_nets VDDPAD]
-set_voltage 0.00 -object_list [get_supply_nets VSSCORE]
-set_voltage 0.00 -object_list [get_supply_nets VSSPAD]
+#set_voltage 1.20 -object_list [get_supply_nets VDDCORE]
+#set_voltage 3.30 -object_list [get_supply_nets VDDPAD]
+#set_voltage 0.00 -object_list [get_supply_nets VSSCORE]
+#set_voltage 0.00 -object_list [get_supply_nets VSSPAD]
 
-connect_supply_net VSSPAD -ports [get_pins */VSSPAD]
-connect_supply_net VSSCORE -ports [get_pins */VSSCORE]
-connect_supply_net VDDPAD -ports [get_pins */VDDPAD]
-connect_supply_net VDDCORE -ports [get_pins */VDDCORE]
+#connect_supply_net VSSPAD -ports [get_pins */VSSPAD]
+#connect_supply_net VSSCORE -ports [get_pins */VSSCORE]
+#connect_supply_net VDDPAD -ports [get_pins */VDDPAD]
+#connect_supply_net VDDCORE -ports [get_pins */VDDCORE]
 
 connect_pg_net -automatic
 
@@ -201,19 +201,16 @@ set_pg_strategy core_mesh_v -core \
 
 compile_pg -strategies core_mesh_v
 
-echo "\033\[1;31m Corners before upf \033\[0m"
-get_corners
+
+
+
 ####################
 # 02h-placement
 ####################
-create_placement -floorplan -timing_driven
-legalize_placement
+#create_placement -floorplan -timing_driven
+#legalize_placement
 # report_utilization
 # check_legality
-
-echo  "\033\[1;31m Corners after place \033\[0m"
-get_corners
-return
 
 #check_pg_drc          > $REPORT_DIR/fp_pg_drc.rpt
 #check_pg_connectivity -check_std_cell_pins none > $REPORT_DIR/fp_pg_connectivity.rpt

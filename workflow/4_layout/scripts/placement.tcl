@@ -22,7 +22,14 @@ if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_PLACEMENT} }] } {
 	set_auto_floorplan_constraints
 	#set_early_data_check_policy -checks {estimated_corner} -policy tolerate
 	# placement + optimização (comando forte do ICC2)
-	place_opt
+	compile_fusion
+	
+	
+	#create_placement -floorplan -timing_driven
+	#legalize_placement
+	# report_utilization
+	# check_legality
+	#place_opt
 
 	# reports
 	#redirect -f $REPORT_DIR/place_opt_timing_max.txt {report_timing -max_paths 10}

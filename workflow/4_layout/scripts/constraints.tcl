@@ -1,46 +1,75 @@
-
-
 set CLOCK_PERIOD 20.0
 
+load_upf $SCRIPT_DIR/power.upf
+commit_upf
+connect_supply_net VSSPAD -ports [get_pins */VSSPAD]
+connect_supply_net VSSCORE -ports [get_pins */VSSCORE]
+connect_supply_net VDDPAD -ports [get_pins */VDDPAD]
+connect_supply_net VDDCORE -ports [get_pins */VDDCORE]
 
 
+# UM: testing here
+
+# ---- modes ----
+create_mode func
+current_mode func
+
+# ---- corners ----
 create_corner tt_25c
-set_parasitic_parameters -corner tt_25c -early_spec rcTLU -late_spec rcTLU
+current_corner tt_25c
+set_parasitic_parameters -early_spec rcTLU -late_spec rcTLU
 set_process_number 1
 set_process_label typical
-set_voltage -object_list VDDCORE 1.20
-set_voltage -object_list VSSCORE 0.0
-set_voltage -object_list VDDPAD 3.30
-set_voltage -object_list VSSPAD 0.0
 set_temperature 25
+set_voltage 1.20 -object_list [get_supply_nets VDDCORE]
+set_voltage 3.30 -object_list [get_supply_nets VDDPAD]
+set_voltage 0.00 -object_list [get_supply_nets VSSCORE]
+set_voltage 0.00 -object_list [get_supply_nets VSSPAD]
+
+
+create_corner ss_125c
+current_corner ss_125c
+set_parasitic_parameters -early_spec rcTLU -late_spec rcTLU
+set_process_number 1
+set_process_label slow
+set_temperature 125
+set_voltage 1.08 -object_list [get_supply_nets VDDCORE]
+set_voltage 3.00 -object_list [get_supply_nets VDDPAD]
+set_voltage 0.00 -object_list [get_supply_nets VSSCORE]
+set_voltage 0.00 -object_list [get_supply_nets VSSPAD]
+
 
 #create_corner ff_m40c
-#set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
+#current_corner ff_m40c
+#set_parasitic_parameters -early_spec rcTLU -late_spec rcTLU
 #set_process_number 1
 #set_process_label fast
-#set_voltage -object_list VDDCORE 1.65
-#set_voltage -object_list VSSCORE 0.0
-#set_voltage -object_list VDDPAD 1.65
-#set_voltage -object_list VSSPAD 0.0
 #set_temperature -40
+#set_voltage 1.65 -object_list [get_supply_nets VDDCORE]
+#set_voltage 3.60 -object_list [get_supply_nets VDDPAD]
+#set_voltage 0.00 -object_list [get_supply_nets VSSCORE]
+#set_voltage 0.00 -object_list [get_supply_nets VSSPAD]
 
-#create_corner ss_125c
-#set_parasitic_parameters -late_spec rcTLU -early_spec rcTLU
-#set_process_number 1
-#set_process_label slow
-#set_voltage -object_list VDDCORE 1.08
-#set_voltage -object_list VSSCORE 0.0
-#set_voltage -object_list VDDPAD 1.08
-#set_voltage -object_list VSSPAD 0.0
-#set_temperature 125
-
-
-create_mode func
-create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
-
+# ---- scenario ----
 create_scenario -mode func -corner tt_25c
-set_scenario_status func::tt_25c -setup true -hold false
-#create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock] 
+current_scenario func::tt_25c
+set_scenario_status func::tt_25c -active true -setup true -hold false
+create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock]
+
+create_scenario -mode func -corner ss_125c
+current_scenario func::ss_125c
+set_scenario_status func::ss_125c -active true -setup true -hold false
+create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock]
+
+#create_scenario -mode func -corner ff_m40c
+#current_scenario func::ff_m40c
+#set_scenario_status func::ff_m40c -active true -setup true -hold false
+#create_clock -name master_clk -period $CLOCK_PERIOD [get_ports clock]
+
+
+
+remove_corners default
+
 
 #create_scenario -mode func -corner ff_m40c
 #set_scenario_status func::ff_m40c -setup true -hold false

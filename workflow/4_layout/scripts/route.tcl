@@ -28,7 +28,8 @@ if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_ROUTE}}] } {
 	#redirect -f $REPORT_DIR/post_route_timing_max.txt {report_timing -max_paths 10}
 	#redirect -f $REPORT_DIR/post_route_timing_min.txt {report_timing -delay_type min -max_paths 10}
 	#redirect -f $REPORT_DIR/post_route_qor.txt {report_qor}
-	save_block -as ${TOP_MODULE_NAME}_post_route
+	check_route
+	route_detail -incremental true
 
 	# --- incremental (hold) ---
 	# em ICC2 o hold fixing já vem do CCD no route_opt; incremento extra:

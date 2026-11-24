@@ -1,0 +1,46 @@
+
+#----------------- Preamble ----------------------------------
+set SCRIPT_DIR     [file dirname [file normalize [info script]]]
+set PRJ_ROOT [file dirname [file dirname $SCRIPT_DIR]]
+set FLOW_ROOT [file dirname $SCRIPT_DIR]
+set LOCAL_PDK_DIR "$FLOW_ROOT/_pdk"
+set LOCAL_LC_DIR "$FLOW_ROOT/_lc"
+#set OUT_LIBRARY $FLOW_ROOT/output/design.dlib
+set OUTPUT_PATH [getenv "OUTPUT_PATH"]
+set  OUT_LIBRARY $OUTPUT_PATH/design.dlib
+# top design
+set TOP_MODULE_NAME "top_pad_rvx"
+set DESIGN          "rvx"
+# dirs
+set SOURCE_DIR  	"$FLOW_ROOT/inp_data/source"           
+set REPORT_DIR  	"$FLOW_ROOT/out_data/reports/pnr"   
+set PRE_LAYOUT_DIR	"$FLOW_ROOT/out_data/pre_layout"    
+set POST_LAYOUT_DIR	"$FLOW_ROOT/out_data/post_layout"   
+
+set_host_options -max_cores 16
+#---------------Basic Set up ----------------------------
+
+source $SCRIPT_DIR/pdk_setup.tcl
+source $SCRIPT_DIR/set_context.tcl
+source $SCRIPT_DIR/constraints.tcl
+
+#----------------------- Main steps ----------------------------
+
+source $SCRIPT_DIR/powerring.tcl
+
+#exit
+source $SCRIPT_DIR/placement.tcl
+
+source $SCRIPT_DIR/clocks.tcl
+source $SCRIPT_DIR/route.tcl
+
+#report_constraints -all_violators
+#source $SCRIPT_DIR/cap_fix.tcl
+
+check_route
+#--------------------- Reporting and exporting ----------------------------
+#report_constraints -all_violators
+#source $SCRIPT_DIR/report_blocks.tcl
+#source ../scripts/07-export.tcl
+#start_gui
+exit

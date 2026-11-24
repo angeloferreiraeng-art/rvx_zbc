@@ -24,24 +24,24 @@ set_host_options -max_cores 16
 source $SCRIPT_DIR/pdk_setup.tcl
 source $SCRIPT_DIR/set_context.tcl
 source $SCRIPT_DIR/constraints.tcl
-report_ref_libs
+
 #----------------------- Main steps ----------------------------
 
 source $SCRIPT_DIR/floorplan.tcl
-get_corners
+
 #exit
 source $SCRIPT_DIR/placement.tcl
 
-#source $SCRIPT_DIR/clocks.tcl
-#source $SCRIPT_DIR/route.tcl
+source $SCRIPT_DIR/clocks.tcl
+source $SCRIPT_DIR/route.tcl
 
 #report_constraints -all_violators
-#source $SCRIPT_DIR/cap_fix.tcl
+source $SCRIPT_DIR/cap_fix.tcl
 
-
+check_route
 #--------------------- Reporting and exporting ----------------------------
 #report_constraints -all_violators
 #source $SCRIPT_DIR/report_blocks.tcl
 #source ../scripts/07-export.tcl
 #start_gui
-#exit
+exit

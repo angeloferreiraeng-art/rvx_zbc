@@ -1,0 +1,3251 @@
+ 
+                              Fusion Compiler (TM)
+
+                Version W-2024.09-SP3 for linux64 - Jan 16, 2025
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Loading user preference file /home/angelo.ferreira/.synopsys_fc_gui/preferences.tcl
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+fc_shell> open_lib output2/design.dlib/
+Information: Loading library file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/output2/design.dlib/' (FILE-007)
+Information: Loading library file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2ng_stdcell.ndm' (FILE-007)
+Information: Loading library file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/_lc/libs/ixc013g2_iocell.ndm' (FILE-007)
+Information: Loading library file '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/garbage/CLIBs/EXPLORE_physical_only.ndm' (FILE-007)
+Information: Auto created reference libraries are up-to-date, no need to rebuild. (LIB-084)
+{design.dlib}
+fc_shell> open_block top_pad_rvx_route
+Information: User units loaded from library 'ixc013g2ng_stdcell' (LNK-040)
+Opening block 'design.dlib:top_pad_rvx_route.design' in edit mode
+{design.dlib:top_pad_rvx_route.design}
+fc_shell> check_route
+Using libraries: design.dlib ixc013g2ng_stdcell ixc013g2_iocell EXPLORE_physical_only
+Visiting block design.dlib:top_pad_rvx_route.design
+Information: The command 'load_upf' cleared the undo history. (UNDO-016)
+Warning: Instance PAD_CLK connected to top-level port clock has is_pad set to true, while instance clock_gate_u_core/rvx_uart_instance/rx_cycle_counter_reg_0_ connected to the same port has 'is_pad' set to false.  This should not be implemented as mixture of pad cells and standard cells on the same port is uncommon. Supply at top-level port is set from pad cell supply. (MV-141)
+Design 'top_pad_rvx' was successfully linked.
+NEX(Warning): extract.rc_techfile_for_diode_mode_26_thickness not set, will igonre it
+Cut layer Via1 has invalid minimum width specified
+Cell Min-Routing-Layer = Metal1
+Cell Max-Routing-Layer = TopMetal2
+Turn off antenna since no rule is specified
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer Cont. (ZRT-022)
+Warning: Ignore 22 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Wire on layer (Metal2) needs more than one tracks
+Via on layer (Via1) needs more than one tracks
+Via on layer (Via2) needs more than one tracks
+Warning: Layer Metal2 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.455" & "wire/via-up 0.455". (ZRT-026)
+Wire on layer (Metal4) needs more than one tracks
+Via on layer (Via3) needs more than one tracks
+Via on layer (Via4) needs more than one tracks
+Warning: Layer Metal4 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.455" & "wire/via-up 0.455". (ZRT-026)
+Via on layer (TopVia1) needs more than one tracks
+Warning: Layer Metal5 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.410" & "wire/via-up 0.620". (ZRT-026)
+Wire on layer (TopMetal1) needs more than one tracks
+Via on layer (TopVia1) needs more than one tracks
+Via on layer (TopVia2) needs more than one tracks
+Warning: Layer TopMetal1 default pitch 2.280 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 3.280" & "wire/via-up 3.410". (ZRT-026)
+Transition layer name: Metal2(1)
+Transition layer name: Metal4(3)
+Transition layer name: Metal5(4)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 6.30 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 6.30 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Standard cell pin SDFRRSJIX1/SN has no valid via regions. (ZRT-044)
+Warning: Standard cell pin INVJIX2/Q has no valid via regions. (ZRT-044)
+Warning: Standard cell pin INJIX2/Q has no valid via regions. (ZRT-044)
+
+
+Start checking for open nets ... 
+
+Total number of nets = 43088, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 43088 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used  129  Alloctr  130  Proc 4362 
+Printing options for 'route.common.*'
+common.eco_route_fix_existing_drc                       :        true                
+common.verbose_level                                    :        0                   
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :        true                
+detail.eco_route_use_soft_spacing_for_timing_optimization:       true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked 157/289 Partitions, Violations =        0
+Checked 158/289 Partitions, Violations =        0
+Checked 159/289 Partitions, Violations =        0
+Checked 160/289 Partitions, Violations =        0
+Checked 161/289 Partitions, Violations =        0
+Checked 162/289 Partitions, Violations =        0
+Checked 163/289 Partitions, Violations =        0
+Checked 164/289 Partitions, Violations =        0
+Checked 165/289 Partitions, Violations =        0
+Checked 166/289 Partitions, Violations =        0
+Checked 167/289 Partitions, Violations =        0
+Checked 168/289 Partitions, Violations =        0
+Checked 169/289 Partitions, Violations =        0
+Checked 170/289 Partitions, Violations =        0
+Checked 171/289 Partitions, Violations =        0
+Checked 172/289 Partitions, Violations =        0
+Checked 176/289 Partitions, Violations =        0
+Checked 187/289 Partitions, Violations =        0
+Checked 198/289 Partitions, Violations =        0
+Checked 209/289 Partitions, Violations =        0
+Checked 220/289 Partitions, Violations =        90
+Checked 231/289 Partitions, Violations =        90
+Checked 242/289 Partitions, Violations =        90
+Checked 253/289 Partitions, Violations =        90
+Checked 264/289 Partitions, Violations =        90
+Checked 275/289 Partitions, Violations =        90
+Checked 286/289 Partitions, Violations =        101
+[DRC CHECK] Elapsed real time: 0:00:15 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:15 total=0:00:15
+[DRC CHECK] Stage (MB): Used    0  Alloctr    1  Proc  133 
+[DRC CHECK] Total (MB): Used  239  Alloctr  241  Proc 4577 
+Warning: No antenna rules defined, Skip antenna analysis. (ZRT-309)
+Information: Merged away 71 aligned/redundant DRCs. (ZRT-305)
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      30
+        Short : 30
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+
+Total Wire Length =                    3796055 micron
+Total Number of Contacts =             500066
+Total Number of Wires =                604238
+Total Number of PtConns =              47780
+Total Number of Routed Wires =       591517
+Total Routed Wire Length =           3778139 micron
+Total Number of Routed Contacts =       500066
+        Layer          Metal1 :      85283 micron
+        Layer          Metal2 :     729756 micron
+        Layer          Metal3 :    1256757 micron
+        Layer          Metal4 :    1151381 micron
+        Layer          Metal5 :     553321 micron
+        Layer       TopMetal1 :       1515 micron
+        Layer       TopMetal2 :        127 micron
+        Via       TopVia2EWNS :          3
+        Via       TopVia1EWNS :         27
+        Via        Via4_XX_so :      20021
+        Via   Via4_XX_so(rot) :       1678
+        Via        Via3_XX_so :      79433
+        Via   Via3_XX_so(rot) :       2370
+        Via        Via2_XX_so :     195191
+        Via   Via2_XX_so(rot) :       1873
+        Via        Via1_XX_so :      10896
+        Via   Via1_XX_so(rot) :     188574
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 500066 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 27      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (27      vias)
+    Layer TopVia2    =  0.00% (0      / 3       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (3       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 500066 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+    Layer TopVia1    =  0.00% (0      / 27      vias)
+    Layer TopVia2    =  0.00% (0      / 3       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 500066 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 27      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (27      vias)
+    Layer TopVia2    =  0.00% (0      / 3       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (3       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 43088, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+
+Total number of DRCs = 30
+Total number of antenna violations = no antenna rules defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+
+1
+fc_shell> route_eco
+Cut layer Via1 has invalid minimum width specified
+Cell Min-Routing-Layer = Metal1
+Cell Max-Routing-Layer = TopMetal2
+Turn off antenna since no rule is specified
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer Cont. (ZRT-022)
+Warning: Ignore 22 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Wire on layer (Metal2) needs more than one tracks
+Via on layer (Via1) needs more than one tracks
+Via on layer (Via2) needs more than one tracks
+Warning: Layer Metal2 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.455" & "wire/via-up 0.455". (ZRT-026)
+Wire on layer (Metal4) needs more than one tracks
+Via on layer (Via3) needs more than one tracks
+Via on layer (Via4) needs more than one tracks
+Warning: Layer Metal4 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.455" & "wire/via-up 0.455". (ZRT-026)
+Via on layer (TopVia1) needs more than one tracks
+Warning: Layer Metal5 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.410" & "wire/via-up 0.620". (ZRT-026)
+Wire on layer (TopMetal1) needs more than one tracks
+Via on layer (TopVia1) needs more than one tracks
+Via on layer (TopVia2) needs more than one tracks
+Warning: Layer TopMetal1 default pitch 2.280 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 3.280" & "wire/via-up 3.410". (ZRT-026)
+Transition layer name: Metal2(1)
+Transition layer name: Metal4(3)
+Transition layer name: Metal5(4)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 4.20 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 4.20 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Standard cell pin SDFRRSJIX1/SN has no valid via regions. (ZRT-044)
+Warning: Standard cell pin INVJIX2/Q has no valid via regions. (ZRT-044)
+Warning: Standard cell pin INJIX2/Q has no valid via regions. (ZRT-044)
+[ECO: DbIn With Extraction] Elapsed real time: 0:00:02 
+[ECO: DbIn With Extraction] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[ECO: DbIn With Extraction] Stage (MB): Used   66  Alloctr   66  Proc    0 
+[ECO: DbIn With Extraction] Total (MB): Used   69  Alloctr   70  Proc 4577 
+[ECO: Before Refresh Via Ladder Phase] Elapsed real time: 0:00:02 
+[ECO: Before Refresh Via Ladder Phase] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[ECO: Before Refresh Via Ladder Phase] Stage (MB): Used   66  Alloctr   66  Proc    0 
+[ECO: Before Refresh Via Ladder Phase] Total (MB): Used   69  Alloctr   70  Proc 4577 
+
+    Found 0 via ladders to verify.
+
+VIA LADDER INFO: found 0 via ladder DRCs across 0 nets.
+Updating the database ...
+
+    Via ladders will be inserted on 0 of 0 ports with via ladder constraints.
+
+Updating the database ...
+[Arrange data for GR] Elapsed real time: 0:00:00 
+[Arrange data for GR] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Arrange data for GR] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Arrange data for GR] Total (MB): Used   58  Alloctr   60  Proc 4577 
+[ECO: After Refresh Via Ladder Phase] Elapsed real time: 0:00:07 
+[ECO: After Refresh Via Ladder Phase] Elapsed cpu  time: sys=0:00:00 usr=0:00:07 total=0:00:07
+[ECO: After Refresh Via Ladder Phase] Stage (MB): Used  125  Alloctr  126  Proc    0 
+[ECO: After Refresh Via Ladder Phase] Total (MB): Used  129  Alloctr  130  Proc 4577 
+[ECO: Analysis] Elapsed real time: 0:00:07 
+[ECO: Analysis] Elapsed cpu  time: sys=0:00:00 usr=0:00:07 total=0:00:07
+[ECO: Analysis] Stage (MB): Used  125  Alloctr  126  Proc    0 
+[ECO: Analysis] Total (MB): Used  129  Alloctr  130  Proc 4577 
+Num of eco nets = 43088
+Num of open eco nets = 0
+[ECO: Init] Elapsed real time: 0:00:07 
+[ECO: Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:07 total=0:00:07
+[ECO: Init] Stage (MB): Used  136  Alloctr  137  Proc    0 
+[ECO: Init] Total (MB): Used  139  Alloctr  140  Proc 4577 
+Loading parastics information to the router ...
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+parastics information loaded to the router.
+Printing options for 'route.common.*'
+common.eco_route_fix_existing_drc                       :        true                
+common.verbose_level                                    :        0                   
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :        true                
+detail.eco_route_use_soft_spacing_for_timing_optimization:       true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+Information: RC layer preference is turned off for this design. (ZRT-613)
+
+Begin ECO DRC check ...
+
+Checked 1/289 Partitions, Violations =  0
+Checked 11/289 Partitions, Violations = 0
+Checked 22/289 Partitions, Violations = 0
+Checked 33/289 Partitions, Violations = 0
+Checked 44/289 Partitions, Violations = 0
+Checked 55/289 Partitions, Violations = 90
+Checked 66/289 Partitions, Violations = 90
+Checked 77/289 Partitions, Violations = 90
+Checked 88/289 Partitions, Violations = 90
+Checked 99/289 Partitions, Violations = 90
+Checked 110/289 Partitions, Violations =        90
+Checked 121/289 Partitions, Violations =        90
+Checked 132/289 Partitions, Violations =        90
+Checked 143/289 Partitions, Violations =        90
+Checked 154/289 Partitions, Violations =        97
+Checked 165/289 Partitions, Violations =        97
+Checked 176/289 Partitions, Violations =        97
+Checked 187/289 Partitions, Violations =        101
+Checked 198/289 Partitions, Violations =        101
+Checked 209/289 Partitions, Violations =        101
+Checked 220/289 Partitions, Violations =        101
+Checked 231/289 Partitions, Violations =        101
+Checked 242/289 Partitions, Violations =        101
+Checked 253/289 Partitions, Violations =        101
+Checked 264/289 Partitions, Violations =        101
+Checked 275/289 Partitions, Violations =        101
+Checked 286/289 Partitions, Violations =        101
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      101
+
+[DRC CHECK] Elapsed real time: 0:00:15 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:01 usr=0:00:15 total=0:00:16
+[DRC CHECK] Stage (MB): Used    0  Alloctr    1  Proc   92 
+[DRC CHECK] Total (MB): Used  292  Alloctr  294  Proc 4820 
+
+Total Wire Length =                    3796055 micron
+Total Number of Contacts =             500066
+Total Number of Wires =                604238
+Total Number of PtConns =              47780
+Total Number of Routed Wires =       591517
+Total Routed Wire Length =           3778139 micron
+Total Number of Routed Contacts =       500066
+        Layer          Metal1 :      85283 micron
+        Layer          Metal2 :     729756 micron
+        Layer          Metal3 :    1256757 micron
+        Layer          Metal4 :    1151381 micron
+        Layer          Metal5 :     553321 micron
+        Layer       TopMetal1 :       1515 micron
+        Layer       TopMetal2 :        127 micron
+        Via       TopVia2EWNS :          3
+        Via       TopVia1EWNS :         27
+        Via        Via4_XX_so :      20021
+        Via   Via4_XX_so(rot) :       1678
+        Via        Via3_XX_so :      79433
+        Via   Via3_XX_so(rot) :       2370
+        Via        Via2_XX_so :     195191
+        Via   Via2_XX_so(rot) :       1873
+        Via        Via1_XX_so :      10896
+        Via   Via1_XX_so(rot) :     188574
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 500066 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 27      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (27      vias)
+    Layer TopVia2    =  0.00% (0      / 3       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (3       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 500066 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+    Layer TopVia1    =  0.00% (0      / 27      vias)
+    Layer TopVia2    =  0.00% (0      / 3       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 500066 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 27      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (27      vias)
+    Layer TopVia2    =  0.00% (0      / 3       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (3       vias)
+ 
+Total number of nets = 43088, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Information: Using 1 threads for routing. (ZRT-444)
+Start DR iteration 0: non-uniform partition
+Routed  1/9 Partitions, Violations =    113
+Routed  2/9 Partitions, Violations =    134
+Routed  3/9 Partitions, Violations =    140
+Routed  4/9 Partitions, Violations =    140
+Routed  5/9 Partitions, Violations =    142
+Routed  6/9 Partitions, Violations =    145
+Routed  7/9 Partitions, Violations =    148
+Routed  8/9 Partitions, Violations =    149
+Routed  9/9 Partitions, Violations =    157
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      157
+        Diff net spacing : 17
+        Short : 140
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 0] Elapsed real time: 0:00:16 
+[Iter 0] Elapsed cpu  time: sys=0:00:01 usr=0:00:16 total=0:00:17
+[Iter 0] Stage (MB): Used  153  Alloctr  153  Proc  242 
+[Iter 0] Total (MB): Used  293  Alloctr  294  Proc 4820 
+
+End DR iteration 0 with 9 parts
+
+Start DR iteration 1: non-uniform partition
+Routed  1/7 Partitions, Violations =    161
+Routed  2/7 Partitions, Violations =    157
+Routed  3/7 Partitions, Violations =    120
+Routed  4/7 Partitions, Violations =    120
+Routed  5/7 Partitions, Violations =    119
+Routed  6/7 Partitions, Violations =    117
+Routed  7/7 Partitions, Violations =    108
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      108
+        Diff net spacing : 12
+        Short : 96
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 1] Elapsed real time: 0:00:16 
+[Iter 1] Elapsed cpu  time: sys=0:00:01 usr=0:00:16 total=0:00:17
+[Iter 1] Stage (MB): Used  153  Alloctr  153  Proc  242 
+[Iter 1] Total (MB): Used  293  Alloctr  294  Proc 4820 
+
+End DR iteration 1 with 7 parts
+
+Start DR iteration 2: non-uniform partition
+Routed  1/6 Partitions, Violations =    113
+Routed  2/6 Partitions, Violations =    116
+Routed  3/6 Partitions, Violations =    124
+Routed  4/6 Partitions, Violations =    125
+Routed  5/6 Partitions, Violations =    133
+Routed  6/6 Partitions, Violations =    121
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      121
+        Diff net spacing : 13
+        Short : 108
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 2] Elapsed real time: 0:00:16 
+[Iter 2] Elapsed cpu  time: sys=0:00:01 usr=0:00:16 total=0:00:18
+[Iter 2] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 2] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 2 with 6 parts
+
+Start DR iteration 3: non-uniform partition
+Routed  1/7 Partitions, Violations =    135
+Routed  2/7 Partitions, Violations =    133
+Routed  3/7 Partitions, Violations =    137
+Routed  4/7 Partitions, Violations =    133
+Routed  5/7 Partitions, Violations =    135
+Routed  6/7 Partitions, Violations =    136
+Routed  7/7 Partitions, Violations =    126
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      126
+        Diff net spacing : 14
+        Short : 112
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 3] Elapsed real time: 0:00:17 
+[Iter 3] Elapsed cpu  time: sys=0:00:01 usr=0:00:17 total=0:00:18
+[Iter 3] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 3] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 3 with 7 parts
+
+Start DR iteration 4: non-uniform partition
+Routed  1/8 Partitions, Violations =    132
+Routed  2/8 Partitions, Violations =    140
+Routed  3/8 Partitions, Violations =    133
+Routed  4/8 Partitions, Violations =    140
+Routed  5/8 Partitions, Violations =    142
+Routed  6/8 Partitions, Violations =    151
+Routed  7/8 Partitions, Violations =    139
+Routed  8/8 Partitions, Violations =    138
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      138
+        Diff net spacing : 14
+        Short : 124
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 4] Elapsed real time: 0:00:17 
+[Iter 4] Elapsed cpu  time: sys=0:00:01 usr=0:00:17 total=0:00:18
+[Iter 4] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 4] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 4 with 8 parts
+
+Start DR iteration 5: non-uniform partition
+Routed  1/8 Partitions, Violations =    144
+Routed  2/8 Partitions, Violations =    124
+Routed  3/8 Partitions, Violations =    119
+Routed  4/8 Partitions, Violations =    120
+Routed  5/8 Partitions, Violations =    128
+Routed  6/8 Partitions, Violations =    125
+Routed  7/8 Partitions, Violations =    117
+Routed  8/8 Partitions, Violations =    118
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      118
+        Diff net spacing : 14
+        Short : 104
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 5] Elapsed real time: 0:00:18 
+[Iter 5] Elapsed cpu  time: sys=0:00:01 usr=0:00:17 total=0:00:19
+[Iter 5] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 5] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 5 with 8 parts
+
+Start DR iteration 6: non-uniform partition
+Routed  1/7 Partitions, Violations =    116
+Routed  2/7 Partitions, Violations =    110
+Routed  3/7 Partitions, Violations =    105
+Routed  4/7 Partitions, Violations =    106
+Routed  5/7 Partitions, Violations =    109
+Routed  6/7 Partitions, Violations =    109
+Routed  7/7 Partitions, Violations =    102
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      102
+        Diff net spacing : 9
+        Short : 93
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 6] Elapsed real time: 0:00:18 
+[Iter 6] Elapsed cpu  time: sys=0:00:01 usr=0:00:18 total=0:00:19
+[Iter 6] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 6] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 6 with 7 parts
+
+Start DR iteration 7: non-uniform partition
+Routed  1/8 Partitions, Violations =    101
+Routed  2/8 Partitions, Violations =    99
+Routed  3/8 Partitions, Violations =    104
+Routed  4/8 Partitions, Violations =    104
+Routed  5/8 Partitions, Violations =    104
+Routed  6/8 Partitions, Violations =    106
+Routed  7/8 Partitions, Violations =    109
+Routed  8/8 Partitions, Violations =    110
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      110
+        Diff net spacing : 12
+        Short : 98
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 7] Elapsed real time: 0:00:19 
+[Iter 7] Elapsed cpu  time: sys=0:00:01 usr=0:00:18 total=0:00:20
+[Iter 7] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 7] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 7 with 8 parts
+
+Start DR iteration 8: non-uniform partition
+Routed  1/7 Partitions, Violations =    102
+Routed  2/7 Partitions, Violations =    102
+Routed  3/7 Partitions, Violations =    104
+Routed  4/7 Partitions, Violations =    65
+Routed  5/7 Partitions, Violations =    67
+Routed  6/7 Partitions, Violations =    31
+Routed  7/7 Partitions, Violations =    26
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      26
+        Short : 26
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 8] Elapsed real time: 0:00:19 
+[Iter 8] Elapsed cpu  time: sys=0:00:01 usr=0:00:19 total=0:00:20
+[Iter 8] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 8] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 8 with 7 parts
+
+Start DR iteration 9: non-uniform partition
+Routed  1/6 Partitions, Violations =    24
+Routed  2/6 Partitions, Violations =    24
+Routed  3/6 Partitions, Violations =    25
+Routed  4/6 Partitions, Violations =    27
+Routed  5/6 Partitions, Violations =    28
+Routed  6/6 Partitions, Violations =    25
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      25
+        Short : 25
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 9] Elapsed real time: 0:00:20 
+[Iter 9] Elapsed cpu  time: sys=0:00:01 usr=0:00:19 total=0:00:21
+[Iter 9] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 9] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 9 with 6 parts
+
+Start DR iteration 10: non-uniform partition
+Routed  1/7 Partitions, Violations =    26
+Routed  2/7 Partitions, Violations =    27
+Routed  3/7 Partitions, Violations =    29
+Routed  4/7 Partitions, Violations =    29
+Routed  5/7 Partitions, Violations =    28
+Routed  6/7 Partitions, Violations =    24
+Routed  7/7 Partitions, Violations =    26
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      26
+        Short : 26
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 10] Elapsed real time: 0:00:20 
+[Iter 10] Elapsed cpu  time: sys=0:00:01 usr=0:00:20 total=0:00:21
+[Iter 10] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 10] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 10 with 7 parts
+
+Start DR iteration 11: non-uniform partition
+Routed  1/7 Partitions, Violations =    28
+Routed  2/7 Partitions, Violations =    30
+Routed  3/7 Partitions, Violations =    29
+Routed  4/7 Partitions, Violations =    27
+Routed  5/7 Partitions, Violations =    29
+Routed  6/7 Partitions, Violations =    30
+Routed  7/7 Partitions, Violations =    30
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      30
+        Short : 30
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 11] Elapsed real time: 0:00:20 
+[Iter 11] Elapsed cpu  time: sys=0:00:01 usr=0:00:20 total=0:00:22
+[Iter 11] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 11] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 11 with 7 parts
+
+Start DR iteration 12: non-uniform partition
+Routed  1/6 Partitions, Violations =    31
+Routed  2/6 Partitions, Violations =    29
+Routed  3/6 Partitions, Violations =    33
+Routed  4/6 Partitions, Violations =    34
+Routed  5/6 Partitions, Violations =    28
+Routed  6/6 Partitions, Violations =    26
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      26
+        Short : 26
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 12] Elapsed real time: 0:00:21 
+[Iter 12] Elapsed cpu  time: sys=0:00:01 usr=0:00:21 total=0:00:22
+[Iter 12] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 12] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 12 with 6 parts
+
+Start DR iteration 13: non-uniform partition
+Routed  1/7 Partitions, Violations =    25
+Routed  2/7 Partitions, Violations =    26
+Routed  3/7 Partitions, Violations =    28
+Routed  4/7 Partitions, Violations =    29
+Routed  5/7 Partitions, Violations =    30
+Routed  6/7 Partitions, Violations =    29
+Routed  7/7 Partitions, Violations =    26
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      26
+        Short : 26
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 13] Elapsed real time: 0:00:22 
+[Iter 13] Elapsed cpu  time: sys=0:00:01 usr=0:00:21 total=0:00:23
+[Iter 13] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 13] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 13 with 7 parts
+
+Incremental DRC patching before early termination:
+Routed  1/5 Partitions, Violations =    24
+Routed  2/5 Partitions, Violations =    25
+Routed  3/5 Partitions, Violations =    25
+Routed  4/5 Partitions, Violations =    25
+Routed  5/5 Partitions, Violations =    24
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      24
+        Short : 24
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+[Iter 14] Elapsed real time: 0:00:22 
+[Iter 14] Elapsed cpu  time: sys=0:00:01 usr=0:00:22 total=0:00:23
+[Iter 14] Stage (MB): Used  151  Alloctr  152  Proc  242 
+[Iter 14] Total (MB): Used  291  Alloctr  293  Proc 4820 
+
+End DR iteration 14 with 5 parts
+
+Stop DR since not converging
+
+
+Nets that have been changed:
+Net 1 = clock
+Net 2 = phfnn_23795
+Total number of changed nets = 2 (out of 43088)
+
+[DR: Done] Elapsed real time: 0:00:22 
+[DR: Done] Elapsed cpu  time: sys=0:00:01 usr=0:00:22 total=0:00:23
+[DR: Done] Stage (MB): Used   10  Alloctr   11  Proc  242 
+[DR: Done] Total (MB): Used  150  Alloctr  152  Proc 4820 
+[ECO: DR] Elapsed real time: 0:00:30 
+[ECO: DR] Elapsed cpu  time: sys=0:00:01 usr=0:00:29 total=0:00:31
+[ECO: DR] Stage (MB): Used  147  Alloctr  148  Proc  242 
+[ECO: DR] Total (MB): Used  150  Alloctr  152  Proc 4820 
+
+ECO Route finished with 0 open nets, of which 0 are frozen
+Information: Merged away 22 aligned/redundant DRCs. (ZRT-305)
+
+ECO Route finished with 2 violations
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      2
+        Short : 2
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+
+
+Total Wire Length =                    3796057 micron
+Total Number of Contacts =             500062
+Total Number of Wires =                604235
+Total Number of PtConns =              47780
+Total Number of Routed Wires =       591514
+Total Routed Wire Length =           3778140 micron
+Total Number of Routed Contacts =       500062
+        Layer          Metal1 :      85283 micron
+        Layer          Metal2 :     729756 micron
+        Layer          Metal3 :    1256757 micron
+        Layer          Metal4 :    1151381 micron
+        Layer          Metal5 :     553288 micron
+        Layer       TopMetal1 :       1392 micron
+        Layer       TopMetal2 :        284 micron
+        Via       TopVia2EWNS :          1
+        Via       TopVia1EWNS :         25
+        Via        Via4_XX_so :      20021
+        Via   Via4_XX_so(rot) :       1678
+        Via        Via3_XX_so :      79433
+        Via   Via3_XX_so(rot) :       2370
+        Via        Via2_XX_so :     195191
+        Via   Via2_XX_so(rot) :       1873
+        Via        Via1_XX_so :      10896
+        Via   Via1_XX_so(rot) :     188574
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1       vias)
+ 
+
+Total number of nets = 43088
+0 open nets, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 2
+Total number of antenna violations = antenna checking not active
+Information: Routes in non-preferred voltage areas = 0 (ZRT-559)
+
+Total Wire Length =                    3796057 micron
+Total Number of Contacts =             500062
+Total Number of Wires =                604235
+Total Number of PtConns =              47780
+Total Number of Routed Wires =       591514
+Total Routed Wire Length =           3778140 micron
+Total Number of Routed Contacts =       500062
+        Layer          Metal1 :      85283 micron
+        Layer          Metal2 :     729756 micron
+        Layer          Metal3 :    1256757 micron
+        Layer          Metal4 :    1151381 micron
+        Layer          Metal5 :     553288 micron
+        Layer       TopMetal1 :       1392 micron
+        Layer       TopMetal2 :        284 micron
+        Via       TopVia2EWNS :          1
+        Via       TopVia1EWNS :         25
+        Via        Via4_XX_so :      20021
+        Via   Via4_XX_so(rot) :       1678
+        Via        Via3_XX_so :      79433
+        Via   Via3_XX_so(rot) :       2370
+        Via        Via2_XX_so :     195191
+        Via   Via2_XX_so(rot) :       1873
+        Via        Via1_XX_so :      10896
+        Via   Via1_XX_so(rot) :     188574
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1       vias)
+ 
+Updating the database ...
+...updated 2 nets with eco mode
+[ECO: End] Elapsed real time: 0:00:30 
+[ECO: End] Elapsed cpu  time: sys=0:00:01 usr=0:00:30 total=0:00:31
+[ECO: End] Stage (MB): Used   -2  Alloctr   -2  Proc  242 
+[ECO: End] Total (MB): Used    1  Alloctr    1  Proc 4820 
+fc_shell> check_route
+Cut layer Via1 has invalid minimum width specified
+Cell Min-Routing-Layer = Metal1
+Cell Max-Routing-Layer = TopMetal2
+Turn off antenna since no rule is specified
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Cannot find a default contact code for layer Cont. (ZRT-022)
+Warning: Ignore 22 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Wire on layer (Metal2) needs more than one tracks
+Via on layer (Via1) needs more than one tracks
+Via on layer (Via2) needs more than one tracks
+Warning: Layer Metal2 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.455" & "wire/via-up 0.455". (ZRT-026)
+Wire on layer (Metal4) needs more than one tracks
+Via on layer (Via3) needs more than one tracks
+Via on layer (Via4) needs more than one tracks
+Warning: Layer Metal4 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.455" & "wire/via-up 0.455". (ZRT-026)
+Via on layer (TopVia1) needs more than one tracks
+Warning: Layer Metal5 default pitch 0.420 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.410" & "wire/via-up 0.620". (ZRT-026)
+Wire on layer (TopMetal1) needs more than one tracks
+Via on layer (TopVia1) needs more than one tracks
+Via on layer (TopVia2) needs more than one tracks
+Warning: Layer TopMetal1 default pitch 2.280 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 3.280" & "wire/via-up 3.410". (ZRT-026)
+Transition layer name: Metal2(1)
+Transition layer name: Metal4(3)
+Transition layer name: Metal5(4)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 6.30 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 6.30 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Standard cell pin SDFRRSJIX1/SN has no valid via regions. (ZRT-044)
+Warning: Standard cell pin INVJIX2/Q has no valid via regions. (ZRT-044)
+Warning: Standard cell pin INJIX2/Q has no valid via regions. (ZRT-044)
+
+
+Start checking for open nets ... 
+
+Total number of nets = 43088, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 43088 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used  129  Alloctr  130  Proc 4820 
+Printing options for 'route.common.*'
+common.eco_route_fix_existing_drc                       :        true                
+common.verbose_level                                    :        0                   
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :        true                
+detail.eco_route_use_soft_spacing_for_timing_optimization:       true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked 157/289 Partitions, Violations =        0
+Checked 158/289 Partitions, Violations =        0
+Checked 159/289 Partitions, Violations =        0
+Checked 160/289 Partitions, Violations =        0
+Checked 161/289 Partitions, Violations =        0
+Checked 162/289 Partitions, Violations =        0
+Checked 163/289 Partitions, Violations =        0
+Checked 164/289 Partitions, Violations =        0
+Checked 165/289 Partitions, Violations =        0
+Checked 166/289 Partitions, Violations =        0
+Checked 167/289 Partitions, Violations =        0
+Checked 168/289 Partitions, Violations =        0
+Checked 169/289 Partitions, Violations =        0
+Checked 170/289 Partitions, Violations =        0
+Checked 171/289 Partitions, Violations =        0
+Checked 172/289 Partitions, Violations =        0
+Checked 176/289 Partitions, Violations =        0
+Checked 187/289 Partitions, Violations =        0
+Checked 198/289 Partitions, Violations =        0
+Checked 209/289 Partitions, Violations =        0
+Checked 220/289 Partitions, Violations =        13
+Checked 231/289 Partitions, Violations =        13
+Checked 242/289 Partitions, Violations =        13
+Checked 253/289 Partitions, Violations =        13
+Checked 264/289 Partitions, Violations =        13
+Checked 275/289 Partitions, Violations =        13
+Checked 286/289 Partitions, Violations =        22
+[DRC CHECK] Elapsed real time: 0:00:16 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:16 total=0:00:17
+[DRC CHECK] Stage (MB): Used    0  Alloctr    1  Proc    0 
+[DRC CHECK] Total (MB): Used  239  Alloctr  241  Proc 4820 
+Warning: No antenna rules defined, Skip antenna analysis. (ZRT-309)
+Information: Merged away 20 aligned/redundant DRCs. (ZRT-305)
+
+DRC-SUMMARY:
+        @@@@@@@ TOTAL VIOLATIONS =      2
+        Short : 2
+
+Information: The app option "route.detail.report_soft_drc_separately" will be on-by-default in future release. (ZRT-807)
+        @@@@@@@ TOTAL SOFT VIOLATIONS = 0
+
+
+Total Wire Length =                    3796057 micron
+Total Number of Contacts =             500062
+Total Number of Wires =                604235
+Total Number of PtConns =              47780
+Total Number of Routed Wires =       591514
+Total Routed Wire Length =           3778140 micron
+Total Number of Routed Contacts =       500062
+        Layer          Metal1 :      85283 micron
+        Layer          Metal2 :     729756 micron
+        Layer          Metal3 :    1256757 micron
+        Layer          Metal4 :    1151381 micron
+        Layer          Metal5 :     553288 micron
+        Layer       TopMetal1 :       1392 micron
+        Layer       TopMetal2 :        284 micron
+        Via       TopVia2EWNS :          1
+        Via       TopVia1EWNS :         25
+        Via        Via4_XX_so :      20021
+        Via   Via4_XX_so(rot) :       1678
+        Via        Via3_XX_so :      79433
+        Via   Via3_XX_so(rot) :       2370
+        Via        Via2_XX_so :     195191
+        Via   Via2_XX_so(rot) :       1873
+        Via        Via1_XX_so :      10896
+        Via   Via1_XX_so(rot) :     188574
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1       vias)
+ 
+  Total double via conversion rate    =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+ 
+  The optimized via conversion rate based on total routed via count =  0.00% (0 / 500062 vias)
+ 
+    Layer Via1       =  0.00% (0      / 199470  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (199470  vias)
+    Layer Via2       =  0.00% (0      / 197064  vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (197064  vias)
+    Layer Via3       =  0.00% (0      / 81803   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (81803   vias)
+    Layer Via4       =  0.00% (0      / 21699   vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (21699   vias)
+    Layer TopVia1    =  0.00% (0      / 25      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (25      vias)
+    Layer TopVia2    =  0.00% (0      / 1       vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 100.00% (1       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 43088, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+
+Total number of DRCs = 2
+Total number of antenna violations = no antenna rules defined
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+
+fc_shell> report_timing
+Information: Timer using 1 threads
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Warning: Corner ff_m40c:  0 process number, 2 process label, 1 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 42056 cells affected for early, 42056 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Warning: Corner ss_125c:  0 process number, 2 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 42056 cells affected for early, 42056 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Warning: Corner tt_25c:  0 process number, 2 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 42056 cells affected for early, 42056 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'design.dlib:top_pad_rvx_route.design'. (TIM-125)
+Information: Design top_pad_rvx_route has 43088 nets, 0 global routed, 43067 detail routed. (NEX-024)
+Warning: Technology layer 'TopMetal1' setting 'pitch' is not valid (NEX-001)
+Information: The RC mode used is DR for design 'top_pad_rvx'. (NEX-022)
+---extraction options---
+Corner: tt_25c
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Corner: ss_125c
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Corner: ff_m40c
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Global options:
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 1
+ extract.connect_open           : true
+ extract.enable_coupling_cap    : false
+Extracting design: top_pad_rvx_route 
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 43067 nets are successfully extracted. (NEX-028)
+Warning: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 43084, routed nets = 43067, across physical hierarchy nets = 0, parasitics cached nets = 43084, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 18. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Warning: Scenario func::ff_m40c is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:09:16 2026
+****************************************
+
+  Startpoint: u_core/rvx_core_instance/rs1_data_s2_reg_0_ (rising edge-triggered flip-flop clocked by master_clk)
+  Endpoint: u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_ (rising edge-triggered flip-flop clocked by master_clk)
+  Mode: func
+  Corner: ss_125c
+  Scenario: func::ss_125c
+  Path Group: master_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 2.24      2.24
+
+  u_core/rvx_core_instance/rs1_data_s2_reg_0_/C (SDFRQJIX1)
+                                                   0.00      2.24 r
+  u_core/rvx_core_instance/rs1_data_s2_reg_0_/Q (SDFRQJIX1)
+                                                   0.59      2.83 r
+  HFSBUF_2102_53410/Q (BUJIX8)                     0.24      3.08 r
+  A50504/Q (AND2JIX0)                              0.22      3.30 r
+  ctmTdsLR_1_56772/Q (AO21JIX1)                    0.20      3.50 r
+  A50222/Q (NA3JIX0)                               0.25      3.75 f
+  A50226/Q (NA2JIX0)                               0.17      3.92 r
+  ctmTdsLR_1_61971/Q (EO3JIX1)                     0.71      4.62 r
+  ctmTdsLR_2_62160/Q (AO21JIX1)                    0.43      5.05 r
+  ctmTdsLR_3_62161/Q (INJIX0)                      0.08      5.13 f
+  ctmTdsLR_1_62159/Q (ON22JIX0)                    0.18      5.31 r
+  A50945/Q (NO2I1JIX0)                             0.16      5.48 f
+  A50946/Q (NO2I1JIX1)                             0.14      5.61 r
+  A50951/Q (NA3JIX1)                               0.15      5.76 f
+  A50952/Q (NA2JIX0)                               0.11      5.87 r
+  A50958/Q (NA2I1JIX0)                             0.14      6.01 r
+  A50960/Q (NA2JIX1)                               0.10      6.11 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U951/CO (FAJIX1)
+                                                   0.28      6.39 f
+  A50847/Q (ON21JIX1)                              0.26      6.64 r
+  A50855/Q (NO2I1JIX0)                             0.24      6.88 r
+  ctmTdsLR_2_58197/Q (ON22JIX1)                    0.17      7.05 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U858/CO (FAJIX1)
+                                                   0.32      7.38 f
+  ctmTdsLR_1_58484/Q (NA3JIX1)                     0.11      7.48 r
+  A51084/Q (NA2JIX2)                               0.12      7.60 f
+  ctmTdsLR_1_61533/Q (EO3JIX1)                     0.19      7.79 f
+  A51093/Q (ON21JIX1)                              0.13      7.92 r
+  A51094/Q (NA2JIX1)                               0.11      8.03 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U768/CO (FAJIX1)
+                                                   0.29      8.31 f
+  A50819/Q (ON21JIX2)                              0.17      8.48 r
+  A50826/Q (EO2JIX1)                               0.21      8.69 r
+  A50829/Q (ON21JIX1)                              0.14      8.83 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U677/CO (FAJIX1)
+                                                   0.25      9.08 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U661/CO (FAJIX1)
+                                                   0.26      9.34 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U632/CO (FAJIX1)
+                                                   0.25      9.59 f
+  A51003/Q (NA2JIX1)                               0.08      9.67 r
+  A51005/Q (NA2JIX1)                               0.08      9.75 f
+  A51699/Q (NA2JIX1)                               0.07      9.82 r
+  A51700/Q (NA2JIX1)                               0.10      9.92 f
+  A51013/Q (NA2JIX1)                               0.08     10.00 r
+  A51014/Q (NA2JIX1)                               0.10     10.10 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U519/CO (FAJIX1)
+                                                   0.26     10.35 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U474/CO (FAJIX1)
+                                                   0.25     10.60 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U462/CO (FAJIX0)
+                                                   0.26     10.86 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U443/CO (FAJIX1)
+                                                   0.26     11.12 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U400/CO (FAJIX1)
+                                                   0.25     11.37 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U391/S (FAJIX0)
+                                                   0.38     11.75 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U3498/CO (FAJIX1)
+                                                   0.30     12.05 f
+  A51052/Q (NO2I1JIX2)                             0.15     12.20 f
+  A51059/Q (INJIX2)                                0.05     12.25 r
+  A52560/Q (NA2I1JIX1)                             0.08     12.33 f
+  A52561/Q (ON21JIX1)                              0.11     12.44 r
+  A52564/Q (NO2JIX1)                               0.08     12.51 f
+  A52566/Q (ON21JIX1)                              0.14     12.65 r
+  A50341/Q (NA2JIX1)                               0.14     12.78 f
+  A51643/Q (AO21JIX2)                              0.32     13.10 f
+  A51539/Q (NA2JIX1)                               0.10     13.20 r
+  A51545/Q (NA3JIX1)                               0.13     13.33 f
+  A50303/Q (NO2I1JIX1)                             0.15     13.48 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U3417/CO (FAJIX1)
+                                                   0.30     13.78 f
+  ctmTdsLR_2_62410/Q (ON22JIX1)                    0.12     13.90 r
+  ctmTdsLR_1_62409/Q (INVJIX1)                     0.10     14.00 f
+  ctmTdsLR_3_62423/Q (NO2JIX1)                     0.09     14.08 r
+  ctmTdsLR_1_62421/Q (AN21JIX1)                    0.09     14.17 f
+  ctmTdsLR_1_62424/Q (NO3JIX1)                     0.17     14.34 r
+  A50251/Q (NO2JIX0)                               0.12     14.46 f
+  ctmTdsLR_1_56413/Q (OA32JIX0)                    0.33     14.79 f
+  u_core/rvx_core_instance/ctmi_35968/Q (AN21JIX1)
+                                                   0.13     14.92 r
+  u_core/rvx_core_instance/ctmi_35967/Q (ON21JIX1)
+                                                   0.19     15.11 f
+  u_core/rvx_core_instance/ctmi_36463/Q (ON21JIX1)
+                                                   0.28     15.39 r
+  A52510/Q (NA2I1JIX1)                             0.22     15.62 r
+  ctmTdsLR_2_62124/Q (NA4I1JIX0)                   0.21     15.83 f
+  ctmTdsLR_1_62123/Q (NA3I1JIX1)                   0.21     16.04 f
+  A52409/Q (NO2JIX1)                               0.11     16.14 r
+  A52620/Q (NA2JIX1)                               0.08     16.22 f
+  A52621/Q (ON211JIX1)                             0.08     16.31 r
+  gre_BUF_36_inst_64495/Q (BUJIX4)                 0.18     16.49 r
+  A51440/Q (EN2JIX1)                               0.14     16.62 r
+  ctmTdsLR_2_62282/Q (AN21JIX1)                    0.11     16.74 f
+  ctmTdsLR_1_62281/Q (INVJIX1)                     0.11     16.85 r
+  ZBUF_4372_inst_54623/Q (BUFJIX12)                0.17     17.02 r
+  u_core/rvx_core_instance/ctmi_36820/Q (NO2JIX0)
+                                                   0.12     17.14 f
+  A52678/Q (OR3JIX2)                               0.40     17.54 f
+  ctmTdsLR_2_62408/Q (INJIX1)                      0.09     17.63 r
+  ctmTdsLR_1_62407/Q (NO2JIX1)                     0.10     17.72 f
+  u_core/rvx_tightly_coupled_memory_instance/A50169/Q (AND2JIX1)
+                                                   0.30     18.02 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_17112/Q (AND2JIX1)
+                                                   0.22     18.24 f
+  HFSBUF_159_53871/Q (BUFJIX2)                     0.78     19.02 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27824/Q (AN22JIX0)
+                                                   1.49     20.50 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27823/Q (NA4JIX1)
+                                                   0.66     21.16 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27817/Q (NO2JIX0)
+                                                   0.30     21.46 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27816/Q (NO4I2JIX0)
+                                                   0.62     22.08 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27663/Q (AN221JIX0)
+                                                   0.36     22.44 f
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_/D (SDFRQJIX1)
+                                                   0.00     22.44 f
+  data arrival time                                         22.44
+
+  clock master_clk (rise edge)                    20.00     20.00
+  clock network delay (propagated)                 2.55     22.55
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_/C (SDFRQJIX1)
+                                                   0.00     22.55 r
+  library setup time                              -0.13     22.42
+  data required time                                        22.42
+  ------------------------------------------------------------------------
+  data required time                                        22.42
+  data arrival time                                        -22.44
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.03
+
+
+1
+fc_shell> report_timing -corners ff_m40
+Warning: Nothing implicitly matched 'ff_m40' (SEL-003)
+Error: Nothing matched for -corners (SEL-005)
+Error: bad value specified for option -corners
+        Use error_info for more info. (CMD-013)
+fc_shell> report_timing -corners ff_m40C
+Warning: Nothing implicitly matched 'ff_m40C' (SEL-003)
+Error: Nothing matched for -corners (SEL-005)
+Error: bad value specified for option -corners
+        Use error_info for more info. (CMD-013)
+fc_shell> report_timing -corners ff_m40c
+Warning: Scenario func::ff_m40c is not configured for setup analysis: skipping. (UIC-058)
+Warning: None of the specified scenarios are active for setup analysis. (UIC-057)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:09:51 2026
+****************************************
+No paths.
+1
+fc_shell> report_timing -hold -corners ff_m40c
+Error: unknown option '-hold' (CMD-010)
+fc_shell> man report_timing
+2.  Synopsys Commands                                        Command Reference
+                                 report_timing
+
+NAME
+       report_timing
+              Displays timing information about a design.
+
+SYNTAX
+       status report_timing
+              [-to to_list]
+                  | -rise_to rise_to_list
+                  | -fall_to fall_to_list]
+              [-from from_list
+                  | -rise_from rise_from_list
+                  | -fall_from fall_from_list]
+              [-through through_list]
+              [-rise_through rise_through_list]
+              [-fall_through fall_through_list]
+              [-exclude exclude_list
+                  | -rise_exclude rise_exclude_list
+                  | -fall_exclude fall_exclude_list]
+              [-path_type short | full | full_clock | full_clock_expanded | only | end | end_detailed]
+              [-delay_type min | min_rise | min_fall | max | max_rise | max_fall]
+              [-report_by design | mode | corner | scenario | group ]
+              [-sort_by group | slack]
+              [-nworst paths_per_endpoint]
+              [-max_paths max_path_count]
+              [-slack_lesser_than lower_slack_limit]
+              [-pba_mode none | path | exhaustive]
+              [-start_end_type from_to_type]
+              [-start_end_pair]
+              [-significant_digits digits]
+              [-nosplit]
+              [-modes mode_list]
+              [-corners corner_list]
+              [-scenarios scenario_list]
+              [-groups group_list]
+              [-nets]
+              [-physical]
+              [-attributes]
+              [-input_pins]
+              [-transition_time]
+              [-capacitance]
+              [-process]
+              [-voltage]
+              [-temperature]
+              [-derate]
+              [-crosstalk_delta]
+              [-variation]
+              [-exception exception_type]
+              [-file_no]
+              [-skip_transparency_window]
+              [-include_hierarchical_pins]
+
+              [timing_path_list]
+
+   Data Types
+       to_list             list
+       rise_to_list        list
+       fall_to_list        list
+       from_list           list
+       rise_from_list      list
+       fall_from_list      list
+       through_list        list
+       rise_through_list   list
+       fall_through_list   list
+       exclude_list        list
+       rise_exclude_list   list
+       fall_exclude_list   list
+       paths_per_endpoint  integer
+       max_path_count      integer
+       lower_slack_limit  float
+       digits              integer
+       mode_list           list
+       corner_list         list
+       scenario_list       list
+       group_list          list
+       timing_path_list    collection
+
+ARGUMENTS
+       -to to_list
+              Reports  only  the  paths that connect to the named pins, ports,
+              cells, or clocks. If you do not specify this option, the command
+              reports  the longest path to an output port if the design has no
+              timing constraints. If the design has  timing  constraints,  the
+              command  reports  the path with the worst slack within each path
+              group if -group is not present. If -group is given, the  command
+              reports the path with the worst slack within the group specified
+              by -group.
+
+       -rise_to rise_to_list
+              Reports only the paths with a rising edge at the  endpoint  that
+              connect  to  the named pins, ports, cells, or clocks. If a clock
+              object is specified, this option selects  endpoints  clocked  by
+              the named clock, if the capturing edge is the rising edge of the
+              clock at the clock source. The command considers logical  inver-
+              sions along the clock path.
+
+       -fall_to fall_to_list
+              Reports  only the paths with a falling edge at the endpoint that
+              connect to the named pins, ports, cells, or clocks. If  a  clock
+              object  is  specified,  this option selects endpoints clocked by
+              the named clock, if the capturing edge is the  falling  edge  of
+              the  clock  at  the  clock source. The command considers logical
+              inversions along the clock path.
+
+       -from from_list
+              Reports only the paths  that  originate  from  the  named  pins,
+              ports,  cells, or clocks. If you do not specify this option, the
+              command reports the longest path to an output port if the design
+              has no timing constraints. If the design has timing constraints,
+              the command reports the path with the worst  slack  within  each
+              path  group  if  -group  is not present. If -group is given, the
+              command reports the path with the worst slack within  the  group
+              specified by -group.
+
+       -rise_from rise_from_list
+              Reports  only  the paths with a rising edge from the named pins,
+              ports, cells, or clocks. If a clock object  is  specified,  this
+              option  selects  startpoints  clocked by the named clock, if the
+              paths are launched by the rising edge of the clock at the  clock
+              source. The command considers logical inversions along the clock
+              path.
+
+       -fall_from fall_from_list
+              Reports only the paths with a falling edge from the named  pins,
+              ports,  cells,  or  clocks. If a clock object is specified, this
+              option selects startpoints clocked by the named  clock,  if  the
+              paths are launched by the falling edge of the clock at the clock
+              source. The command considers logical inversions along the clock
+              path.
+
+       -through through_list
+              Reports  only  paths  that  pass  through the named pins, ports,
+              cells, or nets. If you specify only  one  -through  option,  the
+              tool  reports  only the paths that travel through one or more of
+              the objects in the list. For the tool to trace  all  the  points
+              specified  in  the through list, specify -through multiple times
+              with one report_timing command - for example,
+                prompt> report_timing -from A1 -through {B1 B2} -through {C1 C2} -to D1
+              See the EXAMPLES section for more information.
+
+       -rise_through rise_through_list
+              Reports only paths that pass  through  the  named  pins,  ports,
+              cells, or nets and have a rising transition at those objects. If
+              you specify only one -through option, the tool reports only  the
+              paths  that  travel  through  one  or more of the objects in the
+              list. You can specify  -rise_through  multiple  times  with  one
+              report_timing  command.  See  the  DESCRIPTION  section for more
+              information.
+
+       -fall_through fall_through_list
+              Reports only paths that pass  through  the  named  pins,  ports,
+              cells,  or  nets and have a falling transition at those objects.
+              If you specify only one -through option, the tool  reports  only
+              the  paths that travel through one or more of the objects in the
+              list. You can specify  -fall_through  multiple  times  with  one
+              report_timing  command.  See  the  DESCRIPTION  section for more
+              information.
+
+       -exclude exclude_list
+              Prevents  the reporting of data paths that contain the specified
+              pins, ports, nets, and cell instances.  Reporting  excludes  all
+              data paths from, through, or to the named pins, ports, nets, and
+              cell instances.  If a cell instance is specified,  all  pins  of
+              the cell are excluded.  The -exclude option
+
+              o Takes precedence over the -from, -through, and -to options.
+
+              o Is exclusive with the -rise_exclude and -fall_exclude options.
+
+              o Does not apply to borrowing path from the  -trace_latch_borrow
+                option   or   clock   path   from   the  -path  full_clock  or
+                full_clock_expanded option.
+
+              o Does not apply to clock pins.
+
+              Note that this option is intended for use  in  conjunction  with
+              -from,  -through  and  -to  options and can lead to long runtime
+              when used on  its  own,  that is,  without  other   such   topo-
+              logical options.
+
+       -rise_exclude rise_exclude_list
+              Same as the -exclude option, but applies only to paths rising at
+              the named pins, ports, nets, and cell instances.
+
+       -fall_exclude fall_exclude_list
+              Same as the -exclude option, but applies only to  paths  falling
+              at the named pins, ports, nets, and cell instances.
+
+       -path_type short | full | full_clock | full_clock_expanded | only | end
+       | end_detailed
+              Specifies  how to display the timing path.  By default, the full
+              path is displayed.  If full_clock is specified,  the  report  is
+              similar to the one generated by full but includes the full clock
+              paths for propagated clocks.  If full_clock_expanded  is  speci-
+              fied,  the  report is similar to the one generated by full_clock
+              but includes full clock paths from  the  primary  clock  to  the
+              related  generated  clock  source.   If  you specify short, only
+              startpoints and endpoints are displayed.  If you  specify  only,
+              only  the  path  is displayed without the accompanying required-
+              time and slack calculation.  If you specify end, the report  has
+              a  column format that shows one line for each path, showing only
+              the endpoint name, delay,  required-time,  slack,  and  scenario
+              name.  If you specify end_detailed, the report is similar to the
+              one generated by end, but with additional  columns  showing  the
+              pathgroup name and the number of logic levels.
+
+       -delay_type min | min_rise | min_fall | max | max_rise | max_fall
+              Specifies the path type at the endpoint.  The default is max.
+
+       -report_by design | mode | corner | scenario | group
+              Specifies  the  grouping  criteria  for  reporting  paths.   The
+              default is design.  It is an error to give both  the  -report_by
+              and -sort_by options.
+
+       -sort_by group | slack
+              Specifies  the  sorting  criteria  for reporting paths, group or
+              slack.  It is an error to give both the -report_by and  -sort_by
+              options.   This  option is deprecated in favor of the -report_by
+              option.
+
+       -nworst paths_per_endpoint
+              Specifies the number of  paths  to  report  per  endpoint.   The
+              default is 1.
+
+       -max_paths max_path_count
+              Specifies  the  number  of  paths  to report.  The default is 1.
+              Depending of the value of the -report_by option,  the  max_paths
+              value  is applied to each path group, scenario, mode, or corner,
+              or to the entire design.
+
+       -slack_lesser_than lower_slack_limit
+              Reports   only   those   paths   with   a   slack   less    than
+              lower_slack_limit.  When you specify this option, there might be
+              an insufficient number of paths to satisfy  the  -max_paths  and
+              -nworst  options.   If  this  option is specified, unconstrained
+              paths are not returned, as unconstrained paths  do  not  have  a
+              defined slack.
+
+       -pba_mode none | path | exhaustive
+              Controls path-based analysis with the following modes:
+
+              o none (the default) - Path-based analysis is not applied.
+              o path - Path-based analysis is applied to paths after they have
+                been gathered.
+              o exhaustive - An exhaustive  path-based  analysis  path  search
+                algorithm  is applied to determine the worst path-based analy-
+                sis path set in the design.  If you use exhaustive, you cannot
+                use the -start_end_pair option.
+
+       -start_end_type from_to_type
+              Restricts  the  report  to one of four classes of paths based on
+              the type of startpoint and endpoint:
+
+              o reg_to_reg - from register to register
+              o reg_to_out - from register to output port
+              o in_to_reg - from input port to register
+              o in_to_out - from input port to output port
+
+              In this description, "register" means any  valid  startpoint  or
+              endpoint  that  is  not  an input port, output port, or bidirec-
+              tional port, even if not a sequential register. For  example,  a
+              clock-gating  check  endpoint  qualifies  as a "register" in the
+              in_to_reg from-to type. A bidirectional port qualifies  as  both
+              an input port and an output port.
+
+       -start_end_pair
+              Reports paths for each pair of startpoint and endpoint based  on
+              connectivity.  This option can lead to long runtime and can lead
+              to generating a huge number of paths depending on the design. By
+              default, this option searches only for paths that are violating.
+              This default can be changed by having an explicit
+               -slack_lesser_than  option.  The  options that do not work with
+              this option are -nworst, -max_paths, -report_by.  Unlike   other
+              options  of  the  report_timing  command, this option causes the
+              paths reported to no longer be sorted based on  slack.  Instead,
+              paths  are arranged based on the endpoint with those sharing the
+              same endpoint appearing next to one another. The maximum  number
+              of paths reported is limited to 2000000.
+
+       -significant_digits digits
+              Specifies  the number of significant digits (digits to the right
+              of the decimal point) to  report.  Allowed  values  are  from  0
+              through  13.  The  default is 2. Using this option overrides the
+              value set by the  shell.common.report_default_significant_digits
+              application option.
+
+       -nosplit
+              Writes out wide report lines, even if the line length is greater
+              than 80 columns. Use this option to simplify post-processing  of
+              the  output  files  or  when comparing the output files with the
+              UNIX diff command. Most of the design information is  listed  in
+              fixed-width columns. If the information in a given field exceeds
+              the column width, the next field begins on a new line,  starting
+              in the correct column.
+
+       -modes mode_list
+              Specifies  the  modes  for  which to generate the timing report.
+              Each active scenario of the modes specified by the -modes option
+              and the corners specified by the -corners option are included in
+              the report.  If this option is not given,  the  report  includes
+              scenarios  of  all  modes.   If none of the -modes, -corners, or
+              -scenarios options are given, the report includes  every  active
+              scenario of the design.  It is an error to give this option with
+              the -scenarios option.
+
+       -corners corner_list
+              Specifies the corners for which to generate the  timing  report.
+              Each active scenario of the modes specified by the -modes option
+              and the corners specified by the -corners option are included in
+              the  report.   If  this option is not given, the command reports
+              every scenario that is active with the specified modes.   It  is
+              an error to give this option with the -scenarios option.
+
+       -scenarios scenario_list
+              Specifies the scenarios for which to generate the timing report.
+              Each of the specified scenarios is included in the report. It is
+              an  error  to  give  this option with the -modes or the -corners
+              options.  If none of the -modes, -corners, or -scenarios options
+              are specified, the report includes every scenario of the design.
+
+       -groups group_list
+              Specify  the  list  of  path  group  names  for reporting paths.
+              Default is all  path  groups.   If  this  option  is  specified,
+              unconstrained  paths are not returned, as unconstrained paths do
+              not belong to any path group.
+
+       -nets  Print nets.
+
+       -physical
+              Print pin XY locations.
+
+       -attributes
+              Print attributes of each pin.
+
+       -input_pins
+              Print data for input pins.
+
+       -transition_time
+              Print transition time of each pin.
+
+       -capacitance
+              Print capacitance of each load pin.
+
+       -process
+              Print process number and process label (if  any)  of  each  leaf
+              pin.
+
+       -voltage
+              Print voltage of each leaf pin.
+
+       -temperature
+              Print temperature of each leaf pin.
+
+       -derate
+              Print timing derates of each leaf pin.
+
+       -crosstalk_delta
+              Print  SI  delta-delays of each load pin.  This option is effec-
+              tive only if SI analysis is enabled.
+
+       -variation
+              Reports  parametric  on-chip  variation  (POCV)  information  by
+              expanding  column  "Incr"  to columns "Mean", "Sensit", "Corner"
+              and "Value", and expanding  column  "Path"  to  columns  "Mean",
+              "Sensit"  and "Value". This option works only when POCV analysis
+              is enabled.
+
+       -exception exception_type
+              Prints user-specified timing  exceptions,  namely  false  paths,
+              multicycle  paths, and minimum and maximum delays, that are sat-
+              isfied per timing path being reported. Only "dominant" exception
+              type  is  acceptable,  which is to report the dominant exception
+              constraint used for the reported path.
+
+       -file_no
+              Reports file number references for the exceptions reported  with
+              -exceptions option.
+
+              Note: The additional analysis required per path with the -excep-
+              tions option is not trivial. Therefore,  using  a  report_timing
+              command  with  the  -exceptions  option  is  expected to execute
+              slower than the exact same  command  without  this  option.  The
+              -exceptions    option    does    not    work   with   -path_type
+              short/end/end_detailed option and forces the -input_pins option.
+
+       -skip_transparency_window
+              Skip printing the detailed transparency window.
+
+       -include_hierarchical_pins
+              Print the hierarchical pins.
+
+       timing_path_list
+              Specifies the collection of timing paths to report. This  option
+              is mutually exclusive with options that control the selection of
+              paths to report and is only compatible with options  which  con-
+              trol the formatting of the report.
+
+DESCRIPTION
+       The  report_timing  command  generates  a  report  that contains timing
+       information for the current design. By default, the report_timing  com-
+       mand  reports  the  single  worst  setup path for each of the scenarios
+       specified by the -modes, -corners, or -scenarios options.  If  none  of
+       these  options are specified, the command reports the single worst path
+       over all scenarios of the design.
+
+       Command options let you specify the number of paths reported, the types
+       of paths reported, and the amount of detail included in the report. You
+       can restrict the scope of paths reported by startpoints, endpoints, and
+       intermediate  points  by using the -from, -to, and -through options. To
+       restrict the report by slack or clock group, use the -slack_lesser_than
+       and -group options.
+
+       If  the  time.report_unconstrained_paths  application  option is set to
+       true, the command searches for unconstrained  paths  to  endpoints  for
+       which  constrained  paths  cannot be found. Searching for unconstrained
+       paths can cause significantly longer runtimes.
+
+       The report actually consists of a series of subreports, each containing
+       up  to  max_paths  paths, sorted by slack.  The value of the -report_by
+       option controls the contents of each subreport as follows:
+
+        design -- There will be a single subreport for the entire design, con-
+         taining the worst paths across all pathgroups of all scenarios.  This
+         is the default.
+
+        group -- There will be a subreport (with up to  max_paths  paths)  for
+         each  pathgroup  of  each specified scenario.  (This is equivalent to
+         the old default -sort_by group option.)
+
+        scenario -- There will be a subreport for  each  scenario,  containing
+         the  worst  paths  across all pathgroups.  (This is equivalent to the
+         old -sort_by slack option.)
+
+        mode -- There will be a subreport for each mode, containing the  worst
+         paths across all pathgroups of all scenarios of that mode.
+
+        corner  --  There  will be a subreport for each corner, containing the
+         worst paths across all pathgroups of all scenarios of that corner.
+
+       The command can also report on a collection of timing paths which  were
+       retrieved using the get_timing_paths command.
+
+   Multicorner-Multimode Support
+       By  default,  this  command  works on all active scenarios.  To specify
+       different scenarios, use the -scenarios  option  or  the  -corners  and
+       -modes options.
+
+EXAMPLES
+       The  following  example uses multiple -through options in a single com-
+       mand to specify paths that traverse multiple points in the design.  The
+       command reports paths beginning at A1, passing through B1, then through
+       C1, and ending at D1:
+
+         prompt> report_timing -from A1 -through B1 -through C1 -to D1
+
+       The following example allows multiple possible paths by specifying mul-
+       tiple objects within one -through option. The path can pass through any
+       of the objects. The command specifies paths beginning  at  A1,  passing
+       through either B1 or B2, then passing through either C1 or C2, and end-
+       ing at D1.
+
+         prompt> report_timing -from A1 -through {B1 B2} -through {C1 C2} -to D1
+
+       The following example uses the -report_by design option to  report  the
+       single worst path over the entire design:
+
+         prompt> report_timing -report_by design -scenarios [all_scenarios] -max_paths 1
+
+       The  following  example shows how a preexisting collection of paths can
+       be printed:
+
+         prompt> set paths [get_timing_paths -report_by corner -corner c23 -max_paths 100]
+         prompt> report_timing $paths
+
+       If you specify the -pba_mode exhaustive option, path-based analysis  is
+       used  during  the path search, and the worst recalculated paths meeting
+       your criteria are returned.  This option requires that a path search be
+       performed  to  ensure that the paths being returned truly are the worst
+       paths.  The additional runtime required for this option depends on  the
+       amount  of  timing  improvement resulting from path-based analysis.  As
+       the timing improvement from path-based analysis increases, the  runtime
+       for  the  path search increases. Large -nworst values can significantly
+       increase the time needed for the search.
+
+       To see the worst path in the design with path-based analysis applied:
+         prompt> report_timing -pba_mode exhaustive
+
+       To report all endpoints in the  design  which  fail  after  considering
+       path-based analysis:
+         prompt> report_timing -pba_mode exhaustive -slack_lesser_than 0 -max_paths 1000
+
+SEE ALSO
+       current_corner(2)
+       current_mode(2)
+       current_scenario(2)
+       get_timing_paths(2)
+       set_scenario_status(2)
+       time.report_unconstrained_paths(3)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> report_timing -early -corners ff_m40c
+Error: unknown option '-early' (CMD-010)
+fc_shell> man report_timing
+2.  Synopsys Commands                                        Command Reference
+                                 report_timing
+
+NAME
+       report_timing
+              Displays timing information about a design.
+
+SYNTAX
+       status report_timing
+              [-to to_list]
+                  | -rise_to rise_to_list
+                  | -fall_to fall_to_list]
+              [-from from_list
+                  | -rise_from rise_from_list
+                  | -fall_from fall_from_list]
+              [-through through_list]
+              [-rise_through rise_through_list]
+              [-fall_through fall_through_list]
+              [-exclude exclude_list
+                  | -rise_exclude rise_exclude_list
+                  | -fall_exclude fall_exclude_list]
+              [-path_type short | full | full_clock | full_clock_expanded | only | end | end_detailed]
+              [-delay_type min | min_rise | min_fall | max | max_rise | max_fall]
+              [-report_by design | mode | corner | scenario | group ]
+              [-sort_by group | slack]
+              [-nworst paths_per_endpoint]
+              [-max_paths max_path_count]
+              [-slack_lesser_than lower_slack_limit]
+              [-pba_mode none | path | exhaustive]
+              [-start_end_type from_to_type]
+              [-start_end_pair]
+              [-significant_digits digits]
+              [-nosplit]
+              [-modes mode_list]
+              [-corners corner_list]
+              [-scenarios scenario_list]
+              [-groups group_list]
+              [-nets]
+              [-physical]
+              [-attributes]
+              [-input_pins]
+              [-transition_time]
+              [-capacitance]
+              [-process]
+              [-voltage]
+              [-temperature]
+              [-derate]
+              [-crosstalk_delta]
+              [-variation]
+              [-exception exception_type]
+              [-file_no]
+              [-skip_transparency_window]
+              [-include_hierarchical_pins]
+
+              [timing_path_list]
+
+   Data Types
+       to_list             list
+       rise_to_list        list
+       fall_to_list        list
+       from_list           list
+       rise_from_list      list
+       fall_from_list      list
+       through_list        list
+       rise_through_list   list
+       fall_through_list   list
+       exclude_list        list
+       rise_exclude_list   list
+       fall_exclude_list   list
+       paths_per_endpoint  integer
+       max_path_count      integer
+       lower_slack_limit  float
+       digits              integer
+       mode_list           list
+       corner_list         list
+       scenario_list       list
+       group_list          list
+       timing_path_list    collection
+
+ARGUMENTS
+       -to to_list
+              Reports  only  the  paths that connect to the named pins, ports,
+              cells, or clocks. If you do not specify this option, the command
+              reports  the longest path to an output port if the design has no
+              timing constraints. If the design has  timing  constraints,  the
+              command  reports  the path with the worst slack within each path
+              group if -group is not present. If -group is given, the  command
+              reports the path with the worst slack within the group specified
+              by -group.
+
+       -rise_to rise_to_list
+              Reports only the paths with a rising edge at the  endpoint  that
+              connect  to  the named pins, ports, cells, or clocks. If a clock
+              object is specified, this option selects  endpoints  clocked  by
+              the named clock, if the capturing edge is the rising edge of the
+              clock at the clock source. The command considers logical  inver-
+              sions along the clock path.
+
+       -fall_to fall_to_list
+              Reports  only the paths with a falling edge at the endpoint that
+              connect to the named pins, ports, cells, or clocks. If  a  clock
+              object  is  specified,  this option selects endpoints clocked by
+              the named clock, if the capturing edge is the  falling  edge  of
+              the  clock  at  the  clock source. The command considers logical
+              inversions along the clock path.
+
+       -from from_list
+              Reports only the paths  that  originate  from  the  named  pins,
+              ports,  cells, or clocks. If you do not specify this option, the
+              command reports the longest path to an output port if the design
+              has no timing constraints. If the design has timing constraints,
+              the command reports the path with the worst  slack  within  each
+              path  group  if  -group  is not present. If -group is given, the
+              command reports the path with the worst slack within  the  group
+              specified by -group.
+
+       -rise_from rise_from_list
+              Reports  only  the paths with a rising edge from the named pins,
+              ports, cells, or clocks. If a clock object  is  specified,  this
+              option  selects  startpoints  clocked by the named clock, if the
+              paths are launched by the rising edge of the clock at the  clock
+              source. The command considers logical inversions along the clock
+              path.
+
+       -fall_from fall_from_list
+              Reports only the paths with a falling edge from the named  pins,
+              ports,  cells,  or  clocks. If a clock object is specified, this
+              option selects startpoints clocked by the named  clock,  if  the
+              paths are launched by the falling edge of the clock at the clock
+              source. The command considers logical inversions along the clock
+              path.
+
+       -through through_list
+              Reports  only  paths  that  pass  through the named pins, ports,
+              cells, or nets. If you specify only  one  -through  option,  the
+              tool  reports  only the paths that travel through one or more of
+              the objects in the list. For the tool to trace  all  the  points
+              specified  in  the through list, specify -through multiple times
+              with one report_timing command - for example,
+                prompt> report_timing -from A1 -through {B1 B2} -through {C1 C2} -to D1
+              See the EXAMPLES section for more information.
+
+       -rise_through rise_through_list
+              Reports only paths that pass  through  the  named  pins,  ports,
+              cells, or nets and have a rising transition at those objects. If
+              you specify only one -through option, the tool reports only  the
+              paths  that  travel  through  one  or more of the objects in the
+              list. You can specify  -rise_through  multiple  times  with  one
+              report_timing  command.  See  the  DESCRIPTION  section for more
+              information.
+
+       -fall_through fall_through_list
+              Reports only paths that pass  through  the  named  pins,  ports,
+              cells,  or  nets and have a falling transition at those objects.
+              If you specify only one -through option, the tool  reports  only
+              the  paths that travel through one or more of the objects in the
+              list. You can specify  -fall_through  multiple  times  with  one
+              report_timing  command.  See  the  DESCRIPTION  section for more
+              information.
+
+       -exclude exclude_list
+              Prevents  the reporting of data paths that contain the specified
+              pins, ports, nets, and cell instances.  Reporting  excludes  all
+              data paths from, through, or to the named pins, ports, nets, and
+              cell instances.  If a cell instance is specified,  all  pins  of
+              the cell are excluded.  The -exclude option
+
+              o Takes precedence over the -from, -through, and -to options.
+
+              o Is exclusive with the -rise_exclude and -fall_exclude options.
+
+              o Does not apply to borrowing path from the  -trace_latch_borrow
+                option   or   clock   path   from   the  -path  full_clock  or
+                full_clock_expanded option.
+
+              o Does not apply to clock pins.
+
+              Note that this option is intended for use  in  conjunction  with
+              -from,  -through  and  -to  options and can lead to long runtime
+              when used on  its  own,  that is,  without  other   such   topo-
+              logical options.
+
+       -rise_exclude rise_exclude_list
+              Same as the -exclude option, but applies only to paths rising at
+              the named pins, ports, nets, and cell instances.
+
+       -fall_exclude fall_exclude_list
+              Same as the -exclude option, but applies only to  paths  falling
+              at the named pins, ports, nets, and cell instances.
+
+       -path_type short | full | full_clock | full_clock_expanded | only | end
+       | end_detailed
+              Specifies  how to display the timing path.  By default, the full
+              path is displayed.  If full_clock is specified,  the  report  is
+              similar to the one generated by full but includes the full clock
+              paths for propagated clocks.  If full_clock_expanded  is  speci-
+              fied,  the  report is similar to the one generated by full_clock
+              but includes full clock paths from  the  primary  clock  to  the
+              related  generated  clock  source.   If  you specify short, only
+              startpoints and endpoints are displayed.  If you  specify  only,
+              only  the  path  is displayed without the accompanying required-
+              time and slack calculation.  If you specify end, the report  has
+              a  column format that shows one line for each path, showing only
+              the endpoint name, delay,  required-time,  slack,  and  scenario
+              name.  If you specify end_detailed, the report is similar to the
+              one generated by end, but with additional  columns  showing  the
+              pathgroup name and the number of logic levels.
+
+       -delay_type min | min_rise | min_fall | max | max_rise | max_fall
+              Specifies the path type at the endpoint.  The default is max.
+
+       -report_by design | mode | corner | scenario | group
+              Specifies  the  grouping  criteria  for  reporting  paths.   The
+              default is design.  It is an error to give both  the  -report_by
+              and -sort_by options.
+
+       -sort_by group | slack
+              Specifies  the  sorting  criteria  for reporting paths, group or
+              slack.  It is an error to give both the -report_by and  -sort_by
+              options.   This  option is deprecated in favor of the -report_by
+              option.
+
+       -nworst paths_per_endpoint
+              Specifies the number of  paths  to  report  per  endpoint.   The
+              default is 1.
+
+       -max_paths max_path_count
+              Specifies  the  number  of  paths  to report.  The default is 1.
+              Depending of the value of the -report_by option,  the  max_paths
+              value  is applied to each path group, scenario, mode, or corner,
+              or to the entire design.
+
+       -slack_lesser_than lower_slack_limit
+              Reports   only   those   paths   with   a   slack   less    than
+              lower_slack_limit.  When you specify this option, there might be
+              an insufficient number of paths to satisfy  the  -max_paths  and
+              -nworst  options.   If  this  option is specified, unconstrained
+              paths are not returned, as unconstrained paths  do  not  have  a
+              defined slack.
+
+       -pba_mode none | path | exhaustive
+              Controls path-based analysis with the following modes:
+
+              o none (the default) - Path-based analysis is not applied.
+              o path - Path-based analysis is applied to paths after they have
+                been gathered.
+              o exhaustive - An exhaustive  path-based  analysis  path  search
+                algorithm  is applied to determine the worst path-based analy-
+                sis path set in the design.  If you use exhaustive, you cannot
+                use the -start_end_pair option.
+
+       -start_end_type from_to_type
+              Restricts  the  report  to one of four classes of paths based on
+              the type of startpoint and endpoint:
+
+              o reg_to_reg - from register to register
+              o reg_to_out - from register to output port
+              o in_to_reg - from input port to register
+              o in_to_out - from input port to output port
+
+              In this description, "register" means any  valid  startpoint  or
+              endpoint  that  is  not  an input port, output port, or bidirec-
+              tional port, even if not a sequential register. For  example,  a
+              clock-gating  check  endpoint  qualifies  as a "register" in the
+              in_to_reg from-to type. A bidirectional port qualifies  as  both
+              an input port and an output port.
+
+       -start_end_pair
+              Reports paths for each pair of startpoint and endpoint based  on
+              connectivity.  This option can lead to long runtime and can lead
+              to generating a huge number of paths depending on the design. By
+              default, this option searches only for paths that are violating.
+              This default can be changed by having an explicit
+               -slack_lesser_than  option.  The  options that do not work with
+              this option are -nworst, -max_paths, -report_by.  Unlike   other
+              options  of  the  report_timing  command, this option causes the
+              paths reported to no longer be sorted based on  slack.  Instead,
+              paths  are arranged based on the endpoint with those sharing the
+              same endpoint appearing next to one another. The maximum  number
+              of paths reported is limited to 2000000.
+
+       -significant_digits digits
+              Specifies  the number of significant digits (digits to the right
+              of the decimal point) to  report.  Allowed  values  are  from  0
+              through  13.  The  default is 2. Using this option overrides the
+              value set by the  shell.common.report_default_significant_digits
+              application option.
+
+       -nosplit
+              Writes out wide report lines, even if the line length is greater
+              than 80 columns. Use this option to simplify post-processing  of
+              the  output  files  or  when comparing the output files with the
+              UNIX diff command. Most of the design information is  listed  in
+              fixed-width columns. If the information in a given field exceeds
+              the column width, the next field begins on a new line,  starting
+              in the correct column.
+
+       -modes mode_list
+              Specifies  the  modes  for  which to generate the timing report.
+              Each active scenario of the modes specified by the -modes option
+              and the corners specified by the -corners option are included in
+              the report.  If this option is not given,  the  report  includes
+              scenarios  of  all  modes.   If none of the -modes, -corners, or
+              -scenarios options are given, the report includes  every  active
+              scenario of the design.  It is an error to give this option with
+              the -scenarios option.
+
+       -corners corner_list
+              Specifies the corners for which to generate the  timing  report.
+              Each active scenario of the modes specified by the -modes option
+              and the corners specified by the -corners option are included in
+              the  report.   If  this option is not given, the command reports
+              every scenario that is active with the specified modes.   It  is
+              an error to give this option with the -scenarios option.
+
+       -scenarios scenario_list
+              Specifies the scenarios for which to generate the timing report.
+              Each of the specified scenarios is included in the report. It is
+              an  error  to  give  this option with the -modes or the -corners
+              options.  If none of the -modes, -corners, or -scenarios options
+              are specified, the report includes every scenario of the design.
+
+       -groups group_list
+              Specify  the  list  of  path  group  names  for reporting paths.
+              Default is all  path  groups.   If  this  option  is  specified,
+              unconstrained  paths are not returned, as unconstrained paths do
+              not belong to any path group.
+
+       -nets  Print nets.
+
+       -physical
+              Print pin XY locations.
+
+       -attributes
+              Print attributes of each pin.
+
+       -input_pins
+              Print data for input pins.
+
+       -transition_time
+              Print transition time of each pin.
+
+       -capacitance
+              Print capacitance of each load pin.
+
+       -process
+              Print process number and process label (if  any)  of  each  leaf
+              pin.
+
+       -voltage
+              Print voltage of each leaf pin.
+
+       -temperature
+              Print temperature of each leaf pin.
+
+       -derate
+              Print timing derates of each leaf pin.
+
+       -crosstalk_delta
+              Print  SI  delta-delays of each load pin.  This option is effec-
+              tive only if SI analysis is enabled.
+
+       -variation
+              Reports  parametric  on-chip  variation  (POCV)  information  by
+              expanding  column  "Incr"  to columns "Mean", "Sensit", "Corner"
+              and "Value", and expanding  column  "Path"  to  columns  "Mean",
+              "Sensit"  and "Value". This option works only when POCV analysis
+              is enabled.
+
+       -exception exception_type
+              Prints user-specified timing  exceptions,  namely  false  paths,
+              multicycle  paths, and minimum and maximum delays, that are sat-
+              isfied per timing path being reported. Only "dominant" exception
+              type  is  acceptable,  which is to report the dominant exception
+              constraint used for the reported path.
+
+       -file_no
+              Reports file number references for the exceptions reported  with
+              -exceptions option.
+
+              Note: The additional analysis required per path with the -excep-
+              tions option is not trivial. Therefore,  using  a  report_timing
+              command  with  the  -exceptions  option  is  expected to execute
+              slower than the exact same  command  without  this  option.  The
+              -exceptions    option    does    not    work   with   -path_type
+              short/end/end_detailed option and forces the -input_pins option.
+
+       -skip_transparency_window
+              Skip printing the detailed transparency window.
+
+       -include_hierarchical_pins
+              Print the hierarchical pins.
+
+       timing_path_list
+              Specifies the collection of timing paths to report. This  option
+              is mutually exclusive with options that control the selection of
+              paths to report and is only compatible with options  which  con-
+              trol the formatting of the report.
+
+DESCRIPTION
+       The  report_timing  command  generates  a  report  that contains timing
+       information for the current design. By default, the report_timing  com-
+       mand  reports  the  single  worst  setup path for each of the scenarios
+       specified by the -modes, -corners, or -scenarios options.  If  none  of
+       these  options are specified, the command reports the single worst path
+       over all scenarios of the design.
+
+       Command options let you specify the number of paths reported, the types
+       of paths reported, and the amount of detail included in the report. You
+       can restrict the scope of paths reported by startpoints, endpoints, and
+       intermediate  points  by using the -from, -to, and -through options. To
+       restrict the report by slack or clock group, use the -slack_lesser_than
+       and -group options.
+
+       If  the  time.report_unconstrained_paths  application  option is set to
+       true, the command searches for unconstrained  paths  to  endpoints  for
+       which  constrained  paths  cannot be found. Searching for unconstrained
+       paths can cause significantly longer runtimes.
+
+       The report actually consists of a series of subreports, each containing
+       up  to  max_paths  paths, sorted by slack.  The value of the -report_by
+       option controls the contents of each subreport as follows:
+
+        design -- There will be a single subreport for the entire design, con-
+         taining the worst paths across all pathgroups of all scenarios.  This
+         is the default.
+
+        group -- There will be a subreport (with up to  max_paths  paths)  for
+         each  pathgroup  of  each specified scenario.  (This is equivalent to
+         the old default -sort_by group option.)
+
+        scenario -- There will be a subreport for  each  scenario,  containing
+         the  worst  paths  across all pathgroups.  (This is equivalent to the
+         old -sort_by slack option.)
+
+        mode -- There will be a subreport for each mode, containing the  worst
+         paths across all pathgroups of all scenarios of that mode.
+
+        corner  --  There  will be a subreport for each corner, containing the
+         worst paths across all pathgroups of all scenarios of that corner.
+
+       The command can also report on a collection of timing paths which  were
+       retrieved using the get_timing_paths command.
+
+   Multicorner-Multimode Support
+       By  default,  this  command  works on all active scenarios.  To specify
+       different scenarios, use the -scenarios  option  or  the  -corners  and
+       -modes options.
+
+EXAMPLES
+       The  following  example uses multiple -through options in a single com-
+       mand to specify paths that traverse multiple points in the design.  The
+       command reports paths beginning at A1, passing through B1, then through
+       C1, and ending at D1:
+
+         prompt> report_timing -from A1 -through B1 -through C1 -to D1
+
+       The following example allows multiple possible paths by specifying mul-
+       tiple objects within one -through option. The path can pass through any
+       of the objects. The command specifies paths beginning  at  A1,  passing
+       through either B1 or B2, then passing through either C1 or C2, and end-
+       ing at D1.
+
+         prompt> report_timing -from A1 -through {B1 B2} -through {C1 C2} -to D1
+
+       The following example uses the -report_by design option to  report  the
+       single worst path over the entire design:
+
+         prompt> report_timing -report_by design -scenarios [all_scenarios] -max_paths 1
+
+       The  following  example shows how a preexisting collection of paths can
+       be printed:
+
+         prompt> set paths [get_timing_paths -report_by corner -corner c23 -max_paths 100]
+         prompt> report_timing $paths
+
+       If you specify the -pba_mode exhaustive option, path-based analysis  is
+       used  during  the path search, and the worst recalculated paths meeting
+       your criteria are returned.  This option requires that a path search be
+       performed  to  ensure that the paths being returned truly are the worst
+       paths.  The additional runtime required for this option depends on  the
+       amount  of  timing  improvement resulting from path-based analysis.  As
+       the timing improvement from path-based analysis increases, the  runtime
+       for  the  path search increases. Large -nworst values can significantly
+       increase the time needed for the search.
+
+       To see the worst path in the design with path-based analysis applied:
+         prompt> report_timing -pba_mode exhaustive
+
+       To report all endpoints in the  design  which  fail  after  considering
+       path-based analysis:
+         prompt> report_timing -pba_mode exhaustive -slack_lesser_than 0 -max_paths 1000
+
+SEE ALSO
+       current_corner(2)
+       current_mode(2)
+       current_scenario(2)
+       get_timing_paths(2)
+       set_scenario_status(2)
+       time.report_unconstrained_paths(3)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> report_timing -corners ff_m40c -early
+Error: unknown option '-early' (CMD-010)
+fc_shell> report_timing -help
+Usage: report_timing    # Report timing
+        [-modes mode_list]     (use scenarios of these modes (default is all modes))
+        [-corners corner_list] (use scenarios of these corners (default is all corners))
+        [-scenarios scenario_list]
+                               (use these scenarios)
+        [-groups group_list]   (List of path group names to report (default is all path groups))
+        [-nworst nworst]       (Number of paths per endpoint: 
+                                Value >= 1)
+        [-max_paths max_paths] (Maximum total paths to find: 
+                                Value >= 1)
+        [-delay_type delay_type]
+                               (Delay type: 
+                                Values: max, max_fall, max_rise, min, 
+                                min_fall, min_rise)
+        [-path_type path_style]
+                               (Path reporting style: 
+                                Values: end, end_detailed, full, 
+                                full_clock, full_clock_expanded, only, 
+                                short)
+        [-report_by report_by] (Path ordering criteria: 
+                                Values: corner, design, group, mode, 
+                                scenario)
+        [-sort_by sort_type]   (Sorting criteria: 
+                                Values: group, slack)
+        [-exception exception_type]
+                               (Scope of timing exceptions reporting:: 
+                                Values: all, dominant, overridden)
+        [-slack_lesser_than lesser_slack_limit]
+                               (Filter by slack)
+        [-include_hierarchical_pins]
+                               (Include hierarchical pins)
+        [-from from_list]      (List of path startpoints or clocks)
+        [-rise_from rise_from_list]
+                               (Apply to paths rising from the list of startpoints or clocks)
+        [-fall_from fall_from_list]
+                               (Apply to paths falling from the list of startpoints or clocks)
+        [-through through_list]
+                               (List of through pins, ports, cells or nets)
+        [-rise_through rise_through_list]
+                               (Apply to paths rising through pins, ports, cells or nets)
+        [-fall_through fall_through_list]
+                               (Apply to paths rising through pins, ports, cells or nets)
+        [-to to_list]          (List of path endpoints or clocks)
+        [-rise_to rise_to_list]
+                               (Apply to paths with rise transition at the list of path endpoints or clocks)
+        [-fall_to fall_to_list]
+                               (Apply to paths with fall transition at the list of path endpoints or clocks)
+        [-exclude exclude_list]
+                               (Exclude pins, ports, nets or cells)
+        [-rise_exclude rise_exclude_list]
+                               (Exclude rising of pins, ports, nets or cells)
+        [-fall_exclude fall_exclude_list]
+                               (Exclude falling of pins, ports, nets or cells)
+        [-start_end_pair]      (List worst path per start-endpoint pair)
+        [-pba_mode pba_mode]   (Path-based timing analysis modes: 
+                                Values: exhaustive, none, path)
+        [-start_end_type Valid Values: reg_to_reg, reg_to_out, in_to_reg, in_to_out]
+                               (Type of paths to return: 
+                                Values: in_to_out, in_to_reg, 
+                                reg_to_out, reg_to_reg)
+        [-significant_digits digits]
+                               (Number of digits to display: 
+                                Range: 0 to 13)
+        [-nosplit]             (Don't split lines if column overflows)
+        [-file_no]             (Show File line number reference for exceptions)
+        [-nets]                (Print nets)
+        [-physical]            (Print pin XY locations)
+        [-attributes]          (Print attributes)
+        [-input_pins]          (Print input pins)
+        [-skip_transparency_window]
+                               (Skip the transparency window)
+        [-transition_time]     (Print transition times)
+        [-capacitance]         (Print capacitances)
+        [-process]             (Print process numbers/labels)
+        [-voltage]             (Print voltages)
+        [-temperature]         (Print temperatures)
+        [-derate]              (Print timing derates)
+        [-variation]           (Report variation-aware info)
+        [-crosstalk_delta]     (Print SI delta-delays)
+        [timing_path_list]     (List of timing paths to print)
+fc_shell> report_timing -delay_type min
+Warning: Scenario func::ss_125c is not configured for hold analysis: skipping. (UIC-058)
+Warning: Scenario func::tt_25c is not configured for hold analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:14:16 2026
+****************************************
+
+  Startpoint: u_core/rvx_uart_instance/cycles_per_baud_reg_5_ (rising edge-triggered flip-flop clocked by master_clk)
+  Endpoint: u_core/rvx_uart_instance/read_data_reg_5_ (rising edge-triggered flip-flop clocked by master_clk)
+  Mode: func
+  Corner: ff_m40c
+  Scenario: func::ff_m40c
+  Path Group: master_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 0.29      0.29
+
+  u_core/rvx_uart_instance/cycles_per_baud_reg_5_/C (SDFRQJIX1)
+                                                   0.00      0.29 r
+  u_core/rvx_uart_instance/cycles_per_baud_reg_5_/Q (SDFRQJIX1)
+                                                   0.21      0.50 f
+  phfnr_buf_48415/Q (INJIX0)                       0.08      0.58 r
+  copt_h_inst_62794/Q (DLY1JIX1)                   0.37      0.95 r
+  A46728/Q (ON22JIX0)                              0.09      1.04 f
+  u_core/rvx_uart_instance/read_data_reg_5_/D (SDFRQJIX1)
+                                                   0.00      1.04 f
+  data arrival time                                          1.04
+
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 1.04      1.04
+  u_core/rvx_uart_instance/read_data_reg_5_/C (SDFRQJIX1)
+                                                   0.00      1.04 r
+  library hold time                               -0.00      1.04
+  data required time                                         1.04
+  ------------------------------------------------------------------------
+  data required time                                         1.04
+  data arrival time                                         -1.04
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.00
+
+
+1
+fc_shell> report_timing -delay_type max
+Warning: Scenario func::ff_m40c is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:14:40 2026
+****************************************
+
+  Startpoint: u_core/rvx_core_instance/rs1_data_s2_reg_0_ (rising edge-triggered flip-flop clocked by master_clk)
+  Endpoint: u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_ (rising edge-triggered flip-flop clocked by master_clk)
+  Mode: func
+  Corner: ss_125c
+  Scenario: func::ss_125c
+  Path Group: master_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 2.24      2.24
+
+  u_core/rvx_core_instance/rs1_data_s2_reg_0_/C (SDFRQJIX1)
+                                                   0.00      2.24 r
+  u_core/rvx_core_instance/rs1_data_s2_reg_0_/Q (SDFRQJIX1)
+                                                   0.59      2.83 r
+  HFSBUF_2102_53410/Q (BUJIX8)                     0.24      3.08 r
+  A50504/Q (AND2JIX0)                              0.22      3.30 r
+  ctmTdsLR_1_56772/Q (AO21JIX1)                    0.20      3.50 r
+  A50222/Q (NA3JIX0)                               0.25      3.75 f
+  A50226/Q (NA2JIX0)                               0.17      3.92 r
+  ctmTdsLR_1_61971/Q (EO3JIX1)                     0.71      4.62 r
+  ctmTdsLR_2_62160/Q (AO21JIX1)                    0.43      5.05 r
+  ctmTdsLR_3_62161/Q (INJIX0)                      0.08      5.13 f
+  ctmTdsLR_1_62159/Q (ON22JIX0)                    0.18      5.31 r
+  A50945/Q (NO2I1JIX0)                             0.16      5.48 f
+  A50946/Q (NO2I1JIX1)                             0.14      5.61 r
+  A50951/Q (NA3JIX1)                               0.15      5.76 f
+  A50952/Q (NA2JIX0)                               0.11      5.87 r
+  A50958/Q (NA2I1JIX0)                             0.14      6.01 r
+  A50960/Q (NA2JIX1)                               0.10      6.11 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U951/CO (FAJIX1)
+                                                   0.28      6.39 f
+  A50847/Q (ON21JIX1)                              0.26      6.64 r
+  A50855/Q (NO2I1JIX0)                             0.24      6.88 r
+  ctmTdsLR_2_58197/Q (ON22JIX1)                    0.17      7.05 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U858/CO (FAJIX1)
+                                                   0.32      7.38 f
+  ctmTdsLR_1_58484/Q (NA3JIX1)                     0.11      7.48 r
+  A51084/Q (NA2JIX2)                               0.12      7.60 f
+  ctmTdsLR_1_61533/Q (EO3JIX1)                     0.19      7.79 f
+  A51093/Q (ON21JIX1)                              0.13      7.92 r
+  A51094/Q (NA2JIX1)                               0.11      8.03 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U768/CO (FAJIX1)
+                                                   0.29      8.31 f
+  A50819/Q (ON21JIX2)                              0.17      8.48 r
+  A50826/Q (EO2JIX1)                               0.21      8.69 r
+  A50829/Q (ON21JIX1)                              0.14      8.83 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U677/CO (FAJIX1)
+                                                   0.25      9.08 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U661/CO (FAJIX1)
+                                                   0.26      9.34 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U632/CO (FAJIX1)
+                                                   0.25      9.59 f
+  A51003/Q (NA2JIX1)                               0.08      9.67 r
+  A51005/Q (NA2JIX1)                               0.08      9.75 f
+  A51699/Q (NA2JIX1)                               0.07      9.82 r
+  A51700/Q (NA2JIX1)                               0.10      9.92 f
+  A51013/Q (NA2JIX1)                               0.08     10.00 r
+  A51014/Q (NA2JIX1)                               0.10     10.10 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U519/CO (FAJIX1)
+                                                   0.26     10.35 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U474/CO (FAJIX1)
+                                                   0.25     10.60 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U462/CO (FAJIX0)
+                                                   0.26     10.86 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U443/CO (FAJIX1)
+                                                   0.26     11.12 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U400/CO (FAJIX1)
+                                                   0.25     11.37 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U391/S (FAJIX0)
+                                                   0.38     11.75 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U3498/CO (FAJIX1)
+                                                   0.30     12.05 f
+  A51052/Q (NO2I1JIX2)                             0.15     12.20 f
+  A51059/Q (INJIX2)                                0.05     12.25 r
+  A52560/Q (NA2I1JIX1)                             0.08     12.33 f
+  A52561/Q (ON21JIX1)                              0.11     12.44 r
+  A52564/Q (NO2JIX1)                               0.08     12.51 f
+  A52566/Q (ON21JIX1)                              0.14     12.65 r
+  A50341/Q (NA2JIX1)                               0.14     12.78 f
+  A51643/Q (AO21JIX2)                              0.32     13.10 f
+  A51539/Q (NA2JIX1)                               0.10     13.20 r
+  A51545/Q (NA3JIX1)                               0.13     13.33 f
+  A50303/Q (NO2I1JIX1)                             0.15     13.48 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U3417/CO (FAJIX1)
+                                                   0.30     13.78 f
+  ctmTdsLR_2_62410/Q (ON22JIX1)                    0.12     13.90 r
+  ctmTdsLR_1_62409/Q (INVJIX1)                     0.10     14.00 f
+  ctmTdsLR_3_62423/Q (NO2JIX1)                     0.09     14.08 r
+  ctmTdsLR_1_62421/Q (AN21JIX1)                    0.09     14.17 f
+  ctmTdsLR_1_62424/Q (NO3JIX1)                     0.17     14.34 r
+  A50251/Q (NO2JIX0)                               0.12     14.46 f
+  ctmTdsLR_1_56413/Q (OA32JIX0)                    0.33     14.79 f
+  u_core/rvx_core_instance/ctmi_35968/Q (AN21JIX1)
+                                                   0.13     14.92 r
+  u_core/rvx_core_instance/ctmi_35967/Q (ON21JIX1)
+                                                   0.19     15.11 f
+  u_core/rvx_core_instance/ctmi_36463/Q (ON21JIX1)
+                                                   0.28     15.39 r
+  A52510/Q (NA2I1JIX1)                             0.22     15.62 r
+  ctmTdsLR_2_62124/Q (NA4I1JIX0)                   0.21     15.83 f
+  ctmTdsLR_1_62123/Q (NA3I1JIX1)                   0.21     16.04 f
+  A52409/Q (NO2JIX1)                               0.11     16.14 r
+  A52620/Q (NA2JIX1)                               0.08     16.22 f
+  A52621/Q (ON211JIX1)                             0.08     16.31 r
+  gre_BUF_36_inst_64495/Q (BUJIX4)                 0.18     16.49 r
+  A51440/Q (EN2JIX1)                               0.14     16.62 r
+  ctmTdsLR_2_62282/Q (AN21JIX1)                    0.11     16.74 f
+  ctmTdsLR_1_62281/Q (INVJIX1)                     0.11     16.85 r
+  ZBUF_4372_inst_54623/Q (BUFJIX12)                0.17     17.02 r
+  u_core/rvx_core_instance/ctmi_36820/Q (NO2JIX0)
+                                                   0.12     17.14 f
+  A52678/Q (OR3JIX2)                               0.40     17.54 f
+  ctmTdsLR_2_62408/Q (INJIX1)                      0.09     17.63 r
+  ctmTdsLR_1_62407/Q (NO2JIX1)                     0.10     17.72 f
+  u_core/rvx_tightly_coupled_memory_instance/A50169/Q (AND2JIX1)
+                                                   0.30     18.02 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_17112/Q (AND2JIX1)
+                                                   0.22     18.24 f
+  HFSBUF_159_53871/Q (BUFJIX2)                     0.78     19.02 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27824/Q (AN22JIX0)
+                                                   1.49     20.50 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27823/Q (NA4JIX1)
+                                                   0.66     21.16 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27817/Q (NO2JIX0)
+                                                   0.30     21.46 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27816/Q (NO4I2JIX0)
+                                                   0.62     22.08 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27663/Q (AN221JIX0)
+                                                   0.36     22.44 f
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_/D (SDFRQJIX1)
+                                                   0.00     22.44 f
+  data arrival time                                         22.44
+
+  clock master_clk (rise edge)                    20.00     20.00
+  clock network delay (propagated)                 2.55     22.55
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_/C (SDFRQJIX1)
+                                                   0.00     22.55 r
+  library setup time                              -0.13     22.42
+  data required time                                        22.42
+  ------------------------------------------------------------------------
+  data required time                                        22.42
+  data arrival time                                        -22.44
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.03
+
+
+1
+fc_shell> report_timing -delay_type min
+Warning: Scenario func::ss_125c is not configured for hold analysis: skipping. (UIC-058)
+Warning: Scenario func::tt_25c is not configured for hold analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:14:53 2026
+****************************************
+
+  Startpoint: u_core/rvx_uart_instance/cycles_per_baud_reg_5_ (rising edge-triggered flip-flop clocked by master_clk)
+  Endpoint: u_core/rvx_uart_instance/read_data_reg_5_ (rising edge-triggered flip-flop clocked by master_clk)
+  Mode: func
+  Corner: ff_m40c
+  Scenario: func::ff_m40c
+  Path Group: master_clk
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 0.29      0.29
+
+  u_core/rvx_uart_instance/cycles_per_baud_reg_5_/C (SDFRQJIX1)
+                                                   0.00      0.29 r
+  u_core/rvx_uart_instance/cycles_per_baud_reg_5_/Q (SDFRQJIX1)
+                                                   0.21      0.50 f
+  phfnr_buf_48415/Q (INJIX0)                       0.08      0.58 r
+  copt_h_inst_62794/Q (DLY1JIX1)                   0.37      0.95 r
+  A46728/Q (ON22JIX0)                              0.09      1.04 f
+  u_core/rvx_uart_instance/read_data_reg_5_/D (SDFRQJIX1)
+                                                   0.00      1.04 f
+  data arrival time                                          1.04
+
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 1.04      1.04
+  u_core/rvx_uart_instance/read_data_reg_5_/C (SDFRQJIX1)
+                                                   0.00      1.04 r
+  library hold time                               -0.00      1.04
+  data required time                                         1.04
+  ------------------------------------------------------------------------
+  data required time                                         1.04
+  data arrival time                                         -1.04
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.00
+
+
+1
+fc_shell> report_qor
+****************************************
+Report : qor
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:15:40 2026
+****************************************
+
+
+Scenario           'func::ff_m40c'
+Timing Path Group  'master_clk'
+----------------------------------------
+Worst Hold Violation:             -0.00
+Total Hold Violation:             -0.00
+No. of Hold Violations:               2
+----------------------------------------
+
+Scenario           'func::ss_125c'
+Timing Path Group  'master_clk'
+----------------------------------------
+Levels of Logic:                     90
+Critical Path Length:             20.20
+Critical Path Slack:              -0.03
+Critical Path Clk Period:         20.00
+Total Negative Slack:             -0.18
+No. of Violating Paths:              21
+----------------------------------------
+
+Scenario           'func::tt_25c'
+Timing Path Group  'master_clk'
+----------------------------------------
+Levels of Logic:                     80
+Critical Path Length:             12.41
+Critical Path Slack:               7.31
+Critical Path Clk Period:         20.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:              0
+Hierarchical Port Count:              0
+Leaf Cell Count:                  42056
+Buf/Inv Cell Count:                2952
+Buf Cell Count:                    1206
+Inv Cell Count:                    1746
+Combinational Cell Count:         30119
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:            11937
+   Integrated Clock-Gating Cell Count:                     1116
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       10821
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            1.00
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:           639689.05
+Noncombinational Area:        424652.84
+Buf/Inv Area:                  21950.16
+Total Buffer Area:             13296.15
+Total Inverter Area:            8654.01
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                 1930943.18
+Net YLength:                 1870987.84
+----------------------------------------
+Cell Area (netlist):                        1064341.89
+Cell Area (netlist and physical only):      3445141.89
+Net Length:                  3801931.01
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:             43088
+Nets with Violations:                 8
+Max Trans Violations:                 8
+Max Cap Violations:                   0
+----------------------------------------
+
+1
+fc_shell> report_timing -corners ss_125c
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:17:38 2026
+****************************************
+
+  Startpoint: u_core/rvx_core_instance/rs1_data_s2_reg_0_ (rising edge-triggered flip-flop clocked by master_clk)
+  Endpoint: u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_ (rising edge-triggered flip-flop clocked by master_clk)
+  Mode: func
+  Corner: ss_125c
+  Scenario: func::ss_125c
+  Path Group: master_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 2.24      2.24
+
+  u_core/rvx_core_instance/rs1_data_s2_reg_0_/C (SDFRQJIX1)
+                                                   0.00      2.24 r
+  u_core/rvx_core_instance/rs1_data_s2_reg_0_/Q (SDFRQJIX1)
+                                                   0.59      2.83 r
+  HFSBUF_2102_53410/Q (BUJIX8)                     0.24      3.08 r
+  A50504/Q (AND2JIX0)                              0.22      3.30 r
+  ctmTdsLR_1_56772/Q (AO21JIX1)                    0.20      3.50 r
+  A50222/Q (NA3JIX0)                               0.25      3.75 f
+  A50226/Q (NA2JIX0)                               0.17      3.92 r
+  ctmTdsLR_1_61971/Q (EO3JIX1)                     0.71      4.62 r
+  ctmTdsLR_2_62160/Q (AO21JIX1)                    0.43      5.05 r
+  ctmTdsLR_3_62161/Q (INJIX0)                      0.08      5.13 f
+  ctmTdsLR_1_62159/Q (ON22JIX0)                    0.18      5.31 r
+  A50945/Q (NO2I1JIX0)                             0.16      5.48 f
+  A50946/Q (NO2I1JIX1)                             0.14      5.61 r
+  A50951/Q (NA3JIX1)                               0.15      5.76 f
+  A50952/Q (NA2JIX0)                               0.11      5.87 r
+  A50958/Q (NA2I1JIX0)                             0.14      6.01 r
+  A50960/Q (NA2JIX1)                               0.10      6.11 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U951/CO (FAJIX1)
+                                                   0.28      6.39 f
+  A50847/Q (ON21JIX1)                              0.26      6.64 r
+  A50855/Q (NO2I1JIX0)                             0.24      6.88 r
+  ctmTdsLR_2_58197/Q (ON22JIX1)                    0.17      7.05 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U858/CO (FAJIX1)
+                                                   0.32      7.38 f
+  ctmTdsLR_1_58484/Q (NA3JIX1)                     0.11      7.48 r
+  A51084/Q (NA2JIX2)                               0.12      7.60 f
+  ctmTdsLR_1_61533/Q (EO3JIX1)                     0.19      7.79 f
+  A51093/Q (ON21JIX1)                              0.13      7.92 r
+  A51094/Q (NA2JIX1)                               0.11      8.03 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U768/CO (FAJIX1)
+                                                   0.29      8.31 f
+  A50819/Q (ON21JIX2)                              0.17      8.48 r
+  A50826/Q (EO2JIX1)                               0.21      8.69 r
+  A50829/Q (ON21JIX1)                              0.14      8.83 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U677/CO (FAJIX1)
+                                                   0.25      9.08 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U661/CO (FAJIX1)
+                                                   0.26      9.34 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U632/CO (FAJIX1)
+                                                   0.25      9.59 f
+  A51003/Q (NA2JIX1)                               0.08      9.67 r
+  A51005/Q (NA2JIX1)                               0.08      9.75 f
+  A51699/Q (NA2JIX1)                               0.07      9.82 r
+  A51700/Q (NA2JIX1)                               0.10      9.92 f
+  A51013/Q (NA2JIX1)                               0.08     10.00 r
+  A51014/Q (NA2JIX1)                               0.10     10.10 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U519/CO (FAJIX1)
+                                                   0.26     10.35 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U474/CO (FAJIX1)
+                                                   0.25     10.60 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U462/CO (FAJIX0)
+                                                   0.26     10.86 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U443/CO (FAJIX1)
+                                                   0.26     11.12 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U400/CO (FAJIX1)
+                                                   0.25     11.37 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U391/S (FAJIX0)
+                                                   0.38     11.75 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U3498/CO (FAJIX1)
+                                                   0.30     12.05 f
+  A51052/Q (NO2I1JIX2)                             0.15     12.20 f
+  A51059/Q (INJIX2)                                0.05     12.25 r
+  A52560/Q (NA2I1JIX1)                             0.08     12.33 f
+  A52561/Q (ON21JIX1)                              0.11     12.44 r
+  A52564/Q (NO2JIX1)                               0.08     12.51 f
+  A52566/Q (ON21JIX1)                              0.14     12.65 r
+  A50341/Q (NA2JIX1)                               0.14     12.78 f
+  A51643/Q (AO21JIX2)                              0.32     13.10 f
+  A51539/Q (NA2JIX1)                               0.10     13.20 r
+  A51545/Q (NA3JIX1)                               0.13     13.33 f
+  A50303/Q (NO2I1JIX1)                             0.15     13.48 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U3417/CO (FAJIX1)
+                                                   0.30     13.78 f
+  ctmTdsLR_2_62410/Q (ON22JIX1)                    0.12     13.90 r
+  ctmTdsLR_1_62409/Q (INVJIX1)                     0.10     14.00 f
+  ctmTdsLR_3_62423/Q (NO2JIX1)                     0.09     14.08 r
+  ctmTdsLR_1_62421/Q (AN21JIX1)                    0.09     14.17 f
+  ctmTdsLR_1_62424/Q (NO3JIX1)                     0.17     14.34 r
+  A50251/Q (NO2JIX0)                               0.12     14.46 f
+  ctmTdsLR_1_56413/Q (OA32JIX0)                    0.33     14.79 f
+  u_core/rvx_core_instance/ctmi_35968/Q (AN21JIX1)
+                                                   0.13     14.92 r
+  u_core/rvx_core_instance/ctmi_35967/Q (ON21JIX1)
+                                                   0.19     15.11 f
+  u_core/rvx_core_instance/ctmi_36463/Q (ON21JIX1)
+                                                   0.28     15.39 r
+  A52510/Q (NA2I1JIX1)                             0.22     15.62 r
+  ctmTdsLR_2_62124/Q (NA4I1JIX0)                   0.21     15.83 f
+  ctmTdsLR_1_62123/Q (NA3I1JIX1)                   0.21     16.04 f
+  A52409/Q (NO2JIX1)                               0.11     16.14 r
+  A52620/Q (NA2JIX1)                               0.08     16.22 f
+  A52621/Q (ON211JIX1)                             0.08     16.31 r
+  gre_BUF_36_inst_64495/Q (BUJIX4)                 0.18     16.49 r
+  A51440/Q (EN2JIX1)                               0.14     16.62 r
+  ctmTdsLR_2_62282/Q (AN21JIX1)                    0.11     16.74 f
+  ctmTdsLR_1_62281/Q (INVJIX1)                     0.11     16.85 r
+  ZBUF_4372_inst_54623/Q (BUFJIX12)                0.17     17.02 r
+  u_core/rvx_core_instance/ctmi_36820/Q (NO2JIX0)
+                                                   0.12     17.14 f
+  A52678/Q (OR3JIX2)                               0.40     17.54 f
+  ctmTdsLR_2_62408/Q (INJIX1)                      0.09     17.63 r
+  ctmTdsLR_1_62407/Q (NO2JIX1)                     0.10     17.72 f
+  u_core/rvx_tightly_coupled_memory_instance/A50169/Q (AND2JIX1)
+                                                   0.30     18.02 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_17112/Q (AND2JIX1)
+                                                   0.22     18.24 f
+  HFSBUF_159_53871/Q (BUFJIX2)                     0.78     19.02 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27824/Q (AN22JIX0)
+                                                   1.49     20.50 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27823/Q (NA4JIX1)
+                                                   0.66     21.16 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27817/Q (NO2JIX0)
+                                                   0.30     21.46 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27816/Q (NO4I2JIX0)
+                                                   0.62     22.08 r
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_27663/Q (AN221JIX0)
+                                                   0.36     22.44 f
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_/D (SDFRQJIX1)
+                                                   0.00     22.44 f
+  data arrival time                                         22.44
+
+  clock master_clk (rise edge)                    20.00     20.00
+  clock network delay (propagated)                 2.55     22.55
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_2_/C (SDFRQJIX1)
+                                                   0.00     22.55 r
+  library setup time                              -0.13     22.42
+  data required time                                        22.42
+  ------------------------------------------------------------------------
+  data required time                                        22.42
+  data arrival time                                        -22.44
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.03
+
+
+1
+fc_shell> report_timing -corners tt_25c
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top_pad_rvx
+Version: W-2024.09-SP3
+Date   : Mon Nov 23 21:17:55 2026
+****************************************
+
+  Startpoint: u_core/rvx_core_instance/rs2_data_s2_reg_4_ (rising edge-triggered flip-flop clocked by master_clk)
+  Endpoint: u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_28_ (rising edge-triggered flip-flop clocked by master_clk)
+  Mode: func
+  Corner: tt_25c
+  Scenario: func::tt_25c
+  Path Group: master_clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock master_clk (rise edge)                     0.00      0.00
+  clock network delay (propagated)                 1.56      1.56
+
+  u_core/rvx_core_instance/rs2_data_s2_reg_4_/C (SDFRQJIX2)
+                                                   0.00      1.56 r
+  u_core/rvx_core_instance/rs2_data_s2_reg_4_/Q (SDFRQJIX2)
+                                                   0.42      1.98 f
+  ZBUF_2644_inst_61144/Q (BUFJIX4)                 0.14      2.12 f
+  A50774/Q (NO2JIX0)                               0.12      2.24 r
+  A50777/Q (AN21JIX0)                              0.09      2.33 f
+  A50778/Q (AO21JIX2)                              0.15      2.48 f
+  A51184/Q (MU2JIX1)                               0.15      2.62 f
+  A51187/Q (NA2JIX1)                               0.04      2.66 r
+  A51191/Q (NA2JIX1)                               0.06      2.72 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U26/CO (FAJIX1)
+                                                   0.21      2.93 f
+  A51231/Q (NO2JIX1)                               0.10      3.03 r
+  A51235/Q (ON211JIX1)                             0.12      3.14 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U22/CO (FAJIX0)
+                                                   0.18      3.33 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U21/CO (FAJIX1)
+                                                   0.17      3.49 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U20/CO (FAJIX0)
+                                                   0.17      3.67 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U19/CO (FAJIX0)
+                                                   0.18      3.85 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U18/CO (FAJIX1)
+                                                   0.17      4.02 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U17/CO (FAJIX1)
+                                                   0.16      4.18 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U16/CO (FAJIX1)
+                                                   0.16      4.35 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U15/CO (FAJIX1)
+                                                   0.17      4.51 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U14/CO (FAJIX1)
+                                                   0.17      4.68 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U13/CO (FAJIX1)
+                                                   0.17      4.85 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U12/CO (FAJIX0)
+                                                   0.17      5.02 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U11/CO (FAJIX1)
+                                                   0.17      5.19 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U10/CO (FAJIX1)
+                                                   0.17      5.37 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U9/CO (FAJIX1)
+                                                   0.17      5.53 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U8/CO (FAJIX1)
+                                                   0.17      5.70 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U7/CO (FAJIX1)
+                                                   0.17      5.86 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U6/CO (FAJIX1)
+                                                   0.17      6.03 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U5/CO (FAJIX1)
+                                                   0.18      6.21 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/intadd_30_U4/CO (FAJIX1)
+                                                   0.21      6.42 f
+  ctmTdsLR_1_57738/Q (AO222JIX1)                   0.29      6.70 f
+  A50711/Q (EO2JIX1)                               0.36      7.07 r
+  u_core/rvx_core_instance/ctmi_32664/Q (AN21JIX1)
+                                                   0.15      7.22 f
+  u_core/rvx_core_instance/ctmi_45071/Q (MU2JIX0)
+                                                   0.20      7.42 f
+  u_core/rvx_core_instance/gen_rvx_core_mdu_rvx_core_mdu_instance/U385/S (FAJIX0)
+                                                   0.27      7.70 r
+  A51026/Q (AND2JIX0)                              0.22      7.91 r
+  A51346/Q (NO3JIX2)                               0.08      8.00 f
+  A51970/Q (ON21JIX2)                              0.11      8.10 r
+  ctmTdsLR_1_56254/Q (AN31JIX2)                    0.09      8.20 f
+  A52633/Q (INJIX1)                                0.04      8.24 r
+  u_core/rvx_core_instance/ctmi_30357/Q (NA2JIX2)
+                                                   0.06      8.30 f
+  A52048/Q (ON221JIX2)                             0.10      8.40 r
+  u_core/rvx_core_instance/ctmi_32310/Q (NA2JIX1)
+                                                   0.09      8.49 f
+  A52694/Q (ON21JIX2)                              0.06      8.55 r
+  ctmTdsLR_1_57413/Q (NA3JIX1)                     0.09      8.64 f
+  ctmTdsLR_3_57415/Q (NA2JIX1)                     0.05      8.69 r
+  A51982/Q (AO21JIX1)                              0.13      8.81 r
+  A51285/Q (EO2JIX0)                               0.10      8.91 r
+  u_core/rvx_core_instance/ctmi_36373/Q (ON22JIX0)
+                                                   0.11      9.02 f
+  u_core/rvx_core_instance/ctmi_36372/Q (AN21JIX1)
+                                                   0.13      9.15 r
+  u_core/rvx_core_instance/ctmi_36371/Q (ON21JIX1)
+                                                   0.12      9.27 f
+  u_core/rvx_core_instance/ctmi_36370/Q (ON21JIX1)
+                                                   0.21      9.49 r
+  u_core/rvx_core_instance/ctmi_36369/Q (NA2I1JIX0)
+                                                   0.14      9.63 r
+  u_core/rvx_core_instance/ctmi_36365/Q (NA2JIX1)
+                                                   0.08      9.71 f
+  u_core/rvx_core_instance/ctmi_43620/Q (NO2JIX1)
+                                                   0.11      9.82 r
+  ctmTdsLR_3_57436/Q (AN211JIX1)                   0.09      9.91 f
+  A52626/Q (OA31JIX0)                              0.16     10.07 f
+  u_core/rvx_core_instance/ctmi_36267/Q (ON21JIX1)
+                                                   0.07     10.14 r
+  A52675/Q (NA2JIX1)                               0.05     10.19 f
+  A52677/Q (AN21JIX1)                              0.07     10.26 r
+  A52619/Q (AN21JIX1)                              0.06     10.32 f
+  A52621/Q (ON211JIX1)                             0.08     10.40 r
+  gre_BUF_36_inst_64495/Q (BUJIX4)                 0.11     10.51 r
+  A51440/Q (EN2JIX1)                               0.09     10.60 r
+  ctmTdsLR_2_62282/Q (AN21JIX1)                    0.07     10.67 f
+  ctmTdsLR_1_62281/Q (INVJIX1)                     0.07     10.74 r
+  ZBUF_4372_inst_54623/Q (BUFJIX12)                0.10     10.85 r
+  u_core/rvx_core_instance/ctmi_39489/Q (NA2I1JIX0)
+                                                   0.09     10.94 r
+  A50111/Q (NA3I1JIX1)                             0.09     11.03 f
+  ZBUF_685_inst_54625/Q (BUJIX4)                   0.13     11.17 f
+  ctmi_45165/Q (NO2I1JIX2)                         0.11     11.28 f
+  phfnr_buf_48553/Q (INJIX4)                       0.07     11.35 r
+  ctmTdsLR_1_58546/Q (OR2JIX2)                     0.10     11.45 r
+  ctmTdsLR_2_58547/Q (INJIX4)                      0.09     11.54 f
+  u_core/rvx_tightly_coupled_memory_instance/ctmi_17135/Q (AND2JIX0)
+                                                   0.12     11.66 f
+  HFSBUF_396_53996/Q (BUFJIX2)                     0.33     11.99 f
+  ctmTdsLR_2_61908/Q (AO221JIX0)                   0.81     12.80 f
+  ctmTdsLR_1_61907/Q (AO221JIX0)                   0.20     13.00 f
+  u_core/rvx_tightly_coupled_memory_instance/A49911/Q (NO4I2JIX1)
+                                                   0.38     13.38 r
+  A50667/Q (NO4I2JIX2)                             0.46     13.84 r
+  A50668/Q (AN21JIX0)                              0.13     13.97 f
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_28_/D (SDFRQJIX1)
+                                                   0.00     13.97 f
+  data arrival time                                         13.97
+
+  clock master_clk (rise edge)                    20.00     20.00
+  clock network delay (propagated)                 1.34     21.34
+  u_core/rvx_tightly_coupled_memory_instance/port0_rdata_reg_28_/C (SDFRQJIX1)
+                                                   0.00     21.34 r
+  library setup time                              -0.05     21.29
+  data required time                                        21.29
+  ------------------------------------------------------------------------
+  data required time                                        21.29
+  data arrival time                                        -13.97
+  ------------------------------------------------------------------------
+  slack (MET)                                                7.31
+
+
+1
+fc_shell> gui_start
+fc_shell> gui_write_window_image -window Layout.1 -format png -file ./layout.png
+1
+fc_shell> ls
+.                                                          fc_command.log
+..                                                         fc_output.txt
+.gitignore                                                 garbage
+2_synthesis                                                inp_data
+4_layout                                                   layout.idf
+_lc                                                        layout.png
+_pdk                                                       out_data
+_setup                                                     output
+default-20261123_cadmicro-el8-03.inf.ufrgs.br_2884825.svf  output2
+default-20261123_cadmicro-el8-03.inf.ufrgs.br_2899729.svf  physical
+default-20261123_cadmicro-el8-03.inf.ufrgs.br_2913795.svf  run.sh
+default-20261123_cadmicro-el8-03.inf.ufrgs.br_2927112.svf
+fc_shell> 

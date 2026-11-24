@@ -1,10 +1,16 @@
-cd 2_synthesis
-./run_dc.sh
-echo "SYNTESIS STEP IS SUCCESSFUL"
+set -e
+echo $PWD
+export STAGING_PATH="$PWD/garbage"
+export OUTPUT_PATH="$PWD/output2"
 
-cd ../4_layout
+rm -rf "$STAGING_PATH"/*|| true
+rm -rf "$OUTPUT_PATH"/*|| true
 
-./run_icc2.sh
-echo "LAYOUT STEP IS SUCCESSFUL"
+
+cd garbage
+
+module load fusioncompiler
+fc_shell -f ../physical/main.tcl
+echo "FINISHED PHYSICAL SYNTHESIS"
 
 

@@ -1,17 +1,5 @@
-# 04b-mincap_fix.tcl  (ICC2 / Fusion Compiler)
-# Run AFTER clock_opt (04-cts.tcl) and BEFORE route (05-route.tcl).
-#
-# Idea: the min_capacitance DRC on a pad DOUT pin is satisfied by construction if
-# the DOUT net sees a buffer input pin whose capacitance alone exceeds the
-# requirement. Wire length / placement then no longer matter.
-#
-# NOTE: written without access to your libraries; the attribute names marked
-# [CHECK] may differ slightly in your tool version.
+set DESIGN_PADFIX ${TOP_MODULE_NAME}_mincap_fix
 
-file mkdir $REPORT_DIR
-
-# ---- user knobs -------------------------------------------------------------
-set MIN_BUFFER_CAP 0.01 
 set MINCAP_REQ    0.02     ;# required cap from the report (lib units, pF)
 set MINCAP_MARGIN 1.5      ;# buffer pin cap must be >= REQ * MARGIN
 # Pad receiver outputs to fix. Failing in your report: GPIO 0,2,3,4,5 and CLK.
@@ -90,7 +78,9 @@ set_dont_touch [get_cells mincap_buf_*]
 connect_pg_net -automatic
 legalize_placement
 
+check_route
+route_detail -incremental true
+route_eco
 # If clock_c was already routed by CTS, patch the new connection:
-#route_eco
-save_block -as ${TOP_MODULE_NAME}_mincap_fix
+save_block -as ${DESIGN_PADFIX}
 

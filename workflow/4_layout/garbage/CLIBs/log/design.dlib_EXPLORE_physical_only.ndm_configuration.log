@@ -24,8 +24,8 @@
 Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
 set search_path {. /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .}
 . /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/syn_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/dw/sim_ver /tools/synopsys/fusioncompiler/W-2024.09-SP3/libraries/syn .
-setenv RUN_RESULT /tmp/.tARL1304345/_rrMCeBSi
-/tmp/.tARL1304345/_rrMCeBSi
+setenv RUN_RESULT /tmp/.tARL3541152/_rr9mbnMU
+/tmp/.tARL3541152/_rr9mbnMU
 set_current_mismatch_config auto_fix
 1
 set_app_options -name lib.workspace.build_script -value CLIBs/.scripts/EXPLORE_physical_only.tcl
@@ -286,8 +286,8 @@ Workspace check succeeded!
 ... wrote CLIBs/EXPLORE_physical_only.ndm
 ... removing library 'ixc013g2_iocell_v5p8'
 ... lib workspace removed!
-Maximum memory usage for this session: 101.88 MB
+Maximum memory usage for this session: 101.86 MB
 CPU usage for this session:      1 seconds (  0.00 hours)
-Elapsed time for this session:      4 seconds (  0.00 hours)
+Elapsed time for this session:      5 seconds (  0.00 hours)
 Thank you for using Library Manager.
 

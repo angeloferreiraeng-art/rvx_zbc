@@ -42,3 +42,9 @@ gui_zoom -window [gui_get_current_window -view] -factor 2.0
 gui_zoom -window [gui_get_current_window -view] -factor 0.5
 gui_write_window_image -window Layout.1 -format png -file ./layout.png
 ls
+gui_zoom -window [gui_get_current_window -view] -factor 2.0
+gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -start MoveTool
+gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -drag {{861.755 1374.750} {938.940 1140.530}} -scale 2.6616
+gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -reset
+win_select_objects -slct_targets global -at {888.370 1329.500} -radius 2.6616
+gui_write_window_image -window Layout.1 -format png -file ./layout.png

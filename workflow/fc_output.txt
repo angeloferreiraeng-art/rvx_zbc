@@ -3248,4 +3248,9 @@ default-20261123_cadmicro-el8-03.inf.ufrgs.br_2884825.svf  output2
 default-20261123_cadmicro-el8-03.inf.ufrgs.br_2899729.svf  physical
 default-20261123_cadmicro-el8-03.inf.ufrgs.br_2913795.svf  run.sh
 default-20261123_cadmicro-el8-03.inf.ufrgs.br_2927112.svf
+fc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -start MoveTool
+fc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -drag {{861.755 1374.750} {938.940 1140.530}} -scale 2.6616
+fc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -reset
+fc_shell> gui_write_window_image -window Layout.1 -format png -file ./layout.png
+1
 fc_shell> 

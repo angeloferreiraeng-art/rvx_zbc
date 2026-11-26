@@ -8,24 +8,17 @@
 set DESIGN_INITIAL ${TOP_MODULE_NAME}_initial
 
 if { [catch {open_lib $OUT_LIBRARY }] } {
-	create_lib $OUT_LIBRARY \
-	-technology $TECH_FILE \
-	-ref_libs [list $NDM_SC_LIB $NDM_IO_LIB \
-	/pdk/ihp/ihp130/ixc013g2_iocell/lef/ixc013g2_iocell_v5p8.lef \
-	/pdk/ihp/ihp130/ixc013g2ng_stdcell/lef/ixc013g2ng_phys.lef]
 
-	    set link_library "* \
-        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_fast_1p32V_m40C.db \
-        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_typ_1p20V_25C.db \
-        ${STD_LIB_PATH_SETUP}/ixc013g2ng_stdcell_slow_1p08V_125C.db\
-        ${IO_LIB_PATH_SETUP}/ixc013g2_iocell_fast_1p32V_3p6V_m40C.db \
-        ${IO_LIB_PATH_SETUP}/ixc013g2_iocell_typ_1p2V_3p3V_25C.db \
-        ${IO_LIB_PATH_SETUP}/ixc013g2_iocell_slow_1p08V_3p0V_125C.db"
+	create_lib $OUT_LIBRARY \
+	-technology $PDK_TECH_FILE \
+	-ref_libs $PDK_MAIN_FILES
+
+
+	set link_library $PDK_CORNER_FILES 
 	
 	get_libs
 	get_lib_cells -quiet *corner*
 	get_lib_cells -quiet *FEED*
-
 
 	# 2. Parasitics: IHP ships a single .tlu+, used for both late and early
 	read_parasitic_tech -tlup $TLUP_FILE -name rcTLU

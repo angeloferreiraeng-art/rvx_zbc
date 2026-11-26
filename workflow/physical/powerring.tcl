@@ -1,10 +1,10 @@
 #file mkdir $REPORT_DIR
 
-set DESIGN_FLOORPLAN ${TOP_MODULE_NAME}_floorplan
+set DESIGN_PG ${TOP_MODULE_NAME}_power_ring
 
 current_scenario func::tt_25c
 
-if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_FLOORPLAN} }] } {
+if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_PG} }] } {
 	#####################
 	# 02a-floorplan
 	##################### 
@@ -203,5 +203,5 @@ compile_pg -strategies core_mesh_v
 #check_legality        > $REPORT_DIR/fp_pg_check_legality.rpt
 #report_utilization    > $REPORT_DIR/fp_utilization.rpt
 
-save_block -as ${DESIGN_FLOORPLAN}
+save_block -as ${DESIGN_PG}
 }

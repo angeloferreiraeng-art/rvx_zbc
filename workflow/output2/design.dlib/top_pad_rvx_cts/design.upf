@@ -3,7 +3,7 @@
 ################################################################################
 ################################################################################
 #
-# Created by fc (W-2024.09-SP3) internalDesignWriter on Mon Nov 23 20:46:57 2026
+# Created by fc (W-2024.09-SP3) internalDesignWriter on Thu Nov 26 17:36:40 2026
 #
 ################################################################################
 
@@ -24,7 +24,7 @@ set_design_attributes -elements . -internal_attribute _mv_data_file_version 1
 set_design_attributes -elements . -attribute \
     enable_state_propagation_in_add_power_state false
 
-## Start - load_upf /home/angelo.ferreira/FASE2/rvx_zbc/workflow/physical/power.upf on Mon Nov 23 20:28:19 2026
+## Start - load_upf /home/angelo.ferreira/FASE2/rvx_zbc/workflow/physical/power.upf on Thu Nov 26 17:10:08 2026
 create_supply_net VSSCORE
 create_supply_net VDDCORE
 create_supply_net VDDPAD

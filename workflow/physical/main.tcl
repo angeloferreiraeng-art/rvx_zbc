@@ -3,8 +3,7 @@
 set SCRIPT_DIR     [file dirname [file normalize [info script]]]
 set PRJ_ROOT [file dirname [file dirname $SCRIPT_DIR]]
 set FLOW_ROOT [file dirname $SCRIPT_DIR]
-set LOCAL_PDK_DIR "$FLOW_ROOT/_pdk"
-set LOCAL_LC_DIR "$FLOW_ROOT/_lc"
+
 #set OUT_LIBRARY $FLOW_ROOT/output/design.dlib
 set OUTPUT_PATH [getenv "OUTPUT_PATH"]
 set  OUT_LIBRARY $OUTPUT_PATH/design.dlib
@@ -17,11 +16,11 @@ set REPORT_DIR  	"$FLOW_ROOT/out_data/reports/pnr"
 set PRE_LAYOUT_DIR	"$FLOW_ROOT/out_data/pre_layout"    
 set POST_LAYOUT_DIR	"$FLOW_ROOT/out_data/post_layout"   
 
-set_host_options -max_cores 16
+set_host_options -max_cores 64
 #---------------Basic Set up ----------------------------
-
-source $SCRIPT_DIR/pdk_setup.tcl
-source $SCRIPT_DIR/set_context.tcl
+source $SCRIPT_DIR/pdk_setup.tcl 
+source $SCRIPT_DIR/rtl_setup.tcl
+source $SCRIPT_DIR/set_context.tcl 
 source $SCRIPT_DIR/constraints.tcl
 
 #----------------------- Main steps ----------------------------

@@ -31,7 +31,7 @@ if { [catch {open_block ${OUT_LIBRARY}:${DESIGN_ROUTE}}] } {
 	check_route
 	#route_detail -incremental true
 
-	#route_eco
+	route_eco
 	# --- incremental (hold) ---
 	# em ICC2 o hold fixing já vem do CCD no route_opt; incremento extra:
 	#route_opt -from final_opto

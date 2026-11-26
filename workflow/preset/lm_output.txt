@@ -1,0 +1,125 @@
+ 
+                              Library Manager (TM)
+
+                Version W-2024.09-SP3 for linux64 - Jan 16, 2025
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+# ============================================================
+# IHP SG13G2 SRAM NDM Compilation Script
+# ===========================================================
+set ROOT_PATH [file normalize ../..]
+/home/angelo.ferreira/FASE2/rvx_zbc
+set PDK_ROOT        "${ROOT_PATH}/ihp130/ihp-sg13g2"
+/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2
+set SRAM_DIR        "$PDK_ROOT/libs.ref/sg13g2_sram"
+/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2/libs.ref/sg13g2_sram
+set TECH_LEF        "$PDK_ROOT/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef"
+/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef
+set MACRO_PATH       "$SRAM_DIR/lef"
+/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2/libs.ref/sg13g2_sram/lef
+set LIB_PATH "$SRAM_DIR/lib"
+/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2/libs.ref/sg13g2_sram/lib
+# 2. Liberty file paths (modify file names according to actual directory)
+set LIB_TYP         "_typ_1p20V_25C.lib"
+_typ_1p20V_25C.lib
+set LIB_SLOW        "_slow_1p08V_125C.lib"
+_slow_1p08V_125C.lib
+set LIB_FAST        "_fast_1p32V_m55C.lib"
+_fast_1p32V_m55C.lib
+set OUTPUT_NDM      "./sg13g2_sram_mc.ndm"
+./sg13g2_sram_mc.ndm
+set LIB_NAME sram
+sram
+set MEM_MACROS {"RM_IHPSG13_1P_1024x16_c2_bm_bist"\
+                "RM_IHPSG13_1P_1024x32_c2_bm_bist"\
+                "RM_IHPSG13_1P_1024x64_c2_bm_bist"\
+                "RM_IHPSG13_1P_1024x8_c2_bm_bist"\
+                "RM_IHPSG13_1P_2048x32_c2_bm_bist"\
+                "RM_IHPSG13_1P_2048x64_c2_bm_bist"\
+                "RM_IHPSG13_1P_256x16_c2_bm_bist"\
+                "RM_IHPSG13_1P_256x32_c2_bm_bist"\
+                "RM_IHPSG13_1P_256x48_c2_bm_bist"\
+                "RM_IHPSG13_1P_256x64_c2_bm_bist"\
+                "RM_IHPSG13_1P_256x8_c3_bm_bist"\
+                "RM_IHPSG13_1P_4096x16_c3_bm_bist"\
+                "RM_IHPSG13_1P_4096x8_c3_bm_bist"\
+                "RM_IHPSG13_1P_512x16_c2_bm_bist"\
+                "RM_IHPSG13_1P_512x32_c2_bm_bist"\
+                "RM_IHPSG13_1P_512x64_c2_bm_bist"\
+                "RM_IHPSG13_1P_512x8_c3_bm_bist"\
+                "RM_IHPSG13_1P_64x16_c2"\
+                "RM_IHPSG13_1P_64x64_c2_bm_bist"\
+                "RM_IHPSG13_1P_8192x32_c4"\
+                "RM_IHPSG13_2P_1024x16_c2_bm_bist"\
+                "RM_IHPSG13_2P_1024x32_c2_bm_bist"\
+                "RM_IHPSG13_2P_256x16_c2_bm_bist"\
+                "RM_IHPSG13_2P_256x32_c2_bm_bist"\
+                "RM_IHPSG13_2P_256x8_c2_bm_bist"\
+                "RM_IHPSG13_2P_512x16_c2_bm_bist"\
+                "RM_IHPSG13_2P_512x32_c2_bm_bist"\
+                "RM_IHPSG13_2P_512x8_c2_bm_bist"\
+                "RM_IHPSG13_2P_64x22_c2_bm_bist"\
+                "RM_IHPSG13_2P_64x32_c2"\
+
+}
+"RM_IHPSG13_1P_1024x16_c2_bm_bist" "RM_IHPSG13_1P_1024x32_c2_bm_bist" "RM_IHPSG13_1P_1024x64_c2_bm_bist" "RM_IHPSG13_1P_1024x8_c2_bm_bist" "RM_IHPSG13_1P_2048x32_c2_bm_bist" "RM_IHPSG13_1P_2048x64_c2_bm_bist" "RM_IHPSG13_1P_256x16_c2_bm_bist" "RM_IHPSG13_1P_256x32_c2_bm_bist" "RM_IHPSG13_1P_256x48_c2_bm_bist" "RM_IHPSG13_1P_256x64_c2_bm_bist" "RM_IHPSG13_1P_256x8_c3_bm_bist" "RM_IHPSG13_1P_4096x16_c3_bm_bist" "RM_IHPSG13_1P_4096x8_c3_bm_bist" "RM_IHPSG13_1P_512x16_c2_bm_bist" "RM_IHPSG13_1P_512x32_c2_bm_bist" "RM_IHPSG13_1P_512x64_c2_bm_bist" "RM_IHPSG13_1P_512x8_c3_bm_bist" "RM_IHPSG13_1P_64x16_c2" "RM_IHPSG13_1P_64x64_c2_bm_bist" "RM_IHPSG13_1P_8192x32_c4" "RM_IHPSG13_2P_1024x16_c2_bm_bist" "RM_IHPSG13_2P_1024x32_c2_bm_bist" "RM_IHPSG13_2P_256x16_c2_bm_bist" "RM_IHPSG13_2P_256x32_c2_bm_bist" "RM_IHPSG13_2P_256x8_c2_bm_bist" "RM_IHPSG13_2P_512x16_c2_bm_bist" "RM_IHPSG13_2P_512x32_c2_bm_bist" "RM_IHPSG13_2P_512x8_c2_bm_bist" "RM_IHPSG13_2P_64x22_c2_bm_bist" "RM_IHPSG13_2P_64x32_c2" 
+
+# ----------------------------- workspace --------------------------------------
+# Technology comes from the tech LEF (no .tf), so read it first.
+create_workspace -flow exploration $LIB_NAME
+... created workspace sram in exploration flow
+read_lef  $TECH_LEF            
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Information: Loading LEF file '/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2/libs.ref/sg13g2_stdcell/lef/sg13g2_tech.lef' (FILE-007)
+Information: Read LEF into a new library 'sg13g2_tech'. (LEFR-022)
+Error: The library has no technology information. (LEFR-012)
+foreach m $MEM_MACROS {
+    read_lef  $MACRO_PATH/$m.lef            ;# macro abstract (CLASS BLOCK
+        read_lib ${LIB_PATH}/${m}${LIB_TYP}
+        read_lib ${LIB_PATH}/${m}${$LIB_SLOW}
+        read_lib ${LIB_PATH}/${m}${$LIB_FAST}
+
+}
+Information: The default value of lib.workspace.library_developer_mode will be 'true' in future release. (LMUI-054)
+Information: Loading LEF file '/home/angelo.ferreira/FASE2/rvx_zbc/ihp130/ihp-sg13g2/libs.ref/sg13g2_sram/lef/RM_IHPSG13_1P_1024x16_c2_bm_bist.lef' (FILE-007)
+Information: Read LEF into a new library 'RM_IHPSG13_1P_1024x16_c2_bm_bist'. (LEFR-022)
+Error: The library has no technology information. (LEFR-012)
+Error: read_lib failed: cannot find Library Compiler exec '' from ICC2 installation directory (LMUI-018)
+Information: script '/home/angelo.ferreira/FASE2/rvx_zbc/workflow/preset/mk_sram_ref.tcl'
+        stopped at line 58 due to error. (CMD-081)
+Extended error info:
+
+    while executing
+"read_lib ${LIB_PATH}/${m}${LIB_TYP}"
+    ("foreach" body line 3)
+    invoked from within
+"foreach m $MEM_MACROS {
+    read_lef  $MACRO_PATH/$m.lef            ;# macro abstract (CLASS BLOCK
+        read_lib ${LIB_PATH}/${m}${LIB_TYP}
+        read_lib ${LI..."
+    (file "/home/angelo.ferreira/FASE2/rvx_zbc/workflow/preset/mk_sram_ref.tcl" line 58)
+ -- End Extended Error Info
+lm_shell> exit
+Maximum memory usage for this session: 82.23 MB
+CPU usage for this session:      1 seconds (  0.00 hours)
+Elapsed time for this session:     11 seconds (  0.00 hours)
+Thank you for using Library Manager.
+
